@@ -1103,7 +1103,9 @@ input[type=submit]:active {
   background-color: var(--bj-ac2);
   transform: none;
 }
-.b-link_button {
+.b-link_button,
+.b-link_button.dark,
+.b-link_button.dark-2 {
   background-color: var(--bj-sf3);
   border: 1px solid var(--bj-ln2);
   border-radius: 9px;
@@ -1111,7 +1113,9 @@ input[type=submit]:active {
   font-family: var(--bj-font);
   transition: border-color .2s, color .2s;
 }
-.b-link_button:hover {
+.b-link_button:hover,
+.b-link_button.dark:hover,
+.b-link_button.dark-2:hover {
   border-color: var(--bj-ac);
   color: var(--bj-ac);
 }
@@ -1154,7 +1158,10 @@ input[type=number]:focus,
 input[type=url]:focus,
 textarea:focus,
 select:focus,
-.b-shiki_editor-v2 .app-placeholder .textarea:focus {
+.b-shiki_editor-v2 .app-placeholder .textarea:focus,
+.b-shiki_editor .links .link-value:focus,
+.b-shiki_editor .images .link-value:focus,
+.b-shiki_editor .quotes .link-value:focus {
   border-color: var(--bj-ac);
   box-shadow: 0 0 0 3px var(--bj-ac-s);
   outline: none;
