@@ -1,0 +1,114 @@
+.b-button,
+.b-button.blue,
+.b-form input[type=submit],
+input[type=submit] {
+  background-color: var(--bj-ac);
+  border: 0;
+  border-radius: 9px;
+  color: var(--bj-on-ac);
+  font-weight: 600;
+  padding: 0 14px;
+  transition: background-color .2s, transform .2s var(--bj-ease), box-shadow .2s;
+}
+.b-button:hover,
+.b-button.blue:hover,
+.b-form input[type=submit]:hover,
+input[type=submit]:hover {
+  background-color: var(--bj-ac-h);
+  color: var(--bj-on-ac);
+  box-shadow: 0 6px 16px rgba(240, 168, 69, .3);
+  transform: translateY(-1px);
+}
+.b-button:active,
+.b-button.blue:active,
+input[type=submit]:active {
+  background-color: var(--bj-ac2);
+  transform: none;
+}
+.b-link_button {
+  background-color: var(--bj-sf3);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 9px;
+  color: var(--bj-tx);
+  font-family: var(--bj-font);
+  transition: border-color .2s, color .2s;
+}
+.b-link_button:hover {
+  border-color: var(--bj-ac);
+  color: var(--bj-ac);
+}
+.b-spoiler_block > span {
+  background-color: var(--bj-ac-s);
+  border-radius: 9px;
+  color: var(--bj-ac);
+}
+.b-spoiler_block > span:hover { background-color: rgba(240, 168, 69, .24); }
+
+.b-input input,
+.b-input textarea,
+input:not([type]),
+input[type=text],
+input[type=search],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=url],
+textarea,
+select,
+.b-shiki_editor-v2 .app-placeholder .textarea,
+.b-shiki_editor .links .link-value,
+.b-shiki_editor .images .link-value,
+.b-shiki_editor .quotes .link-value {
+  background-color: var(--bj-bg);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 9px;
+  color: var(--bj-tx);
+  transition: border-color .2s, box-shadow .2s;
+}
+.b-input input:focus,
+.b-input textarea:focus,
+input:not([type]):focus,
+input[type=text]:focus,
+input[type=search]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=url]:focus,
+textarea:focus,
+select:focus,
+.b-shiki_editor-v2 .app-placeholder .textarea:focus {
+  border-color: var(--bj-ac);
+  box-shadow: 0 0 0 3px var(--bj-ac-s);
+  outline: none;
+}
+input::placeholder,
+textarea::placeholder { color: var(--bj-mu); }
+.b-input input[disabled] { background-color: var(--bj-sf2); color: var(--bj-mu); }
+input[type=checkbox],
+input[type=radio] { accent-color: var(--bj-ac); }
+
+/* кнопка «добавить в список» на странице тайтла: у сайта светлые фоны по статусам */
+.b-add_to_list .trigger,
+.b-add_to_list .option,
+.b-add_to_list.planned .trigger,
+.b-add_to_list.planned .option,
+.b-add_to_list.watching .trigger,
+.b-add_to_list.watching .option,
+.b-add_to_list.rewatching .trigger,
+.b-add_to_list.rewatching .option,
+.b-add_to_list.completed .trigger,
+.b-add_to_list.completed .option,
+.b-add_to_list.on_hold .trigger,
+.b-add_to_list.on_hold .option,
+.b-add_to_list.dropped .trigger,
+.b-add_to_list.dropped .option {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln);
+  color: var(--bj-tx);
+}
+.b-add_to_list.planned .trigger,
+.b-add_to_list.watching .trigger,
+.b-add_to_list.rewatching .trigger { box-shadow: inset 3px 0 0 var(--bj-ac); }
+.b-add_to_list.completed .trigger { box-shadow: inset 3px 0 0 var(--bj-ok); }
+.b-add_to_list.on_hold .trigger { box-shadow: inset 3px 0 0 var(--bj-mu); }
+.b-add_to_list.dropped .trigger { box-shadow: inset 3px 0 0 var(--bj-warn); }
