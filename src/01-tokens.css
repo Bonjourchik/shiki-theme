@@ -1,0 +1,45 @@
+:root {
+  --bj-bg: #0b0d11;
+  --bj-sf: #14171d;
+  --bj-sf2: #1b1f27;
+  --bj-sf3: #252a35;
+  --bj-ln: #232833;
+  --bj-ln2: #343a47;
+  --bj-tx: #eceef2;
+  --bj-tx2: #c9ccd4;
+  --bj-mu: #878da0;
+  --bj-ac: #f0a845;
+  --bj-ac-h: #ffbe63;
+  --bj-ac2: #ff7a3d;
+  --bj-ac-s: rgba(240, 168, 69, .14);
+  --bj-ac-line: rgba(240, 168, 69, .35);
+  --bj-ok: #5fbf77;
+  --bj-warn: #e0655a;
+  --bj-on-ac: #1a1206;
+  --bj-r: 16px;
+  --bj-r-sm: 10px;
+  --bj-shadow: 0 12px 28px rgba(0, 0, 0, .45);
+  --bj-ease: cubic-bezier(.2, .8, .2, 1);
+  --bj-font: 'Onest', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --bj-font-alt: 'Unbounded', 'Onest', system-ui, sans-serif;
+  --bj-banner-h: 480px;
+  /* дефолты; поле «Внешний вид сайта» переопределяет их */
+  --bj-art: url(//i.ibb.co/BV9BxDb7/1880694-wolf-anime-fox-ears-fox-girl-1080-P.jpg);
+  --bj-ghost: "BONJOURCHIK · BONJOURCHIK · ";
+
+  /* токены самого сайта; --font-alt сайт берёт и для полей ввода и подменю,
+     поэтому там Onest, а Unbounded ставится точечно */
+  --font-main: var(--bj-font);
+  --font-alt: var(--bj-font);
+  --link-color: var(--bj-ac);
+  --link-hover-color: var(--bj-ac-h);
+  --link-active-color: var(--bj-ac2);
+  --link-border-color: var(--bj-ac-line);
+  --link-border-hover-color: var(--bj-ac-h);
+  --link-border-active-color: var(--bj-ac2);
+  --headline-color: var(--bj-tx);
+  --headline-background-color: transparent;
+  --headline-border-color: transparent;
+  --headline-arrow-color: var(--bj-ac);
+  --icon-color: var(--bj-mu);
+}
