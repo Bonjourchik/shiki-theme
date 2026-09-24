@@ -1,0 +1,5 @@
+@import url("https://raw.githubusercontent.com/Bonjourchik/shiki-theme/main/dist/theme.css");
+@media all { :root {
+  --bj-art: url(//i.ibb.co/BV9BxDb7/1880694-wolf-anime-fox-ears-fox-girl-1080-P.jpg);
+  --bj-ghost: "BONJOURCHIK · BONJOURCHIK · ";
+} }
