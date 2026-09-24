@@ -1,4 +1,12 @@
 body.p-profiles-show { position: relative; }
+/* кадрирование камеры (bj-kenburns, scale до 1.12) визуально не выходит за
+   пределы вьюпорта (overflow-x: clip на body из 10-base.css это подтверждает),
+   но трансформ всё равно даёт вклад в scrollable overflow документа —
+   document.documentElement.scrollWidth раздувается на ~35-70px во время
+   цикла анимации, хотя window.scrollX реально дальше 0-1px не двигается.
+   :has() уже используется в head.css — применяем тот же приём, чтобы не
+   трогать overflow глобально на html для остальных страниц. */
+html:has(body.p-profiles-show) { overflow-x: hidden; }
 /* арт с медленным наездом камеры */
 body.p-profiles-show::before {
   content: "";

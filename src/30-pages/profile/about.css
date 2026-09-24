@@ -1,0 +1,85 @@
+.p-profiles-show .about.block .bj-cards {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 12px;
+}
+.p-profiles-show .about.block .bj-card {
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln);
+  border-radius: 14px;
+  color: var(--bj-tx2);
+  line-height: 1.6;
+  transition: transform .4s var(--bj-ease), border-color .4s;
+}
+.p-profiles-show .about.block .bj-card::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(240, 168, 69, .18), transparent);
+  pointer-events: none;
+  transition: transform .5s var(--bj-ease);
+}
+.p-profiles-show .about.block .bj-card:hover {
+  border-color: rgba(240, 168, 69, .4);
+  transform: translateY(-3px);
+}
+.p-profiles-show .about.block .bj-card:hover::after { transform: scale(1.6); }
+.p-profiles-show .about.block .bj-card-title {
+  margin-bottom: 10px;
+  color: var(--bj-ac);
+  font: 600 10px/1.2 var(--bj-font-alt);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+/* топ-3: постеры из [animes] с номерами */
+.p-profiles-show .about.block .bj-top { counter-reset: bj-top; }
+.p-profiles-show .about.block .bj-top > * {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.p-profiles-show .about.block .bj-top .b-catalog_entry {
+  position: relative;
+  float: none;
+  width: 56px !important;
+  margin: 0 !important;
+  counter-increment: bj-top;
+}
+.p-profiles-show .about.block .bj-top .b-catalog_entry::before {
+  content: counter(bj-top);
+  position: absolute;
+  z-index: 3;
+  left: -7px;
+  top: -7px;
+  width: 22px;
+  height: 22px;
+  background: var(--bj-ac);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--bj-sf2);
+  color: var(--bj-on-ac);
+  font: 800 11px/22px var(--bj-font-alt);
+  text-align: center;
+}
+.p-profiles-show .about.block .bj-top .b-catalog_entry .title,
+.p-profiles-show .about.block .bj-top .b-catalog_entry .misc { display: none; }
+.p-profiles-show .about.block .bj-top .b-catalog_entry .cover:hover .image-decor { transform: rotate(-4deg) scale(1.08); }
+/* ссылки */
+.p-profiles-show .about.block .bj-links a {
+  display: block;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--bj-ln);
+  color: var(--bj-ac);
+  transition: color .25s, padding-left .35s var(--bj-ease);
+}
+.p-profiles-show .about.block .bj-links a:last-child { border-bottom: 0; }
+.p-profiles-show .about.block .bj-links a:hover {
+  color: var(--bj-ac-h);
+  padding-left: 6px;
+}

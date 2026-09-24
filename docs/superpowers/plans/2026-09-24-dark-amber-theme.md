@@ -1572,6 +1572,14 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 ```css
 body.p-profiles-show { position: relative; }
+/* кадрирование камеры (bj-kenburns, scale до 1.12) визуально не выходит за
+   пределы вьюпорта (overflow-x: clip на body из 10-base.css это подтверждает),
+   но трансформ всё равно даёт вклад в scrollable overflow документа —
+   document.documentElement.scrollWidth раздувается на ~35-70px во время
+   цикла анимации, хотя window.scrollX реально дальше 0-1px не двигается.
+   :has() уже используется в head.css — применяем тот же приём, чтобы не
+   трогать overflow глобально на html для остальных страниц. */
+html:has(body.p-profiles-show) { overflow-x: hidden; }
 /* арт с медленным наездом камеры */
 body.p-profiles-show::before {
   content: "";
@@ -2562,19 +2570,28 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
     margin-top: 130px;
   }
   .p-profiles-show .profile-head > .c-brief { gap: 16px; }
-  .p-profiles-show .c-brief .avatar { width: 96px; height: 96px; padding: 3px; }
+  /* .profile-head добавлен для специфичности: desktop-правило в head.css —
+     `.p-profiles-show .profile-head .c-brief .avatar` (4 класса) — без
+     префикса это правило (3 класса) проигрывало бы и ширина 96px не
+     применялась (проверено computed style: без префикса оставалось 136px). */
+  .p-profiles-show .profile-head .c-brief .avatar { width: 96px; height: 96px; padding: 3px; }
   .p-profiles-show .c-brief header.head h1 { font-size: 26px; }
   .p-profiles-show .c-history > div:not(.subheadline) { grid-template-columns: minmax(0, 1fr); }
   .p-profiles-show .profile-content > .cc-2 { grid-template-columns: minmax(0, 1fr); }
   .p-profiles-show .cc-favourites { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .p-profiles-show .achievements .cc-2 { grid-template-columns: minmax(0, 1fr); }
-  .p-profiles-show .cc-achievements { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* .achievements добавлен для специфичности: desktop-правило в
+     achievements.css — `.p-profiles-show .achievements .cc-achievements`
+     (3 класса) — без префикса это правило (2 класса) проигрывало бы и
+     сетка оставалась 4-колоночной (проверено на 768px: без префикса
+     computed grid-template-columns оставался repeat(4, …)). */
+  .p-profiles-show .achievements .cc-achievements { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .p-profiles-show .about.block .bj-cards { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
   .p-profiles-show .profile-content .c-right > .cc-2a { grid-template-columns: minmax(0, 1fr); }
   .p-profiles-show .cc-favourites { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .p-profiles-show .cc-achievements { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .p-profiles-show .achievements .cc-achievements { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 ```
 
