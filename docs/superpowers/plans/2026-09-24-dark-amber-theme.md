@@ -1690,7 +1690,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   min-width: 0;
 }
 /* аватар с вращающимся кольцом */
-.p-profiles-show .c-brief .avatar {
+/* .profile-head добавлен для специфичности: сайт задаёт `.p-profiles .profile-head .c-brief .avatar{float:left;...}` (4 класса) */
+.p-profiles-show .profile-head .c-brief .avatar {
   position: relative;
   isolation: isolate;
   flex: none;
@@ -1718,7 +1719,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   background: radial-gradient(closest-side, rgba(240, 168, 69, .35), transparent);
   animation: bj-pulse 3s ease-in-out infinite;
 }
-.p-profiles-show .c-brief .avatar img {
+/* .profile-head добавлен: сайт задаёт `.avatar img{width:160px;height:160px}` при min-width:768px (4 класса) */
+.p-profiles-show .profile-head .c-brief .avatar img {
   position: relative;
   z-index: 1;
   display: block;
@@ -1731,7 +1733,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 }
 .p-profiles-show .c-brief .avatar:hover img { transform: scale(1.06) rotate(-3deg); }
 /* кнопки действий (видны залогиненным) — под ником */
-.p-profiles-show .c-brief .avatar .profile-actions {
+/* .profile-head добавлен: сайт задаёт margin-top:5px на `.avatar .profile-actions` (5 классов) */
+.p-profiles-show .profile-head .c-brief .avatar .profile-actions {
   position: absolute;
   z-index: 2;
   left: calc(100% + 24px);
@@ -1827,16 +1830,21 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 ```css
 .p-profiles-show .profile-head > .c-history { grid-area: hist; }
+/* сайт задаёт margin-bottom:15px на `.c-history.x3` (4 класса) — перебиваем */
+.p-profiles-show .profile-head > .c-history.x3 { margin: 0; }
 .p-profiles-show .c-history > .subheadline { display: none; }
 .p-profiles-show .c-history > div:not(.subheadline) {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
-.p-profiles-show .c-history .entry {
+/* .profile-head добавлен: сайт задаёт border-top/padding-top/margin-bottom на `.entry` (4 класса) */
+.p-profiles-show .profile-head .c-history .entry {
   float: none;
   width: auto;
   margin: 0;
+  border-top: none;
+  padding-top: 0;
 }
 .p-profiles-show .c-history .entry > a {
   display: grid;
@@ -1865,32 +1873,44 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   overflow: hidden;
   border-radius: 7px;
 }
-.p-profiles-show .c-history .entry picture img {
+/* .profile-head добавлен: сайт задаёт float:left;margin на `.entry img` (4 класса) */
+.p-profiles-show .profile-head .c-history .entry picture img {
   display: block;
+  float: none;
   width: 100%;
   height: 100%;
+  margin: 0;
   object-fit: cover;
 }
-.p-profiles-show .c-history .entry .title {
+/* .profile-head добавлен: сайт задаёт display:block;white-space:nowrap на `.entry .title` (5 классов), ломая line-clamp */
+.p-profiles-show .profile-head .c-history .entry .title {
   grid-column: 2;
   display: -webkit-box;
   overflow: hidden;
   color: var(--bj-tx2);
   font-size: 12px;
   line-height: 1.35;
+  white-space: normal;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.p-profiles-show .c-history .entry .misc {
+/* .profile-head + !important: сайт задаёт color:#7b8084 !important на `.entry .misc` (5 классов) */
+.p-profiles-show .profile-head .c-history .entry .misc {
   grid-column: 2;
   margin: 2px 0 0;
-  color: var(--bj-ac);
+  color: var(--bj-ac) !important;
   font-size: 10.5px;
   text-align: left;
   animation: none;
 }
-.p-profiles-show .c-history .entry time.misc { color: var(--bj-mu); margin-top: 0; }
+/* .misc.date + !important: сайт задаёт color:#9da2a8 !important на `.entry .misc.date` (6 классов) */
+.p-profiles-show .profile-head .c-history .entry time.misc.date {
+  color: var(--bj-mu) !important;
+  margin-top: 0;
+}
 ```
+
+**Специфичность (обнаружено при сверке с живым `application.css`):** сайт задаёт для `.c-brief .avatar`/`.avatar img`/`.avatar .profile-actions`, `.c-history.x3`, `.entry`, `.entry img`, `.entry .title`, `.entry .misc`/`.misc.date` селекторы с бо́льшим числом классов (иногда с `!important` на `color`), поэтому эквивалентные правила темы получили префикс `.profile-head` (± совпадающий класс `.date`, ± `!important`), а `.entry`/`.entry picture img` — дополнительные явные сбросы (`border-top`, `padding-top`, `float`, `margin`), которых не было в исходном черновике. Без этого текла бы светлая пунктирная граница списка, плавающий постер со смещением и однострочный `white-space:nowrap` вместо 2-строчного клампа тайтла.
 
 - [ ] **Step 3: Собрать и проверить**
 
