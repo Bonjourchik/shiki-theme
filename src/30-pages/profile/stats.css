@@ -1,0 +1,121 @@
+/* полосы списков */
+.p-profiles-show .b-stats_bar .bar {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  height: 7px;
+  margin: 6px 0 4px;
+  overflow: hidden;
+  background: var(--bj-sf3);
+  border-radius: 4px;
+  font-size: 0;
+  line-height: 0;
+}
+.p-profiles-show .b-stats_bar .bar > .first,
+.p-profiles-show .b-stats_bar .bar > .second,
+.p-profiles-show .b-stats_bar .bar > .third {
+  height: 100%;
+  border-radius: 0;
+  transform-origin: left;
+  animation: bj-fill-x 1.4s .5s var(--bj-ease) both;
+  /* сайт задаёт `.b-stats_bar .bar .first,.second,.third{font-size:11px;color:white;...}` (3 класса) —
+     это конкретнее контейнерного `font-size:0`, число внутри полосы вылезало бы за 7px; здесь 4 класса — перебивает. */
+  font-size: 0;
+}
+.p-profiles-show .b-stats_bar .bar > .first {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac));
+}
+.p-profiles-show .b-stats_bar .bar > .first::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .45), transparent);
+  transform: translateX(-100%);
+  animation: bj-bar-glint 3s 2s ease-in-out infinite;
+}
+.p-profiles-show .b-stats_bar .bar > .second { background: #8a6a3c; }
+.p-profiles-show .b-stats_bar .bar > .third { background: var(--bj-warn); }
+.p-profiles-show .b-stats_bar .stat_names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  color: var(--bj-mu);
+  font-size: 11px;
+}
+.p-profiles-show .b-stats_bar .stat_names .stat_name { float: none; margin: 0; }
+.p-profiles-show .b-stats_bar .stat_names a { color: var(--bj-mu); }
+.p-profiles-show .b-stats_bar .stat_names a:hover { color: var(--bj-ac); }
+.p-profiles-show .b-stats_bar .stat_names .size { color: var(--bj-tx2); }
+
+/* время за аниме */
+.p-profiles-show .lifetime .title {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+.p-profiles-show .lifetime .title .label,
+.p-profiles-show .profile-content .activity > .title {
+  color: var(--bj-tx);
+  font: 600 10.5px/1 var(--bj-font-alt);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.p-profiles-show .lifetime .title .label::before,
+.p-profiles-show .profile-content .activity > .title::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 7px;
+  height: 7px;
+  margin: -2px 10px 0 0;
+  border-radius: 2px;
+  background: var(--bj-ac);
+  box-shadow: 0 0 10px var(--bj-ac);
+  transform: rotate(45deg);
+  animation: bj-blink 2.6s ease-in-out infinite;
+}
+.p-profiles-show .lifetime .title .value {
+  border: 0;
+  margin: 0;
+  color: var(--bj-ac);
+  font: 700 26px/1.1 var(--bj-font-alt);
+}
+.p-profiles-show .lifetime .bar { height: 8px; margin-top: 12px; }
+.p-profiles-show .lifetime .bar .cuts { display: none; }
+.p-profiles-show .lifetime .bar > .third { background: transparent; }
+.p-profiles-show .lifetime .times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: var(--bj-mu);
+  font-size: 10.5px;
+}
+.p-profiles-show .lifetime .times .time {
+  float: none;
+  width: auto;
+  font-size: 10.5px;
+  color: var(--bj-mu);
+}
+.p-profiles-show .lifetime .times .time.checked { color: var(--bj-ac); }
+.p-profiles-show .lifetime .times .time.checked::before { content: "✓ "; }
+
+/* график активности */
+.p-profiles-show .activity { margin-top: 24px; }
+/* сайт задаёт `.profile-content .activity .title{margin-bottom:5px;color:#456}` (4 класса: .profile-content
+   добавлен для соответствия реальному предку `.cc-2 > .profile-content .activity`) — без .profile-content
+   наше правило (3 класса) проигрывало бы по специфичности. */
+.p-profiles-show .profile-content .activity > .title { margin-bottom: 14px; }
+.p-profiles-show .activity .graph .line .bar-container .bar {
+  background: linear-gradient(180deg, var(--bj-ac), rgba(240, 168, 69, .25));
+  border-radius: 5px 5px 0 0;
+  transform-origin: bottom;
+  animation: bj-grow-y 1s var(--bj-ease) both;
+  transition: filter .2s;
+}
+.p-profiles-show .activity .graph .line .bar-container .bar:hover {
+  filter: brightness(1.3) drop-shadow(0 0 8px rgba(240, 168, 69, .6));
+}
+.p-profiles-show .activity .graph .line .bar-container .bar .value { color: var(--bj-tx2); }
+.p-profiles-show .activity .graph .x_label { color: var(--bj-mu); font-size: 10px; }

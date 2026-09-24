@@ -1969,6 +1969,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   border-radius: 0;
   transform-origin: left;
   animation: bj-fill-x 1.4s .5s var(--bj-ease) both;
+  /* сайт задаёт `.b-stats_bar .bar .first,.second,.third{font-size:11px;color:white;...}` (3 класса) —
+     это конкретнее контейнерного `font-size:0`, число внутри полосы вылезало бы за 7px; здесь 4 класса — перебивает. */
+  font-size: 0;
 }
 .p-profiles-show .b-stats_bar .bar > .first {
   position: relative;
@@ -2004,14 +2007,14 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   gap: 8px;
 }
 .p-profiles-show .lifetime .title .label,
-.p-profiles-show .activity > .title {
+.p-profiles-show .profile-content .activity > .title {
   color: var(--bj-tx);
   font: 600 10.5px/1 var(--bj-font-alt);
   letter-spacing: 1.6px;
   text-transform: uppercase;
 }
 .p-profiles-show .lifetime .title .label::before,
-.p-profiles-show .activity > .title::before {
+.p-profiles-show .profile-content .activity > .title::before {
   content: "";
   display: inline-block;
   vertical-align: middle;
@@ -2026,6 +2029,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 }
 .p-profiles-show .lifetime .title .value {
   border: 0;
+  margin: 0;
   color: var(--bj-ac);
   font: 700 26px/1.1 var(--bj-font-alt);
 }
@@ -2042,6 +2046,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 .p-profiles-show .lifetime .times .time {
   float: none;
   width: auto;
+  font-size: 10.5px;
   color: var(--bj-mu);
 }
 .p-profiles-show .lifetime .times .time.checked { color: var(--bj-ac); }
@@ -2049,7 +2054,10 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 /* график активности */
 .p-profiles-show .activity { margin-top: 24px; }
-.p-profiles-show .activity > .title { margin-bottom: 14px; }
+/* сайт задаёт `.profile-content .activity .title{margin-bottom:5px;color:#456}` (4 класса: .profile-content
+   добавлен для соответствия реальному предку `.cc-2 > .profile-content .activity`) — без .profile-content
+   наше правило (3 класса) проигрывало бы по специфичности. */
+.p-profiles-show .profile-content .activity > .title { margin-bottom: 14px; }
 .p-profiles-show .activity .graph .line .bar-container .bar {
   background: linear-gradient(180deg, var(--bj-ac), rgba(240, 168, 69, .25));
   border-radius: 5px 5px 0 0;
