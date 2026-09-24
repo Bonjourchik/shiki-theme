@@ -2175,16 +2175,20 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
-.p-profiles-show .achievements .header .size { color: var(--bj-mu); font-size: 11.5px; }
+.p-profiles-show .achievements .header .size { float: none; color: var(--bj-mu); font-size: 11.5px; }
 .p-profiles-show .achievements .header .size:hover { color: var(--bj-ac); }
 
-/* квадратные карточки с превью */
-.p-profiles-show .cc-achievements {
+/* квадратные карточки с превью.
+   Важно: сайт задаёт .p-profiles-show .achievements .cc-achievements .b-achievement
+   (4 класса, float-раскладка width:49.25%). Наш селектор должен включать
+   .achievements, иначе при равном/меньшем числе классов сайтовый width
+   побеждает и внутри grid-ячейки (73px) даёт квадрат ~36px (49.25% от трека). */
+.p-profiles-show .achievements .cc-achievements {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
-.p-profiles-show .cc-achievements .b-achievement {
+.p-profiles-show .achievements .cc-achievements .b-achievement {
   position: relative;
   float: none;
   width: auto;
@@ -2197,9 +2201,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   cursor: pointer;
   transition: transform .45s var(--bj-ease), box-shadow .45s var(--bj-ease);
 }
-.p-profiles-show .cc-achievements .b-achievement .c-image,
-.p-profiles-show .cc-achievements .b-achievement .inner,
-.p-profiles-show .cc-achievements .b-achievement .inner > a {
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image,
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner,
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner > a {
   position: absolute;
   inset: 0;
   display: block;
@@ -2208,7 +2212,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   margin: 0;
   padding: 0;
 }
-.p-profiles-show .cc-achievements .b-achievement img {
+.p-profiles-show .achievements .cc-achievements .b-achievement img {
   display: block;
   width: 100%;
   height: 100%;
@@ -2216,7 +2220,10 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   filter: saturate(.9);
   transition: transform .6s var(--bj-ease), filter .4s;
 }
-.p-profiles-show .cc-achievements .b-achievement .border {
+/* специфичность сайтового правила для .border (.b-achievement .c-image .inner a .border,
+   4 класса + тег a) выше нашего базового `.b-achievement .border` — повторяем
+   всю цепочку DOM, чтобы выиграть без !important (сайт !important тут не использует) */
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image .inner a .border {
   position: absolute;
   z-index: 3;
   inset: 0;
@@ -2227,7 +2234,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   pointer-events: none;
   transition: opacity .3s;
 }
-.p-profiles-show .cc-achievements .b-achievement .inner::before {
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -2235,25 +2242,41 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   background: linear-gradient(180deg, transparent 35%, rgba(11, 13, 17, .92));
   pointer-events: none;
 }
-/* заголовок и описание из data-атрибутов */
-.p-profiles-show .cc-achievements .b-achievement::after,
-.p-profiles-show .cc-achievements .b-achievement::before {
+/* заголовок и описание из data-атрибутов — attr() читает только со своего
+   элемента, поэтому оставляем оба псевдоэлемента на .b-achievement (там же
+   лежат data-title/data-hint) и перебиваем спецификой сайтовые
+   .b-achievement.is-badge:before/:after (у них content: attr(data-hint) и
+   attr(data-progress)"%" соответственно + собственные position/width/height —
+   явно сбрасываем их, чтобы не было переконстрейнта по top/bottom/width) */
+.p-profiles-show .achievements .cc-achievements .b-achievement::after,
+.p-profiles-show .achievements .cc-achievements .b-achievement::before {
   position: absolute;
   z-index: 2;
+  top: auto;
   left: 9px;
   right: 9px;
   bottom: 17px;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: visible;
+  text-align: left;
+  text-overflow: clip;
+  white-space: normal;
   line-height: 1.2;
+  opacity: 1;
   pointer-events: none;
   transition: transform .35s var(--bj-ease), opacity .35s var(--bj-ease);
 }
-.p-profiles-show .cc-achievements .b-achievement::after {
+.p-profiles-show .achievements .cc-achievements .b-achievement::after {
   content: attr(data-title);
   color: #fff;
   font: 600 11px/1.2 var(--bj-font);
   text-shadow: 0 1px 4px #000;
 }
-.p-profiles-show .cc-achievements .b-achievement::before {
+.p-profiles-show .achievements .cc-achievements .b-achievement::before {
   content: attr(data-hint);
   color: var(--bj-tx2);
   font-size: 10px;
@@ -2261,7 +2284,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   transform: translateY(6px);
 }
 /* прогресс: дорожка + заливка */
-.p-profiles-show .cc-achievements .b-achievement .inner::after {
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner::after {
   content: "";
   position: absolute;
   z-index: 2;
@@ -2272,7 +2295,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   background: rgba(255, 255, 255, .15);
   border-radius: 2px;
 }
-.p-profiles-show .cc-achievements .b-achievement .c-image::before {
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image::before {
   content: "";
   position: absolute;
   z-index: 3;
@@ -2287,7 +2310,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   animation: bj-fill-x 1.2s .8s var(--bj-ease) both;
 }
 /* значок уровня (текст — из сгенерированных правил) */
-.p-profiles-show .cc-achievements .b-achievement .c-image::after {
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image::after {
   position: absolute;
   z-index: 4;
   top: 7px;
@@ -2301,25 +2324,28 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   backdrop-filter: blur(4px);
 }
 /* наведение */
-.p-profiles-show .cc-achievements .b-achievement:hover {
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover {
   z-index: 2;
   box-shadow: 0 14px 30px rgba(0, 0, 0, .5), 0 0 22px rgba(240, 168, 69, .35);
   transform: translateY(-4px) scale(1.04);
 }
-.p-profiles-show .cc-achievements .b-achievement:hover img { filter: saturate(1.15); transform: scale(1.15); }
-.p-profiles-show .cc-achievements .b-achievement:hover .border { opacity: 1; }
-.p-profiles-show .cc-achievements .b-achievement:hover::after { transform: translateY(-14px); }
-.p-profiles-show .cc-achievements .b-achievement:hover::before { opacity: 1; transform: none; }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover img { filter: saturate(1.15); transform: scale(1.15); }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover .c-image .inner a .border { opacity: 1; }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover::after { transform: translateY(-14px); }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover::before { opacity: 1; transform: none; }
 
-/* франшизы и авторы — круглые значки */
-.p-profiles-show .cc-franchises,
-.p-profiles-show .cc-authors {
+/* франшизы и авторы — круглые значки.
+   Аналогично: сайт задаёт .p-profiles-show .achievements .cc-franchises .b-badge
+   и .p-profiles-show .achievements .cc-authors .b-achievement (по 4 класса,
+   float-раскладка) — добавляем .achievements, чтобы не проиграть по ширине. */
+.p-profiles-show .achievements .cc-franchises,
+.p-profiles-show .achievements .cc-authors {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.p-profiles-show .cc-franchises .b-badge,
-.p-profiles-show .cc-authors .b-achievement {
+.p-profiles-show .achievements .cc-franchises .b-badge,
+.p-profiles-show .achievements .cc-authors .b-achievement {
   position: relative;
   float: none;
   width: 46px;
@@ -2330,29 +2356,30 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ln2);
   transition: transform .35s var(--bj-ease), box-shadow .35s var(--bj-ease);
 }
-.p-profiles-show .cc-authors .b-achievement .c-image,
-.p-profiles-show .cc-authors .b-achievement .inner,
-.p-profiles-show .cc-authors .b-achievement .inner > a {
+.p-profiles-show .achievements .cc-franchises .b-badge::before { display: none; }
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image,
+.p-profiles-show .achievements .cc-authors .b-achievement .inner,
+.p-profiles-show .achievements .cc-authors .b-achievement .inner > a {
   position: absolute;
   inset: 0;
   width: auto;
   height: auto;
   margin: 0;
 }
-.p-profiles-show .cc-authors .b-achievement::before,
-.p-profiles-show .cc-authors .b-achievement::after,
-.p-profiles-show .cc-authors .b-achievement .c-image::before,
-.p-profiles-show .cc-authors .b-achievement .c-image::after,
-.p-profiles-show .cc-authors .b-achievement .border { display: none; }
-.p-profiles-show .cc-franchises .b-badge img,
-.p-profiles-show .cc-authors .b-achievement img {
+.p-profiles-show .achievements .cc-authors .b-achievement::before,
+.p-profiles-show .achievements .cc-authors .b-achievement::after,
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image::before,
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image::after,
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image .inner a .border { display: none; }
+.p-profiles-show .achievements .cc-franchises .b-badge img,
+.p-profiles-show .achievements .cc-authors .b-achievement img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.p-profiles-show .cc-franchises .b-badge:hover,
-.p-profiles-show .cc-authors .b-achievement:hover {
+.p-profiles-show .achievements .cc-franchises .b-badge:hover,
+.p-profiles-show .achievements .cc-authors .b-achievement:hover {
   box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ac), 0 8px 18px rgba(240, 168, 69, .35);
   transform: translateY(-4px) scale(1.15);
 }
@@ -2373,6 +2400,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ```
 
 Expected: шесть значений `"none"`. Если где-то не `none`, в отчёте о задаче указать, какой псевдоэлемент занят. Перенести эффект на свободный: заголовок или описание — на `.inner > a::before` / `::after`, затемнение — на `box-shadow: inset 0 -60px 40px -10px rgba(11, 13, 17, .92)` у `.inner`.
+
+**Фактический результат (Task 11):** `.b-achievement::before` и `::after` были заняты сайтом (`.b-achievement.is-badge:before{content:attr(data-hint)}`, `:after{content:attr(data-progress) "%"}`); `.c-image::before`, `.c-image::after` (наше сгенерированное), `.inner::before`, `.inner::after` — свободны. Перенос на `.inner > a::before/::after` не подошёл: `attr()` читает атрибут только со своего элемента, а `data-title`/`data-hint` лежат на `.b-achievement`, не на `<a>`. Вместо переноса — оставили title/description на `.b-achievement::after/::before` и перебили сайтовые правила спецификой: наш селектор `.p-profiles-show .achievements .cc-achievements .b-achievement::after/::before` (4 класса) вместо сайтового `.b-achievement.is-badge:before/:after` (2 класса), плюс явный сброс `top/width/height/padding/background/overflow/white-space/opacity`, чтобы не ловить переконстрейнт по top+bottom+height и не наследовать сайтовый background/ellipsis-обрезку.
 
 - [ ] **Step 4: Собрать и проверить**
 

@@ -687,6 +687,221 @@ header.head .notice { color: var(--bj-mu); }
 .p-profiles-show .profile-content > .block:nth-child(3) { animation-delay: .9s; }
 .p-profiles-show .profile-content > .block:nth-child(4) { animation-delay: 1s; }
 
+.p-profiles-show .achievements .cc-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px 22px;
+}
+.p-profiles-show .achievements .cc-2 > .c-column {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+.p-profiles-show .achievements .header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.p-profiles-show .achievements .header .title {
+  color: var(--bj-mu);
+  font: 500 10px/1.2 var(--bj-font-alt);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.p-profiles-show .achievements .header .size { float: none; color: var(--bj-mu); font-size: 11.5px; }
+.p-profiles-show .achievements .header .size:hover { color: var(--bj-ac); }
+
+.p-profiles-show .achievements .cc-achievements {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement {
+  position: relative;
+  float: none;
+  width: auto;
+  margin: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--bj-sf2);
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06);
+  cursor: pointer;
+  transition: transform .45s var(--bj-ease), box-shadow .45s var(--bj-ease);
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image,
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner,
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner > a {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.9);
+  transition: transform .6s var(--bj-ease), filter .4s;
+}
+
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image .inner a .border {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: inherit;
+  opacity: .55;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(11, 13, 17, .92));
+  pointer-events: none;
+}
+
+.p-profiles-show .achievements .cc-achievements .b-achievement::after,
+.p-profiles-show .achievements .cc-achievements .b-achievement::before {
+  position: absolute;
+  z-index: 2;
+  top: auto;
+  left: 9px;
+  right: 9px;
+  bottom: 17px;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+  overflow: visible;
+  text-align: left;
+  text-overflow: clip;
+  white-space: normal;
+  line-height: 1.2;
+  opacity: 1;
+  pointer-events: none;
+  transition: transform .35s var(--bj-ease), opacity .35s var(--bj-ease);
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement::after {
+  content: attr(data-title);
+  color: #fff;
+  font: 600 11px/1.2 var(--bj-font);
+  text-shadow: 0 1px 4px #000;
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement::before {
+  content: attr(data-hint);
+  color: var(--bj-tx2);
+  font-size: 10px;
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.p-profiles-show .achievements .cc-achievements .b-achievement .inner::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 9px;
+  right: 9px;
+  bottom: 8px;
+  height: 3px;
+  background: rgba(255, 255, 255, .15);
+  border-radius: 2px;
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: 9px;
+  bottom: 8px;
+  width: calc((100% - 18px) * var(--bj-p, 0));
+  height: 3px;
+  background: var(--bj-ac);
+  border-radius: 2px;
+  box-shadow: 0 0 6px var(--bj-ac);
+  transform-origin: left;
+  animation: bj-fill-x 1.2s .8s var(--bj-ease) both;
+}
+
+.p-profiles-show .achievements .cc-achievements .b-achievement .c-image::after {
+  position: absolute;
+  z-index: 4;
+  top: 7px;
+  right: 7px;
+  padding: 4px 6px;
+  background: rgba(11, 13, 17, .7);
+  border-radius: 6px;
+  color: var(--bj-ac);
+  font: 700 10px/1 var(--bj-font-alt);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover {
+  z-index: 2;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .5), 0 0 22px rgba(240, 168, 69, .35);
+  transform: translateY(-4px) scale(1.04);
+}
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover img { filter: saturate(1.15); transform: scale(1.15); }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover .c-image .inner a .border { opacity: 1; }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover::after { transform: translateY(-14px); }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover::before { opacity: 1; transform: none; }
+
+.p-profiles-show .achievements .cc-franchises,
+.p-profiles-show .achievements .cc-authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.p-profiles-show .achievements .cc-franchises .b-badge,
+.p-profiles-show .achievements .cc-authors .b-achievement {
+  position: relative;
+  float: none;
+  width: 46px;
+  height: 46px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ln2);
+  transition: transform .35s var(--bj-ease), box-shadow .35s var(--bj-ease);
+}
+.p-profiles-show .achievements .cc-franchises .b-badge::before { display: none; }
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image,
+.p-profiles-show .achievements .cc-authors .b-achievement .inner,
+.p-profiles-show .achievements .cc-authors .b-achievement .inner > a {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+.p-profiles-show .achievements .cc-authors .b-achievement::before,
+.p-profiles-show .achievements .cc-authors .b-achievement::after,
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image::before,
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image::after,
+.p-profiles-show .achievements .cc-authors .b-achievement .c-image .inner a .border { display: none; }
+.p-profiles-show .achievements .cc-franchises .b-badge img,
+.p-profiles-show .achievements .cc-authors .b-achievement img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.p-profiles-show .achievements .cc-franchises .b-badge:hover,
+.p-profiles-show .achievements .cc-authors .b-achievement:hover {
+  box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ac), 0 8px 18px rgba(240, 168, 69, .35);
+  transform: translateY(-4px) scale(1.15);
+}
+
 body.p-profiles-show { position: relative; }
 
 body.p-profiles-show::before {
@@ -738,6 +953,41 @@ body.p-profiles-show::after {
   pointer-events: none;
   animation: bj-ghost 14s ease-in-out infinite alternate;
 }
+
+.p-profiles-show .cc-favourites {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 10px;
+  perspective: 600px;
+}
+.p-profiles-show .cc-favourites > .c-column {
+  float: none;
+  width: auto !important;
+  margin: 0 !important;
+}
+.p-profiles-show .cc-favourites .cover .misc { display: none; }
+.p-profiles-show .cc-favourites .image-decor { aspect-ratio: 2 / 3; }
+.p-profiles-show .cc-favourites .image-cutter,
+.p-profiles-show .cc-favourites picture,
+.p-profiles-show .cc-favourites img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.p-profiles-show .cc-favourites .cover:hover .image-decor {
+  z-index: 2;
+  transform: translateY(-6px) rotateX(6deg) scale(1.06);
+}
+.p-profiles-show .cc-friends .b-nothing_here,
+.p-profiles-show .b-clubs .b-nothing_here { margin: 0; }
+.p-profiles-show .cc-friends img,
+.p-profiles-show .b-clubs img {
+  border-radius: 50%;
+  transition: transform .3s var(--bj-ease);
+}
+.p-profiles-show .cc-friends a:hover img,
+.p-profiles-show .b-clubs a:hover img { transform: scale(1.1); }
 
 .p-profiles-show .profile-head {
   position: relative;
