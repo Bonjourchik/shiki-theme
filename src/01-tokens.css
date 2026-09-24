@@ -26,7 +26,10 @@
   /* дефолты; поле «Внешний вид сайта» переопределяет их */
   --bj-art: url(//i.ibb.co/BV9BxDb7/1880694-wolf-anime-fox-ears-fox-girl-1080-P.jpg);
   --bj-ghost: "BONJOURCHIK · BONJOURCHIK · ";
+}
 
+:root,
+:root[data-color-mode] {
   /* токены самого сайта; --font-alt сайт берёт и для полей ввода и подменю,
      поэтому там Onest, а Unbounded ставится точечно */
   --font-main: var(--bj-font);

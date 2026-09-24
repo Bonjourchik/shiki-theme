@@ -16,7 +16,11 @@
 .ac_over { background-color: var(--bj-ac-s); color: var(--bj-ac); }
 .b-dropzone,
 .b-footer_vote,
-.b-editable_grid tbody tr:nth-child(odd) td { background: var(--bj-sf); }
+.b-editable_grid tbody tr:nth-child(odd) td {
+  background: var(--bj-sf);
+  border-color: var(--bj-ln);
+  color: var(--bj-tx2);
+}
 .b-form.green-form,
 .green { background: rgba(95, 191, 119, .12); }
 .red,

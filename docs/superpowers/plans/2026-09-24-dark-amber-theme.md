@@ -765,7 +765,10 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   /* дефолты; поле «Внешний вид сайта» переопределяет их */
   --bj-art: url(//i.ibb.co/BV9BxDb7/1880694-wolf-anime-fox-ears-fox-girl-1080-P.jpg);
   --bj-ghost: "BONJOURCHIK · BONJOURCHIK · ";
+}
 
+:root,
+:root[data-color-mode] {
   /* токены самого сайта; --font-alt сайт берёт и для полей ввода и подменю,
      поэтому там Onest, а Unbounded ставится точечно */
   --font-main: var(--bj-font);
@@ -1369,7 +1372,11 @@ pre code { background: var(--bj-sf2); color: var(--bj-tx2); border-radius: var(-
 .ac_over { background-color: var(--bj-ac-s); color: var(--bj-ac); }
 .b-dropzone,
 .b-footer_vote,
-.b-editable_grid tbody tr:nth-child(odd) td { background: var(--bj-sf); }
+.b-editable_grid tbody tr:nth-child(odd) td {
+  background: var(--bj-sf);
+  border-color: var(--bj-ln);
+  color: var(--bj-tx2);
+}
 .b-form.green-form,
 .green { background: rgba(95, 191, 119, .12); }
 .red,
