@@ -1572,10 +1572,6 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 ```css
 body.p-profiles-show { position: relative; }
-/* бегущий текст шире экрана — без этого возникает горизонтальная прокрутка
-   (overflow-x: clip на body её не убирает, т.к. текст позиционируется
-   относительно .l-page) */
-.p-profiles-show .l-page { overflow: hidden; }
 /* арт с медленным наездом камеры */
 body.p-profiles-show::before {
   content: "";
@@ -1613,6 +1609,8 @@ body.p-profiles-show::after {
   position: absolute;
   z-index: -1;
   left: 24px;
+  right: 0;
+  overflow: hidden;
   top: 250px;
   font: 800 130px/1 var(--bj-font-alt);
   letter-spacing: -2px;
@@ -1641,7 +1639,7 @@ Expected: `["none", "none", "none"]`. Если какое-то значение 
 Run: `npm run build`
 Expected: `✓ … файлов: 14`.
 
-Открыть `/p/profile` при 1440×900, скриншот. Ожидается: арт на всю ширину сверху (480px), лицо персонажа видно, низ растворяется в фоне; в нижней части баннера — полупрозрачные янтарные буквы «BONJOURCHIK» без контуров внутри букв; колонки контента стали карточками. Шапка пока может наезжать на баннер — это исправит Task 9. Горизонтальной прокрутки нет (`document.documentElement.scrollWidth <= innerWidth` → `true`).
+Открыть `/p/profile` при 1440×900, скриншот. Ожидается: арт на всю ширину сверху (480px), лицо персонажа видно, низ растворяется в фоне; в нижней части баннера — полупрозрачные янтарные буквы «BONJOURCHIK» без контуров внутри букв; колонки контента стали карточками. Шапка пока может наезжать на баннер — это исправит Task 9. Горизонтальной прокрутки нет (`document.documentElement.scrollWidth <= innerWidth` → `true`). Бегущий текст обрезается собственным блоком (`right: 0; overflow: hidden`), чтобы не было горизонтальной прокрутки.
 
 - [ ] **Step 5: Commit**
 

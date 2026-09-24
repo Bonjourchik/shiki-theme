@@ -689,8 +689,6 @@ header.head .notice { color: var(--bj-mu); }
 
 body.p-profiles-show { position: relative; }
 
-.p-profiles-show .l-page { overflow: hidden; }
-
 body.p-profiles-show::before {
   content: "";
   position: absolute;
@@ -727,6 +725,8 @@ body.p-profiles-show::after {
   position: absolute;
   z-index: -1;
   left: 24px;
+  right: 0;
+  overflow: hidden;
   top: 250px;
   font: 800 130px/1 var(--bj-font-alt);
   letter-spacing: -2px;

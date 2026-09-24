@@ -1,8 +1,4 @@
 body.p-profiles-show { position: relative; }
-/* бегущий текст шире экрана — без этого возникает горизонтальная прокрутка
-   (overflow-x: clip на body её не убирает, т.к. текст позиционируется
-   относительно .l-page) */
-.p-profiles-show .l-page { overflow: hidden; }
 /* арт с медленным наездом камеры */
 body.p-profiles-show::before {
   content: "";
@@ -40,6 +36,8 @@ body.p-profiles-show::after {
   position: absolute;
   z-index: -1;
   left: 24px;
+  right: 0;
+  overflow: hidden;
   top: 250px;
   font: 800 130px/1 var(--bj-font-alt);
   letter-spacing: -2px;
