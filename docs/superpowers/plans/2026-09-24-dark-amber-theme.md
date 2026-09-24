@@ -1889,7 +1889,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   overflow: hidden;
   color: var(--bj-tx2);
   font-size: 12px;
+  font-weight: 500;
   line-height: 1.35;
+  margin-bottom: 0;
   white-space: normal;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -1900,12 +1902,14 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   margin: 2px 0 0;
   color: var(--bj-ac) !important;
   font-size: 10.5px;
+  line-height: 1.35;
   text-align: left;
   animation: none;
 }
 /* .misc.date + !important: сайт задаёт color:#9da2a8 !important на `.entry .misc.date` (6 классов) */
 .p-profiles-show .profile-head .c-history .entry time.misc.date {
   color: var(--bj-mu) !important;
+  line-height: 1.35;
   margin-top: 0;
 }
 ```
