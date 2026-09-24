@@ -122,7 +122,7 @@ html::after {
   pointer-events: none;
   animation: bj-drift 18s ease-in-out infinite alternate;
 }
-.head h1 {
+.l-page header.head h1 {
   color: var(--bj-tx);
   font-family: var(--bj-font-alt);
   font-weight: 700;
@@ -204,6 +204,7 @@ html::after {
 .l-top_menu-v2 .menu-dropdown > span[data-unread_count]::after {
   background: var(--bj-ac);
   color: var(--bj-on-ac);
+  border-color: var(--bj-ac);
 }
 
 @keyframes bj-drift { to { transform: translate(520px, 260px) scale(1.2); } }

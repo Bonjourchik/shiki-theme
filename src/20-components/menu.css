@@ -63,4 +63,5 @@
 .l-top_menu-v2 .menu-dropdown > span[data-unread_count]::after {
   background: var(--bj-ac);
   color: var(--bj-on-ac);
+  border-color: var(--bj-ac);
 }

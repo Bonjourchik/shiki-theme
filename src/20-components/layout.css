@@ -17,7 +17,7 @@ html::after {
   pointer-events: none;
   animation: bj-drift 18s ease-in-out infinite alternate;
 }
-.head h1 {
+.l-page header.head h1 {
   color: var(--bj-tx);
   font-family: var(--bj-font-alt);
   font-weight: 700;
