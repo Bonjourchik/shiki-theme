@@ -1,0 +1,279 @@
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  .pp { --bg:#0b0d11; --sf:#14171d; --sf2:#1b1f27; --sf3:#252a35; --ln:#232833; --ln2:#343a47;
+        --tx:#eceef2; --tx2:#c9ccd4; --mu:#878da0; --ac:#f0a845; --ac2:#ff7a3d; --ac-s:rgba(240,168,69,.14); --warn:#e0655a;
+        --art:url(https://i.ibb.co/BV9BxDb7/1880694-wolf-anime-fox-ears-fox-girl-1080-P.jpg);
+        --u:'Unbounded',sans-serif; --ease:cubic-bezier(.2,.8,.2,1);
+        position:relative; background:var(--bg); color:var(--tx); font:13px/1.6 Onest,sans-serif; border-radius:12px; overflow:hidden; isolation:isolate; }
+  .pp * { box-sizing:border-box; }
+  /* фон: точечная сетка + дрейфующее янтарное сияние */
+  .pp::before { content:""; position:absolute; inset:0; z-index:-1;
+    background:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/22px 22px; }
+  .pp .aurora { position:absolute; z-index:0; width:900px; height:600px; left:-200px; top:300px; border-radius:50%;
+    background:radial-gradient(closest-side,rgba(240,168,69,.16),rgba(255,122,61,.06) 50%,transparent);
+    filter:blur(30px); animation:drift 18s ease-in-out infinite alternate; pointer-events:none; }
+  @keyframes drift { to { transform:translate(520px,260px) scale(1.2); } }
+
+  .pp .menu { position:relative; z-index:3; height:46px; display:flex; align-items:center; gap:22px; padding:0 28px; background:rgba(11,13,17,.55); backdrop-filter:blur(14px) saturate(1.3); border-bottom:1px solid rgba(255,255,255,.06); font-size:12.5px; color:var(--tx2); }
+  .pp .menu span { position:relative; }
+  .pp .menu .it::after { content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background:var(--ac); transform:scaleX(0); transition:transform .3s var(--ease); border-radius:2px; }
+  .pp .menu .it:hover { color:var(--tx); } .pp .menu .it:hover::after { transform:scaleX(1); }
+  .pp .menu .logo { font-family:var(--u); font-weight:700; font-size:15px; color:var(--tx); }
+  .pp .menu .logo b { color:var(--ac); }
+  .pp .menu .sp { flex:1; }
+  .pp .menu .srch { width:220px; height:30px; border-radius:9px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); padding:0 10px; line-height:28px; color:var(--mu); font-size:12px; }
+
+  /* баннер: медленный наезд камеры + световой блик */
+  .pp .banner { position:absolute; left:0; right:0; top:0; height:480px; overflow:hidden; z-index:0; }
+  .pp .banner i { position:absolute; inset:-4%; background:var(--art) center 30%/cover; animation:kenburns 26s ease-in-out infinite alternate; }
+  @keyframes kenburns { from { transform:scale(1) translate(0,0); } to { transform:scale(1.12) translate(-2%,-3%); } }
+  .pp .banner::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(105deg,transparent 35%,rgba(255,210,150,.16) 50%,transparent 65%); background-size:250% 100%; animation:sweep 7s ease-in-out infinite; mix-blend-mode:screen; }
+  @keyframes sweep { 0% { background-position:120% 0; } 60%,100% { background-position:-120% 0; } }
+  .pp .banner::after { content:""; position:absolute; inset:0; z-index:2; background:linear-gradient(180deg,rgba(11,13,17,0) 0%,rgba(11,13,17,.05) 45%,rgba(11,13,17,.6) 75%,var(--bg) 100%); }
+  /* гигантский контурный ник на фоне баннера */
+  .pp .ghost { position:absolute; z-index:2; left:24px; top:300px; font:800 130px/1 var(--u); letter-spacing:-2px; white-space:nowrap; pointer-events:none; animation:ghost 14s linear infinite;
+    background:linear-gradient(180deg,rgba(240,168,69,.30),rgba(240,168,69,.04) 85%); -webkit-background-clip:text; background-clip:text; color:transparent; mix-blend-mode:screen; }
+  @keyframes ghost { to { transform:translateX(-160px); } }
+
+  .pp .page { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:270px 28px 30px; }
+  /* появление блоков лесенкой */
+  .pp .rise { opacity:0; animation:rise .7s var(--ease) forwards; }
+  @keyframes rise { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+
+  .pp .head { display:grid; grid-template-columns:auto 1fr 360px; gap:24px; align-items:end; }
+  /* аватар: вращающееся янтарное кольцо */
+  .pp .ava { position:relative; width:136px; height:136px; border-radius:50%; padding:4px; }
+  .pp .ava::before { content:""; position:absolute; inset:0; border-radius:50%; background:conic-gradient(from 0deg,var(--ac),var(--ac2),transparent 40%,var(--ac) 70%,var(--ac)); animation:spin 6s linear infinite; }
+  .pp .ava::after { content:""; position:absolute; inset:-14px; border-radius:50%; background:radial-gradient(closest-side,rgba(240,168,69,.35),transparent); z-index:-1; animation:pulse 3s ease-in-out infinite; }
+  .pp .ava i { position:relative; display:block; width:100%; height:100%; border-radius:50%; border:4px solid var(--bg); background:url(https://shikimori.io/system/users/x160/859272.png) center/cover; transition:transform .5s var(--ease); }
+  .pp .ava:hover i { transform:scale(1.06) rotate(-3deg); }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  @keyframes pulse { 50% { opacity:.4; transform:scale(.92); } }
+  /* ник с переливом */
+  .pp .nick { font:800 38px/1.05 var(--u); letter-spacing:-.5px; background:linear-gradient(100deg,#fff 0%,#fff 38%,var(--ac) 50%,#fff 62%,#fff 100%); background-size:250% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shine 5s ease-in-out infinite; filter:drop-shadow(0 2px 14px rgba(0,0,0,.55)); }
+  @keyframes shine { 0% { background-position:100% 0; } 50%,100% { background-position:0 0; } }
+  .pp .notice { color:var(--tx2); margin-top:8px; font-size:12.5px; }
+  .pp .notice span+span::before { content:"·"; margin:0 7px; color:var(--mu); }
+  .pp .online { display:inline-flex; align-items:center; gap:7px; font-size:11.5px; color:var(--mu); margin-top:8px; }
+  .pp .online::before { content:""; width:7px; height:7px; border-radius:50%; background:#5fbf77; animation:ping 2s ease-out infinite; }
+  @keyframes ping { 0% { box-shadow:0 0 0 0 rgba(95,191,119,.6); } 100% { box-shadow:0 0 0 8px rgba(95,191,119,0); } }
+  .pp .actions { display:flex; gap:6px; margin-top:12px; }
+  .pp .actions i { width:34px; height:34px; border-radius:10px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); display:grid; place-items:center; font-style:normal; font-size:13px; color:var(--tx2); transition:.25s var(--ease); cursor:pointer; }
+  .pp .actions i:hover { background:var(--ac); color:#1a1206; transform:translateY(-2px) rotate(-6deg); box-shadow:0 6px 16px rgba(240,168,69,.35); }
+
+  .pp .card { position:relative; background:var(--sf); border:1px solid var(--ln); border-radius:16px; padding:18px 20px; transition:border-color .3s, transform .4s var(--ease), box-shadow .4s; }
+  .pp .card:hover { border-color:var(--ln2); }
+  /* янтарная кромка сверху у карточек */
+  .pp .card::before { content:""; position:absolute; left:20px; right:20px; top:-1px; height:1px; background:linear-gradient(90deg,transparent,rgba(240,168,69,.6),transparent); opacity:.5; transition:opacity .3s; }
+  .pp .card:hover::before { opacity:1; }
+  .pp .glass { background:rgba(20,23,29,.62); backdrop-filter:blur(16px) saturate(1.4); }
+  .pp .sub { font:600 10.5px/1 var(--u); letter-spacing:1.6px; text-transform:uppercase; display:flex; align-items:center; gap:9px; margin-bottom:14px; color:var(--tx); }
+  .pp .sub::before { content:""; width:7px; height:7px; border-radius:2px; background:var(--ac); transform:rotate(45deg); box-shadow:0 0 10px var(--ac); animation:blink 2.6s ease-in-out infinite; }
+  @keyframes blink { 50% { box-shadow:0 0 2px var(--ac); opacity:.6; } }
+  .pp .sub em { margin-left:auto; font:400 11.5px Onest; letter-spacing:0; text-transform:none; color:var(--mu); }
+
+  .pp .lst + .lst { margin-top:14px; }
+  .pp .lst .t { display:flex; justify-content:space-between; align-items:baseline; font-size:12px; color:var(--tx2); }
+  .pp .lst .t b { font:700 18px var(--u); color:var(--tx); }
+  .pp .bar { height:7px; border-radius:4px; background:var(--sf3); display:flex; overflow:hidden; margin:6px 0 4px; gap:2px; }
+  .pp .bar i { transform-origin:left; animation:fill 1.4s var(--ease) both; animation-delay:.5s; }
+  .pp .bar i:first-child { background:linear-gradient(90deg,var(--ac2),var(--ac)) !important; position:relative; overflow:hidden; }
+  .pp .bar i:first-child::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent); transform:translateX(-100%); animation:bar 3s 2s ease-in-out infinite; }
+  @keyframes fill { from { transform:scaleX(0); } }
+  @keyframes bar { 60%,100% { transform:translateX(100%); } }
+  .pp .leg { font-size:11px; color:var(--mu); }
+
+  .pp .hist { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
+  .pp .hist div { display:flex; gap:12px; align-items:center; background:var(--sf); border:1px solid var(--ln); border-radius:14px; padding:9px; font-size:12px; color:var(--tx2); line-height:1.35; transition:.35s var(--ease); cursor:pointer; }
+  .pp .hist div:hover { transform:translateY(-3px); border-color:rgba(240,168,69,.5); box-shadow:0 12px 26px rgba(0,0,0,.4); }
+  .pp .hist i { width:36px; height:50px; border-radius:7px; background:var(--sf3) center/cover; flex:none; }
+  .pp .hist small { display:block; color:var(--mu); font-size:10.5px; margin-top:2px; }
+  .pp .hist small b { color:var(--ac); font-weight:500; }
+
+  .pp .grid { display:grid; grid-template-columns:380px 1fr; gap:18px; margin-top:18px; }
+  .pp .time .big { font:700 26px var(--u); color:var(--ac); }
+  .pp .time .big small { font:400 12px Onest; color:var(--mu); margin-left:6px; }
+  .pp .steps { display:flex; justify-content:space-between; margin-top:10px; font-size:10.5px; color:var(--mu); }
+  .pp .steps span.on { color:var(--ac); }
+  .pp .chart { display:flex; align-items:flex-end; gap:6px; height:100px; margin-top:18px; border-bottom:1px solid var(--ln); }
+  .pp .chart i { flex:1; background:linear-gradient(180deg,var(--ac),rgba(240,168,69,.25)); border-radius:5px 5px 0 0; transform-origin:bottom; animation:grow 1s var(--ease) both; transition:filter .2s; }
+  .pp .chart i:hover { filter:brightness(1.3) drop-shadow(0 0 8px rgba(240,168,69,.6)); }
+  .pp .chart i.lo { background:var(--sf3); }
+  @keyframes grow { from { transform:scaleY(0); } }
+  .pp .yrs { display:flex; justify-content:space-between; font-size:10px; color:var(--mu); margin-top:5px; }
+
+  /* постеры: подъём, наклон, блик, свечение */
+  .pp .favs { display:grid; grid-template-columns:repeat(8,1fr); gap:10px; perspective:600px; }
+  .pp .favs i { position:relative; display:block; aspect-ratio:2/3; border-radius:10px; background:var(--sf3) center/cover; border:1px solid var(--ln); overflow:hidden; transition:transform .45s var(--ease), box-shadow .45s, border-color .3s; cursor:pointer; }
+  .pp .favs i::after { content:""; position:absolute; inset:0; background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%); transform:translateX(-120%); transition:transform .7s var(--ease); }
+  .pp .favs i:hover { transform:translateY(-6px) rotateX(6deg) scale(1.06); border-color:var(--ac); box-shadow:0 14px 28px rgba(0,0,0,.5),0 0 18px rgba(240,168,69,.3); z-index:2; }
+  .pp .favs i:hover::after { transform:translateX(120%); }
+  .pp .soc { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+  .pp .empty { color:var(--mu); font-size:12px; }
+
+  /* достижения с превью */
+  .pp .achg { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .pp .achg h6 { margin:0 0 10px; font:500 10px var(--u); letter-spacing:1.4px; text-transform:uppercase; color:var(--mu); }
+  .pp .ach { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .pp .a { --c:#888; position:relative; aspect-ratio:1; border-radius:14px; overflow:hidden; background:var(--sf2) center/cover; cursor:pointer; box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .45s var(--ease), box-shadow .45s; }
+  .pp .a .img { position:absolute; inset:0; background:inherit; background-size:cover; transition:transform .6s var(--ease), filter .4s; filter:saturate(.9); }
+  .pp .a::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,transparent 35%,rgba(11,13,17,.92)); }
+  .pp .a::after { content:""; position:absolute; inset:0; z-index:3; border-radius:inherit; box-shadow:inset 0 0 0 2px var(--c); opacity:.55; transition:opacity .3s; }
+  .pp .a b { position:absolute; z-index:2; left:9px; right:9px; bottom:17px; font:600 11px/1.2 Onest; color:#fff; text-shadow:0 1px 4px #000; }
+  .pp .a small { position:absolute; z-index:2; left:9px; right:9px; bottom:17px; font-size:10px; color:var(--tx2); opacity:0; transform:translateY(6px); transition:.35s var(--ease); line-height:1.2; }
+  .pp .a .pr { position:absolute; z-index:2; left:9px; right:9px; bottom:8px; height:3px; border-radius:2px; background:rgba(255,255,255,.15); overflow:hidden; }
+  .pp .a .pr i { display:block; height:100%; background:var(--c); box-shadow:0 0 6px var(--c); transform-origin:left; animation:fill 1.2s .8s var(--ease) both; }
+  .pp .a .lv { position:absolute; z-index:2; top:7px; right:7px; font:700 10px/1 var(--u); padding:4px 6px; border-radius:6px; background:rgba(11,13,17,.7); color:var(--ac); backdrop-filter:blur(4px); }
+  .pp .a:hover { transform:translateY(-4px) scale(1.04); box-shadow:0 14px 30px rgba(0,0,0,.5),0 0 22px color-mix(in srgb,var(--c) 55%,transparent); z-index:2; }
+  .pp .a:hover .img { transform:scale(1.15); filter:saturate(1.15); }
+  .pp .a:hover::after { opacity:1; }
+  .pp .a:hover b { transform:translateY(-14px); }
+  .pp .a b { transition:transform .35s var(--ease); }
+  .pp .a:hover small { opacity:1; transform:none; }
+  .pp .fr { display:flex; gap:10px; margin-top:18px; align-items:center; }
+  .pp .fr h6 { margin:0 8px 0 0; }
+  .pp .fr i { width:46px; height:46px; border-radius:50%; background:var(--sf3) center/cover; box-shadow:0 0 0 2px var(--bg),0 0 0 3px var(--ln2); transition:.35s var(--ease); cursor:pointer; }
+  .pp .fr i:hover { transform:translateY(-4px) scale(1.15); box-shadow:0 0 0 2px var(--bg),0 0 0 3px var(--ac),0 8px 18px rgba(240,168,69,.35); }
+  .pp .fr span { margin-left:auto; color:var(--mu); font-size:11.5px; }
+
+  .pp .full { margin-top:18px; }
+  .pp .about { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:12px; }
+  .pp .about .c { position:relative; background:var(--sf2); border:1px solid var(--ln); border-radius:14px; padding:16px; overflow:hidden; transition:.4s var(--ease); }
+  .pp .about .c::after { content:""; position:absolute; width:160px; height:160px; right:-60px; top:-60px; border-radius:50%; background:radial-gradient(closest-side,rgba(240,168,69,.18),transparent); transition:.5s var(--ease); }
+  .pp .about .c:hover { transform:translateY(-3px); border-color:rgba(240,168,69,.4); }
+  .pp .about .c:hover::after { transform:scale(1.6); }
+  .pp .about h5 { margin:0 0 10px; font:600 10px var(--u); letter-spacing:1.4px; text-transform:uppercase; color:var(--ac); }
+  .pp .about p { margin:0; color:var(--tx2); }
+  .pp .about .top { display:flex; gap:10px; }
+  .pp .about .top i { width:56px; aspect-ratio:2/3; border-radius:8px; background:var(--sf3) center/cover; position:relative; transition:.4s var(--ease); }
+  .pp .about .top i:hover { transform:rotate(-4deg) scale(1.08); }
+  .pp .about .top i::after { content:attr(data-n); position:absolute; left:-7px; top:-7px; width:22px; height:22px; border-radius:50%; background:var(--ac); color:#1a1206; font:800 11px/22px var(--u); text-align:center; font-style:normal; box-shadow:0 0 0 3px var(--sf2); }
+  .pp .about a { color:var(--ac); text-decoration:none; background:linear-gradient(var(--ac),var(--ac)) 0 100%/0 1px no-repeat; transition:background-size .35s var(--ease); }
+  .pp .about a:hover { background-size:100% 1px; }
+  .pp .about ul { margin:0; padding:0; list-style:none; }
+  .pp .about li { padding:6px 0; border-bottom:1px solid var(--ln); display:flex; justify-content:space-between; color:var(--tx2); }
+  .pp .about li:last-child { border:none; }
+  .pp .about li span { color:var(--mu); font-size:11.5px; }
+  .pp .foot { text-align:center; color:var(--mu); font-size:11px; padding:22px 0 6px; }
+  .pp .foot b { color:var(--ac); font-weight:500; }
+  @media (prefers-reduced-motion: reduce) { .pp *, .pp *::before, .pp *::after { animation:none !important; opacity:1 !important; } }
+</style>
+
+<h2>Секция 2 · Макет профиля — v4</h2>
+<p class="subtitle">Всё живое: подожди пару секунд после загрузки, потом поводи мышью по аватару, кнопкам, постерам, достижениям, карточкам «О себе» и пунктам меню.</p>
+
+<div class="pp">
+  <div class="banner"><i></i></div>
+  <div class="ghost">BONJOURCHIK · BONJOURCHIK</div>
+  <div class="aurora"></div>
+  <div class="menu"><span class="logo">shiki<b>mori</b></span><span class="it">Аниме</span><span class="it">Манга</span><span class="it">Ранобэ</span><span class="it">Сообщество</span><span class="sp"></span><span class="srch">Поиск…</span><span>Bonjourchik</span></div>
+
+  <div class="page">
+    <div class="head">
+      <div class="ava rise" style="animation-delay:.05s"><i></i></div>
+      <div class="rise" style="animation-delay:.15s">
+        <div class="nick">Bonjourchik</div>
+        <div class="notice"><span>на сайте с 2021 г.</span><span>bonjourchik.ru</span></div>
+        <div class="online">в сети 5 минут назад</div>
+        <div class="actions"><i>✉</i><i>⚙</i><i>⚑</i></div>
+      </div>
+      <div class="card glass rise" style="animation-delay:.25s">
+        <div class="lst"><div class="t"><span>Аниме</span><b>1142</b></div>
+          <div class="bar"><i style="width:96%"></i><i style="width:3.4%;background:#8a6a3c"></i><i style="width:.6%;background:var(--warn)"></i></div>
+          <div class="leg">1097 просмотрено · 39 в планах · 6 брошено</div></div>
+        <div class="lst"><div class="t"><span>Манга</span><b>7</b></div>
+          <div class="bar"><i style="width:29%"></i><i style="width:71%;background:#8a6a3c"></i></div>
+          <div class="leg">2 прочитано · 5 в планах</div></div>
+      </div>
+    </div>
+
+    <div class="hist">
+      <div class="rise" style="animation-delay:.35s"><i style="background-image:url(https://shikimori.io/uploads/poster/animes/185/mini_alt-e359ff07890ee4a99bc17634af0913ba.jpeg)"></i><span>Tenkou-saki no Seiso Karen na Bishoujo…<small><b>просмотрено</b> · 23 сентября</small></span></div>
+      <div class="rise" style="animation-delay:.42s"><i style="background-image:url(https://shikimori.io/uploads/poster/animes/431/mini_alt-3bf1e3840a29314dafe09af322e71056.jpeg)"></i><span>Yi Nian Yong Heng<small><b>просмотрено</b> · 22 сентября</small></span></div>
+      <div class="rise" style="animation-delay:.49s"><i style="background-image:url(https://shikimori.io/uploads/poster/animes/1575/mini_alt-7b02685aa0ed5f25d90d0b98b54b1467.jpeg)"></i><span>Grand Blue…<small><b>смотрю</b> · 21 сентября</small></span></div>
+    </div>
+
+    <div class="grid">
+      <div class="card time rise" style="animation-delay:.55s">
+        <div class="sub">Время за аниме</div>
+        <div class="big">6 месяцев<small>и 2 недели</small></div>
+        <div class="bar" style="height:8px;margin-top:10px"><i style="width:78%"></i></div>
+        <div class="steps"><span class="on">✓ неделя</span><span class="on">✓ месяц</span><span class="on">✓ 3 мес.</span><span class="on">✓ 6 мес.</span><span>год</span></div>
+        <div class="chart"><i style="height:95%;animation-delay:.7s"></i><i class="lo" style="height:10%;animation-delay:.75s"></i><i style="height:30%;animation-delay:.8s"></i><i style="height:88%;animation-delay:.85s"></i><i style="height:42%;animation-delay:.9s"></i><i class="lo" style="height:4%;animation-delay:.95s"></i><i style="height:80%;animation-delay:1s"></i><i class="lo" style="height:3%;animation-delay:1.05s"></i><i style="height:40%;animation-delay:1.1s"></i><i style="height:92%;animation-delay:1.15s"></i><i style="height:64%;animation-delay:1.2s"></i></div>
+        <div class="yrs"><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+      </div>
+      <div>
+        <div class="card rise" style="animation-delay:.62s">
+          <div class="sub">Избранное <em>все →</em></div>
+          <div class="favs">
+            <i style="background-image:url(https://shikimori.io/uploads/poster/animes/185/mini_alt-e359ff07890ee4a99bc17634af0913ba.jpeg)"></i>
+            <i style="background-image:url(https://shikimori.io/uploads/poster/animes/1575/mini_alt-7b02685aa0ed5f25d90d0b98b54b1467.jpeg)"></i>
+            <i style="background-image:url(https://shikimori.io/uploads/poster/animes/431/mini_alt-3bf1e3840a29314dafe09af322e71056.jpeg)"></i>
+            <i style="background-image:url(https://shikimori.io/uploads/poster/characters/112893/preview_alt-e8e2539159d1bde68e0f60a35698df87.jpeg)"></i>
+            <i style="background-image:url(https://shikimori.io/uploads/poster/characters/83797/preview_alt-fa019e10d0e216a3217f3ddb0b96a827.jpeg)"></i>
+            <i style="background-image:url(https://shikimori.io/uploads/poster/characters/166439/preview_alt-ee3e8cd2de881a825c1f01317f753743.jpeg)"></i>
+            <i style="background-image:url(https://shikimori.io/uploads/poster/characters/193421/preview_alt-1609c8f78007fd8960e1efbe2452e789.jpeg)"></i>
+            <i style="background-image:url(https://shikimori.io/uploads/poster/characters/43814/preview_alt-0e89939a39d001782dbb26a287c8901b.jpeg)"></i>
+          </div>
+        </div>
+        <div class="soc">
+          <div class="card rise" style="animation-delay:.68s"><div class="sub">Друзья</div><div class="empty">Пока никого</div></div>
+          <div class="card rise" style="animation-delay:.72s"><div class="sub">Клубы</div><div class="empty">Не состоит в клубах</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card full rise" style="animation-delay:.8s">
+      <div class="sub">Достижения <em>наведи на карточку</em></div>
+      <div class="achg">
+        <div><h6>Общие</h6><div class="ach">
+          <div class="a" style="--c:#a2a2d0;background-image:url(https://shikimori.io/assets/achievements/anime/animelist_12.jpg)"><div class="img"></div><span class="lv">12</span><b>Точка невозврата</b><small>1000 просмотренных аниме</small><div class="pr"><i style="width:41%"></i></div></div>
+          <div class="a" style="--c:#CD9575;background-image:url(https://shikimori.io/assets/achievements/anime/yandere_1.jpg)"><div class="img"></div><span class="lv">1</span><b>Бездна</b><small>Яндере 1-го уровня</small><div class="pr"><i style="width:64%"></i></div></div>
+          <div class="a" style="--c:#8f6f73;background-image:url(https://shikimori.io/assets/achievements/anime/kuudere_3.jpg)"><div class="img"></div><span class="lv">3</span><b>Хладнокровие</b><small>Кудере 3-го уровня</small><div class="pr"><i style="width:100%"></i></div></div>
+          <div class="a" style="--c:#00a3a8;background-image:url(https://shikimori.io/assets/achievements/anime/genki_2.jpg)"><div class="img"></div><span class="lv">2</span><b>Заводила</b><small>Генки 2-го уровня</small><div class="pr"><i style="width:61%"></i></div></div>
+        </div></div>
+        <div><h6>Жанровые</h6><div class="ach">
+          <div class="a" style="--c:#2E8B57;background-image:url(https://shikimori.io/assets/achievements/anime/comedy_3.jpg)"><div class="img"></div><span class="lv">3</span><b>До колик в животе!</b><small>Комедия 3-го уровня</small><div class="pr"><i style="width:82%"></i></div></div>
+          <div class="a" style="--c:#2a6fa8;background-image:url(https://shikimori.io/assets/achievements/anime/fantasy_4.gif)"><div class="img"></div><span class="lv">4</span><b>Вершитель</b><small>Фэнтези 4-го уровня</small><div class="pr"><i style="width:100%"></i></div></div>
+          <div class="a" style="--c:#708090;background-image:url(https://shikimori.io/assets/achievements/anime/mecha_1.jpg)"><div class="img"></div><span class="lv">1</span><b>Пилот Evangelion Unit</b><small>Меха 1-го уровня</small><div class="pr"><i style="width:85%"></i></div></div>
+          <div class="a" style="--c:#6b6b78;background-image:url(https://shikimori.io/assets/achievements/anime/military_3.png)"><div class="img"></div><span class="lv">3</span><b>Майор</b><small>Военное 3-го уровня</small><div class="pr"><i style="width:22%"></i></div></div>
+        </div></div>
+      </div>
+      <div class="fr"><h6 style="font:500 10px var(--u);letter-spacing:1.4px;text-transform:uppercase;color:var(--mu)">Франшизы</h6>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/franchise/overlord.jpg)"></i>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/franchise/ao_no_exorcist.jpg)"></i>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/franchise/danmachi.jpg)"></i>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/franchise/dr_stone.jpg)"></i>
+        <span>32 / 286</span></div>
+      <div class="fr"><h6 style="font:500 10px var(--u);letter-spacing:1.4px;text-transform:uppercase;color:var(--mu)">Авторы</h6>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/author/makoto_shinkai.jpg)"></i>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/author/hiroshi_hamasaki.jpg)"></i>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/author/type_moon.jpg)"></i>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/author/masamune_shirow.jpg)"></i>
+        <i style="background-image:url(https://shikimori.io/assets/achievements/anime/author/kenji_kamiyama.jpg)"></i>
+        <span>8 / 44</span></div>
+    </div>
+
+    <div class="card full rise" style="animation-delay:.9s">
+      <div class="sub">О себе</div>
+      <div class="about">
+        <div class="c"><h5>Привет</h5><p>Смотрю всё подряд, но сердце — гонки, меха и Миядзаки. Initial D пересматривал трижды. Текст — черновик, напишем вместе.</p></div>
+        <div class="c"><h5>Топ-3</h5>
+          <div class="top">
+            <i data-n="1" style="background-image:url(https://shikimori.io/uploads/poster/animes/185/mini_alt-e359ff07890ee4a99bc17634af0913ba.jpeg)"></i>
+            <i data-n="2" style="background-image:url(https://shikimori.io/uploads/poster/animes/1575/mini_alt-7b02685aa0ed5f25d90d0b98b54b1467.jpeg)"></i>
+            <i data-n="3" style="background-image:url(https://shikimori.io/uploads/poster/animes/431/mini_alt-3bf1e3840a29314dafe09af322e71056.jpeg)"></i>
+          </div></div>
+        <div class="c"><h5>Ссылки</h5><ul><li><a href="#">bonjourchik.ru</a><span>сайт</span></li><li><a href="#">Список аниме</a><span>1097</span></li><li><a href="#">Telegram</a><span>—</span></li></ul></div>
+      </div>
+    </div>
+
+    <div class="foot">Bonjourchik · <b>dark amber</b></div>
+  </div>
+</div>
+
+<div class="options" style="margin-top:18px">
+  <div class="option" data-choice="ok" onclick="toggleSelect(this)"><div class="letter">✓</div><div class="content"><h3>Вот это уже да</h3><p>Переходим к технической части</p></div></div>
+  <div class="option" data-choice="more" onclick="toggleSelect(this)"><div class="letter">＋</div><div class="content"><h3>Ещё смелее</h3><p>Больше эффектов / декора</p></div></div>
+  <div class="option" data-choice="less" onclick="toggleSelect(this)"><div class="letter">－</div><div class="content"><h3>Перебор</h3><p>Часть анимаций убрать</p></div></div>
+</div>

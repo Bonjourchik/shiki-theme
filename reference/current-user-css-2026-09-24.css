@@ -1,0 +1,48 @@
+/* Снимок пользовательской части CSS профиля Bonjourchik, 2026-09-24.
+   Перед ней в поле стоят @import тем Edesign (ed-main), см. docs/CONTEXT.md. */
+
+/* User Custom Styles */
+body:after {
+  background-image: url(//i.ibb.co/BV9BxDb7/1880694-wolf-anime-fox-ears-fox-girl-1080-P.jpg);
+}
+
+.l-footer:after {
+  content: "*Bronze Sunset*";
+}
+
+@media screen and (min-width: 1200px) {
+  #profiles_show .profile-head::after {
+    background-image: url(//i.ibb.co/BV9BxDb7/1880694-wolf-anime-fox-ears-fox-girl-1080-P.jpg);
+  }
+}
+
+@media screen and (min-width: 1px) {
+  html:root {
+    --white-color: 255, 251, 221;
+    --light-color: 229, 210, 164;
+    --dark-color: 185, 163, 111;
+    --bright-color: 222, 204, 108;
+    --dull-color: 146, 126, 108;
+    --input-color: 86, 79, 66;
+    --hover-bottoms-1: 62, 45, 27;
+    --buttoms-color: 93, 65, 33;
+    --hover-buttoms-2: 156, 98, 25;
+    --very-high-rating: 226, 158, 86;
+    --high-rating: 169, 116, 60;
+    --average-rating: 146, 89, 38;
+    --small-rating: 121, 66, 9;
+    --time-filled: 132, 93, 52;
+    --time-empty: 62, 40, 11;
+    --anime-inprocess: 69, 146, 76;
+    --anime-complete: 41, 107, 47;
+    --manga-inprocess: 189, 15, 86;
+    --manga-complete: 153, 0, 62;
+    --hover-color: 210, 137, 45;
+    --shadows-color: 204, 202, 187;
+    --block-color: 66, 38, 3;
+    --menu-back: 84, 61, 41;
+    --nick-cover: 103, 60, 26;
+    --popup-color: 78, 51, 18;
+    --hundred: 1;
+  }
+}
