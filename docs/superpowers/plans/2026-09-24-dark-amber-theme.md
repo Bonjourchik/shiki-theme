@@ -1572,6 +1572,10 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 ```css
 body.p-profiles-show { position: relative; }
+/* бегущий текст шире экрана — без этого возникает горизонтальная прокрутка
+   (overflow-x: clip на body её не убирает, т.к. текст позиционируется
+   относительно .l-page) */
+.p-profiles-show .l-page { overflow: hidden; }
 /* арт с медленным наездом камеры */
 body.p-profiles-show::before {
   content: "";

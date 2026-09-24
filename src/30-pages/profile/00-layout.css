@@ -1,0 +1,71 @@
+.p-profiles-show .profile-content > .cc-2 {
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+.p-profiles-show .profile-content > .cc-2 > .c-column {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+.p-profiles-show .profile-content .c-right > .cc-2a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.p-profiles-show .profile-content .c-right > .cc-2a > .c-column {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+/* карточки */
+.p-profiles-show .profile-content > .cc-2 > .c-left,
+.p-profiles-show .profile-content .c-right > .cc-2a > .c-column,
+.p-profiles-show .profile-content .c-right > .block,
+.p-profiles-show .profile-content > .block:not(.cc-2) {
+  position: relative;
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  transition: border-color .3s;
+}
+.p-profiles-show .profile-content > .cc-2 > .c-left:hover,
+.p-profiles-show .profile-content .c-right > .cc-2a > .c-column:hover,
+.p-profiles-show .profile-content .c-right > .block:hover,
+.p-profiles-show .profile-content > .block:not(.cc-2):hover { border-color: var(--bj-ln2); }
+/* янтарная кромка сверху */
+.p-profiles-show .profile-content > .cc-2 > .c-left::before,
+.p-profiles-show .profile-content .c-right > .cc-2a > .c-column::before,
+.p-profiles-show .profile-content .c-right > .block::before,
+.p-profiles-show .profile-content > .block:not(.cc-2)::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240, 168, 69, .6), transparent);
+  opacity: .5;
+  transition: opacity .3s;
+}
+.p-profiles-show .profile-content > .cc-2 > .c-left:hover::before,
+.p-profiles-show .profile-content .c-right > .cc-2a > .c-column:hover::before,
+.p-profiles-show .profile-content .c-right > .block:hover::before,
+.p-profiles-show .profile-content > .block:not(.cc-2):hover::before { opacity: 1; }
+.p-profiles-show .profile-content .c-right > .block { margin-bottom: 0; }
+/* появление лесенкой */
+.p-profiles-show .profile-head > *,
+.p-profiles-show .profile-content > .cc-2 > .c-column,
+.p-profiles-show .profile-content > .block:not(.cc-2) { animation: bj-rise .7s var(--bj-ease) both; }
+.p-profiles-show .profile-head > .c-brief { animation-delay: .05s; }
+.p-profiles-show .profile-head > .c-info { animation-delay: .25s; }
+.p-profiles-show .profile-head > .c-history { animation-delay: .35s; }
+.p-profiles-show .profile-content > .cc-2 > .c-left { animation-delay: .55s; }
+.p-profiles-show .profile-content > .cc-2 > .c-right { animation-delay: .62s; }
+.p-profiles-show .profile-content > .block:nth-child(2) { animation-delay: .8s; }
+.p-profiles-show .profile-content > .block:nth-child(3) { animation-delay: .9s; }
+.p-profiles-show .profile-content > .block:nth-child(4) { animation-delay: 1s; }

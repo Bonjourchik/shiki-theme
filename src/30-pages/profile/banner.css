@@ -1,0 +1,53 @@
+body.p-profiles-show { position: relative; }
+/* бегущий текст шире экрана — без этого возникает горизонтальная прокрутка
+   (overflow-x: clip на body её не убирает, т.к. текст позиционируется
+   относительно .l-page) */
+.p-profiles-show .l-page { overflow: hidden; }
+/* арт с медленным наездом камеры */
+body.p-profiles-show::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--bj-banner-h);
+  background: var(--bj-art) center 30% / cover no-repeat;
+  pointer-events: none;
+  transform-origin: 50% 40%;
+  animation: bj-kenburns 26s ease-in-out infinite alternate;
+}
+/* затемнение к фону + пробегающий блик */
+body.p-profiles-show::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(var(--bj-banner-h) + 2px);
+  background:
+    linear-gradient(180deg, rgba(11, 13, 17, 0) 0%, rgba(11, 13, 17, .05) 45%, rgba(11, 13, 17, .6) 75%, var(--bj-bg) 100%),
+    linear-gradient(105deg, transparent 35%, rgba(255, 210, 150, .14) 50%, transparent 65%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 250% 100%;
+  pointer-events: none;
+  animation: bj-sweep 7s ease-in-out infinite;
+}
+/* бегущий текст: только заливка, без обводки */
+.p-profiles-show .l-page::before {
+  content: var(--bj-ghost);
+  position: absolute;
+  z-index: -1;
+  left: 24px;
+  top: 250px;
+  font: 800 130px/1 var(--bj-font-alt);
+  letter-spacing: -2px;
+  white-space: nowrap;
+  background: linear-gradient(180deg, rgba(240, 168, 69, .30), rgba(240, 168, 69, .04) 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  pointer-events: none;
+  animation: bj-ghost 14s ease-in-out infinite alternate;
+}
