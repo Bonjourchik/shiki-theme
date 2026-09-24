@@ -1999,6 +1999,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 .p-profiles-show .b-stats_bar .stat_names a { color: var(--bj-mu); }
 .p-profiles-show .b-stats_bar .stat_names a:hover { color: var(--bj-ac); }
 .p-profiles-show .b-stats_bar .stat_names .size { color: var(--bj-tx2); }
+.p-profiles-show .b-stats_bar .stat_names .stat_name::after,
+.p-profiles-show .b-stats_bar .stat_names .size::before,
+.p-profiles-show .b-stats_bar .stat_names .size::after { color: var(--bj-mu); }
 
 /* время за аниме */
 .p-profiles-show .lifetime .title {
@@ -2050,7 +2053,11 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   color: var(--bj-mu);
 }
 .p-profiles-show .lifetime .times .time.checked { color: var(--bj-ac); }
-.p-profiles-show .lifetime .times .time.checked::before { content: "✓ "; }
+.p-profiles-show .lifetime .times .time.checked::before {
+  content: "✓ ";
+  color: var(--bj-ac);
+  font-family: inherit;
+}
 
 /* график активности */
 .p-profiles-show .activity { margin-top: 24px; }
