@@ -1,0 +1,35 @@
+.l-page {
+  background: transparent;
+  color: var(--bj-tx);
+}
+/* дрейфующее янтарное сияние за контентом */
+html::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  left: -200px;
+  top: 200px;
+  width: 900px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(240, 168, 69, .12), rgba(255, 122, 61, .05) 50%, transparent);
+  filter: blur(30px);
+  pointer-events: none;
+  animation: bj-drift 18s ease-in-out infinite alternate;
+}
+.head h1 {
+  color: var(--bj-tx);
+  font-family: var(--bj-font-alt);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -.3px;
+}
+.b-breadcrumbs a { color: var(--bj-tx2); }
+.b-breadcrumbs a:hover { color: var(--bj-ac); }
+.l-page .menu-toggler .toggler { background: var(--bj-sf2); }
+.l-page .menu-toggler .toggler::after { color: var(--bj-tx); }
+.l-footer,
+.l-footer .links,
+.l-footer .copyright,
+.l-footer a { color: var(--bj-mu); }
+.l-footer a:hover { color: var(--bj-ac); }
