@@ -30,9 +30,15 @@
 
 ## Next recommended steps
 
-1. Получить ревью спеки от пользователя.
-2. superpowers:writing-plans → план реализации этапов 1–2.
-3. Перед первой заменой CSS на сайте сохранить полный текст поля (с `@import` Edesign) в `reference/`.
+1. Выполнять план `docs/superpowers/plans/2026-09-24-dark-amber-theme.md` (13 задач: сборщик → предпросмотр →
+   фундамент → профиль → публикация). Спека пользователем одобрена.
+2. Перед первой заменой CSS на сайте сохранить полный текст поля (с `@import` Edesign) в `reference/` (Task 13).
+
+Факты, собранные для плана (живой DOM, 2026-09-24):
+- `.l-page` у сайта — `background: white; position: relative; z-index: 1`; меню `.l-top_menu-v2` — `#343434`.
+- График активности `.activity .graph` рисует JS сайта: в серверном HTML только `data-stats`.
+- Избранное на профиле — смесь `.c-anime` и `.c-character`, выборка может меняться между загрузками.
+- Страницы тайтлов открываются по `/animes/z<id>-slug` (например `z185-initial-d-first-stage`).
 
 ## Risks and cautions
 
