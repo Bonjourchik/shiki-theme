@@ -1286,8 +1286,10 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 .b-comment header img,
 .b-topic header img { border-radius: 50%; }
 .b-comment .name-date .name,
-.b-topic .name-date .name { color: var(--bj-tx); font-weight: 600; }
-.b-comment .name-date .time,
+.b-topic .name-date .name { font-weight: 600; }
+.b-comment > .inner .name-date span.name,
+.b-topic > .inner .name-date span.name { color: var(--bj-tx); }
+.b-comment > .inner .name-date .time,
 .b-topic > .inner .name-date .time { color: var(--bj-mu); }
 .b-comment .body,
 .b-topic .body { color: var(--bj-tx2); }

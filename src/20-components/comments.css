@@ -1,0 +1,72 @@
+.b-comment {
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  transition: border-color .3s;
+}
+.b-comment:hover { border-color: var(--bj-ln2); }
+.b-comment header img,
+.b-topic header img { border-radius: 50%; }
+.b-comment .name-date .name,
+.b-topic .name-date .name { font-weight: 600; }
+.b-comment > .inner .name-date span.name,
+.b-topic > .inner .name-date span.name { color: var(--bj-tx); }
+.b-comment > .inner .name-date .time,
+.b-topic > .inner .name-date .time { color: var(--bj-mu); }
+.b-comment .body,
+.b-topic .body { color: var(--bj-tx2); }
+.b-quote,
+.b-quote-v2 {
+  background: var(--bj-sf2);
+  border: 0;
+  border-left: 3px solid var(--bj-ac);
+  border-radius: 0 var(--bj-r-sm) var(--bj-r-sm) 0;
+  color: var(--bj-tx2);
+  font-style: normal;
+}
+.b-quote .b-quote,
+.b-quote .b-quote .b-quote .b-quote { background: var(--bj-sf3); }
+.b-quote .b-quote .b-quote { background: var(--bj-sf2); }
+code.b-code_inline {
+  background: var(--bj-sf3);
+  border: 0;
+  border-radius: 5px;
+  color: var(--bj-ac-h);
+  padding: 1px 5px;
+}
+pre,
+pre code { background: var(--bj-sf2); color: var(--bj-tx2); border-radius: var(--bj-r-sm); }
+.b-comments .comments-loader,
+.b-comments .comments-hider,
+.b-comments .comments-expander,
+.b-comments .faye-loader,
+.b-comments .messages-postloader,
+.b-forum .faye-loader,
+.b-postloader {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln);
+  border-radius: var(--bj-r-sm);
+  color: var(--bj-tx2);
+}
+.b-comments .comments-loader:hover,
+.b-comments .comments-hider:hover,
+.b-comments .comments-expander:hover,
+.b-comments .faye-loader:hover,
+.b-comments .messages-postloader:hover,
+.b-forum .faye-loader:hover,
+.b-postloader:hover,
+.b-comments .comments-loader:active,
+.b-comments .comments-hider:active,
+.b-comments .comments-expander:active,
+.b-postloader:active {
+  background: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
+.b-comment > .inner aside.moderation-ban-form,
+.b-topic > .inner aside.moderation-ban-form {
+  background-color: var(--bj-sf2);
+  border-color: var(--bj-ln);
+}
