@@ -2261,9 +2261,11 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
   padding: 0;
   background: transparent;
   box-sizing: border-box;
-  overflow: visible;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
   text-align: left;
-  text-overflow: clip;
   white-space: normal;
   line-height: 1.2;
   opacity: 1;
@@ -2331,7 +2333,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 }
 .p-profiles-show .achievements .cc-achievements .b-achievement:hover img { filter: saturate(1.15); transform: scale(1.15); }
 .p-profiles-show .achievements .cc-achievements .b-achievement:hover .c-image .inner a .border { opacity: 1; }
-.p-profiles-show .achievements .cc-achievements .b-achievement:hover::after { transform: translateY(-14px); }
+.p-profiles-show .achievements .cc-achievements .b-achievement:hover::after { opacity: 0; transform: translateY(-6px); }
 .p-profiles-show .achievements .cc-achievements .b-achievement:hover::before { opacity: 1; transform: none; }
 
 /* франшизы и авторы — круглые значки.
