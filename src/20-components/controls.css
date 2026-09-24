@@ -119,3 +119,48 @@ input[type=radio] { accent-color: var(--bj-ac); }
 .b-add_to_list.completed .trigger { box-shadow: inset 3px 0 0 var(--bj-ok); }
 .b-add_to_list.on_hold .trigger { box-shadow: inset 3px 0 0 var(--bj-mu); }
 .b-add_to_list.dropped .trigger { box-shadow: inset 3px 0 0 var(--bj-warn); }
+
+/* переключатель «другие названия» / «доп. информация» на странице тайтла */
+.p-animes-show .other-names,
+.p-animes-show .more-info,
+.p-mangas-show .other-names,
+.p-mangas-show .more-info,
+.p-ranobe-show .other-names,
+.p-ranobe-show .more-info {
+  background: var(--bj-sf2);
+  color: var(--bj-tx2);
+  border-color: var(--bj-ln);
+}
+
+/* заголовок группы в боковых фильтрах каталога/списка */
+.c-ms-title { color: var(--bj-tx2); }
+
+/* вкладки навигации по рецензиям (все / положительные / нейтральные / отрицательные) */
+.b-reviews_navigation .navigation-node-all {
+  background-color: var(--bj-sf2);
+  color: var(--bj-tx);
+  border-color: var(--bj-ln2);
+}
+.b-reviews_navigation .navigation-node-positive {
+  background-color: var(--bj-sf2);
+  color: var(--bj-ok);
+  border-color: var(--bj-ln2);
+}
+.b-reviews_navigation .navigation-node-neutral {
+  background-color: var(--bj-sf2);
+  color: var(--bj-mu);
+  border-color: var(--bj-ln2);
+}
+.b-reviews_navigation .navigation-node-negative {
+  background-color: var(--bj-sf2);
+  color: var(--bj-warn);
+  border-color: var(--bj-ln2);
+}
+
+/* тег-фильтры жанров в виджете «выбери интересы» на главной */
+.p-dashboards-show .v2 .fc-user-sections .tag-link.anime-tag,
+.p-dashboards-show .v2 .fc-user-sections .tag-link.manga-tag,
+.p-dashboards-show .v2 .fc-user-sections .tag-link.ranobe-tag {
+  background-color: var(--bj-sf2);
+  border-color: var(--bj-ln);
+}

@@ -1,6 +1,7 @@
 .b-catalog_entry .cover { color: var(--bj-tx2); }
 .b-catalog_entry .cover:hover { color: var(--bj-ac); }
 .b-catalog_entry .cover .misc { color: var(--bj-mu); }
+.b-catalog_entry .cover .misc span { color: var(--bj-tx2); }
 .b-catalog_entry .image-decor {
   position: relative;
   display: block;

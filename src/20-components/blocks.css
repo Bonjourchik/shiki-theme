@@ -49,3 +49,28 @@
 .b-block_list li:hover,
 .b-block_list li:active,
 .b-block_list li.selected { background: var(--bj-ac-s); }
+
+/* базовый цвет текста для всех тегов (жанры, теги произведений и т.п.) */
+.b-tag { color: var(--bj-tx2); }
+/* строки «параметр: значение» в инфо-блоке тайтла */
+.b-entry-info .line .value { color: var(--bj-tx2); }
+/* рейтинг тайтла: значение и подпись под ним */
+.b-rate .text-score { color: var(--bj-tx2); }
+.b-rate .score-notice { color: var(--bj-mu); }
+/* «в списках у N человек» в меню тайтла */
+.b-animes-menu .total-rates { color: var(--bj-tx2); }
+/* список площадок «смотреть онлайн» */
+.p-animes-show .c-info-right .watch-online .kind,
+.p-mangas-show .c-info-right .watch-online .kind,
+.p-ranobe-show .c-info-right .watch-online .kind { color: var(--bj-tx2); }
+
+/* столбчатые графики распределения (оценки, типы, активность) */
+.bar.horizontal .line .x_label,
+.bar.vertical .line .x_label { color: var(--bj-mu); }
+.bar.simple .bar.s3,
+.bar.simple .bar.s3:hover { background: var(--bj-sf3); }
+
+/* список пользователя: сводка и заголовки сортировки таблицы */
+.p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
+.p-user_rates-index .l-content .order-control { color: var(--bj-tx2); }
+.p-user_rates-index .list-lines tr td .episodes_total { color: var(--bj-mu); }

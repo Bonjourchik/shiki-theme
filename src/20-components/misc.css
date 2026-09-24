@@ -35,3 +35,16 @@
 .purple { background: rgba(155, 140, 255, .12); }
 .brown { background: rgba(160, 120, 80, .14); }
 .gray { background: rgba(255, 255, 255, .06); }
+
+/* поясняющая строка под заголовком раздела */
+header.head .notice { color: var(--bj-mu); }
+/* плейсхолдер подгрузки блока похожего/связанного контента */
+.p-animes-show .resources-loader.b-ajax,
+.p-mangas-show .resources-loader.b-ajax,
+.p-ranobe-show .resources-loader.b-ajax {
+  background: var(--bj-sf2);
+  color: var(--bj-tx2);
+  border-color: var(--bj-ln);
+}
+/* полупрозрачная подложка спиннера при любой ajax-загрузке (не ловится аудитом — псевдоэлемент) */
+.b-ajax:before { background: rgba(11, 13, 17, .75); }

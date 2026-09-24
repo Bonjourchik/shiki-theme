@@ -70,3 +70,13 @@ pre code { background: var(--bj-sf2); color: var(--bj-tx2); border-radius: var(-
   background-color: var(--bj-sf2);
   border-color: var(--bj-ln);
 }
+
+/* счётчик комментариев в ленте новостей на главной */
+.b-news_line-topic .status-line .comments,
+.b-news_wall-topic .status-line .comments { color: var(--bj-mu); }
+.b-news_wall-topic .title { color: var(--bj-tx); }
+/* виджет «темы дня» на главной/форуме */
+.b-hot_topics-v2 .subject { color: var(--bj-tx); }
+/* плейсхолдер загрузки постера в новости на главной */
+.b-news_wall-topic .poster .b-shiki_swiper.is-loading,
+.b-news_wall-topic .poster .b-shiki_swiper.to-process { background: var(--bj-sf2); }

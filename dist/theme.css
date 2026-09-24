@@ -159,6 +159,28 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .b-block_list li:active,
 .b-block_list li.selected { background: var(--bj-ac-s); }
 
+.b-tag { color: var(--bj-tx2); }
+
+.b-entry-info .line .value { color: var(--bj-tx2); }
+
+.b-rate .text-score { color: var(--bj-tx2); }
+.b-rate .score-notice { color: var(--bj-mu); }
+
+.b-animes-menu .total-rates { color: var(--bj-tx2); }
+
+.p-animes-show .c-info-right .watch-online .kind,
+.p-mangas-show .c-info-right .watch-online .kind,
+.p-ranobe-show .c-info-right .watch-online .kind { color: var(--bj-tx2); }
+
+.bar.horizontal .line .x_label,
+.bar.vertical .line .x_label { color: var(--bj-mu); }
+.bar.simple .bar.s3,
+.bar.simple .bar.s3:hover { background: var(--bj-sf3); }
+
+.p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
+.p-user_rates-index .l-content .order-control { color: var(--bj-tx2); }
+.p-user_rates-index .list-lines tr td .episodes_total { color: var(--bj-mu); }
+
 .b-comment {
   background: var(--bj-sf);
   border: 1px solid var(--bj-ln);
@@ -231,6 +253,15 @@ pre code { background: var(--bj-sf2); color: var(--bj-tx2); border-radius: var(-
   background-color: var(--bj-sf2);
   border-color: var(--bj-ln);
 }
+
+.b-news_line-topic .status-line .comments,
+.b-news_wall-topic .status-line .comments { color: var(--bj-mu); }
+.b-news_wall-topic .title { color: var(--bj-tx); }
+
+.b-hot_topics-v2 .subject { color: var(--bj-tx); }
+
+.b-news_wall-topic .poster .b-shiki_swiper.is-loading,
+.b-news_wall-topic .poster .b-shiki_swiper.to-process { background: var(--bj-sf2); }
 
 .b-button,
 .b-button.blue,
@@ -352,6 +383,47 @@ input[type=radio] { accent-color: var(--bj-ac); }
 .b-add_to_list.completed .trigger { box-shadow: inset 3px 0 0 var(--bj-ok); }
 .b-add_to_list.on_hold .trigger { box-shadow: inset 3px 0 0 var(--bj-mu); }
 .b-add_to_list.dropped .trigger { box-shadow: inset 3px 0 0 var(--bj-warn); }
+
+.p-animes-show .other-names,
+.p-animes-show .more-info,
+.p-mangas-show .other-names,
+.p-mangas-show .more-info,
+.p-ranobe-show .other-names,
+.p-ranobe-show .more-info {
+  background: var(--bj-sf2);
+  color: var(--bj-tx2);
+  border-color: var(--bj-ln);
+}
+
+.c-ms-title { color: var(--bj-tx2); }
+
+.b-reviews_navigation .navigation-node-all {
+  background-color: var(--bj-sf2);
+  color: var(--bj-tx);
+  border-color: var(--bj-ln2);
+}
+.b-reviews_navigation .navigation-node-positive {
+  background-color: var(--bj-sf2);
+  color: var(--bj-ok);
+  border-color: var(--bj-ln2);
+}
+.b-reviews_navigation .navigation-node-neutral {
+  background-color: var(--bj-sf2);
+  color: var(--bj-mu);
+  border-color: var(--bj-ln2);
+}
+.b-reviews_navigation .navigation-node-negative {
+  background-color: var(--bj-sf2);
+  color: var(--bj-warn);
+  border-color: var(--bj-ln2);
+}
+
+.p-dashboards-show .v2 .fc-user-sections .tag-link.anime-tag,
+.p-dashboards-show .v2 .fc-user-sections .tag-link.manga-tag,
+.p-dashboards-show .v2 .fc-user-sections .tag-link.ranobe-tag {
+  background-color: var(--bj-sf2);
+  border-color: var(--bj-ln);
+}
 
 .l-page {
   background: transparent;
@@ -495,9 +567,22 @@ html::after {
 .brown { background: rgba(160, 120, 80, .14); }
 .gray { background: rgba(255, 255, 255, .06); }
 
+header.head .notice { color: var(--bj-mu); }
+
+.p-animes-show .resources-loader.b-ajax,
+.p-mangas-show .resources-loader.b-ajax,
+.p-ranobe-show .resources-loader.b-ajax {
+  background: var(--bj-sf2);
+  color: var(--bj-tx2);
+  border-color: var(--bj-ln);
+}
+
+.b-ajax:before { background: rgba(11, 13, 17, .75); }
+
 .b-catalog_entry .cover { color: var(--bj-tx2); }
 .b-catalog_entry .cover:hover { color: var(--bj-ac); }
 .b-catalog_entry .cover .misc { color: var(--bj-mu); }
+.b-catalog_entry .cover .misc span { color: var(--bj-tx2); }
 .b-catalog_entry .image-decor {
   position: relative;
   display: block;
@@ -559,6 +644,15 @@ html::after {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  html::after { display: none; }
+  .l-top_menu-v2 {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--bj-sf);
   }
 }
 

@@ -1,0 +1,8 @@
+@media (max-width: 1023px) {
+  html::after { display: none; }
+  .l-top_menu-v2 {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--bj-sf);
+  }
+}
