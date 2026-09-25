@@ -167,7 +167,7 @@
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating > span:not(.text)::before { content: "★ "; font-size: 11px; }
 /* в метке — только «★ 9.01»: подпись «рейтинг» делала её шире кнопки */
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating .text[class] { display: none; }
-.tooltip-inner .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 76px); }
+.tooltip-inner .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 74px); }
 .b-catalog_entry-tooltip .flexible-button {
   margin-top: 12px;
   padding-top: 12px;
