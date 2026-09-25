@@ -56,6 +56,9 @@
 }
 .l-page > div > header.head h1 { font-size: 26px; line-height: 1.2; }
 .l-page > div > header.head h1 .b-separator { color: var(--bj-ac); padding: 0 8px; }
+/* h1-ссылка «обновить страницу» (форум) — у сайта тёмно-синяя; [class] — перебить .p-topics header h1 a.reload */
+.l-page > div > header.head h1 a[class] { color: inherit; transition: color .2s; }
+.l-page > div > header.head h1 a[class]:hover { color: var(--bj-ac); }
 .l-page > div > header.head .b-breadcrumbs { margin-top: 8px; }
 .l-page > div > header.head .b-breadcrumbs a {
   display: inline-block;

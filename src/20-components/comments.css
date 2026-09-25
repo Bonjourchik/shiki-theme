@@ -7,8 +7,37 @@
   transition: border-color .3s;
 }
 .b-comment:hover { border-color: var(--bj-ln2); }
+/* у сайта первый комментарий без верхней рамки и отступа — карточка выглядела обрезанной */
+.b-comment:first-child { border-top-width: 1px; padding-top: 12px; }
 .b-comment header img,
 .b-topic header img { border-radius: 50%; }
+/* у топика про тайтл вместо аватара постер — прямоугольник, а не сплюснутый овал */
+.b-topic header a.poster img { border-radius: 8px; object-fit: cover; box-shadow: 0 0 0 1px var(--bj-ln); }
+/* метка «новое» у свежих комментариев (у сайта цвета заданы через body[data-locale]) */
+/* ::before у сайта — абсолютная плашка фиксированной ширины, padding уводил её на кнопку меню */
+body[data-locale] .b-new_marker::before {
+  background-color: var(--bj-ac-s);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 999px;
+  color: var(--bj-ac);
+}
+body[data-locale] .b-new_marker.active:is(:hover, :active)::before {
+  background-color: var(--bj-ac);
+  border-color: var(--bj-ac);
+  color: var(--bj-on-ac);
+}
+body[data-locale] .b-new_marker.off::before { background-color: transparent; border-color: var(--bj-ln2); color: var(--bj-mu); }
+body[data-locale] .b-new_marker.off:is(:hover, :active)::before { background-color: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
+/* счётчик новых комментариев у края экрана */
+.b-comments-notifier,
+.b-comments-notifier:is(:hover, :active) {
+  background: var(--bj-ac);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(240, 168, 69, .35);
+  color: var(--bj-on-ac);
+  font-family: var(--bj-font-alt);
+  font-weight: 700;
+}
 .b-comment .name-date .name,
 .b-topic .name-date .name { font-weight: 600; }
 .b-comment > .inner .name-date span.name,
