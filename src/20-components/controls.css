@@ -257,20 +257,11 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
   color: var(--bj-on-ac);
 }
 
-/* «Добавить в список» внутри строк «Связанное»/«Похожее»: варианты выпадают поверх, а не раздвигают
-   строку; свёрнутый блок (фиксированная высота + overflow: hidden) на время открытия не обрезает список */
-.b-db_entry-variant-list_item .b-add_to_list { position: relative; }
-.b-db_entry-variant-list_item .b-add_to_list .expanded-options {
-  position: absolute;
-  z-index: 30;
-  left: 0;
-  right: 0;
-  top: calc(100% + 2px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, .55);
-}
+/* «Добавить в список» в свёрнутом блоке («Связанное»): у блока фиксированная высота и overflow: hidden —
+   открытый список обрезался. Пока список открыт, блок раскрывается целиком (высоту сайт пишет в style) */
 .b-height_shortened:has(.b-add_to_list.expanded) {
-  overflow: visible;
+  height: auto !important;
   -webkit-mask-image: none;
   mask-image: none;
 }
-.b-db_entry-variant-list_item:has(.b-add_to_list.expanded) { position: relative; z-index: 5; }
+.b-add_to_list .expanded-options { box-shadow: 0 12px 28px rgba(0, 0, 0, .4); }

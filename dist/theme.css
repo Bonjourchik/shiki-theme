@@ -619,21 +619,12 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
   color: var(--bj-on-ac);
 }
 
-.b-db_entry-variant-list_item .b-add_to_list { position: relative; }
-.b-db_entry-variant-list_item .b-add_to_list .expanded-options {
-  position: absolute;
-  z-index: 30;
-  left: 0;
-  right: 0;
-  top: calc(100% + 2px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, .55);
-}
 .b-height_shortened:has(.b-add_to_list.expanded) {
-  overflow: visible;
+  height: auto !important;
   -webkit-mask-image: none;
   mask-image: none;
 }
-.b-db_entry-variant-list_item:has(.b-add_to_list.expanded) { position: relative; z-index: 5; }
+.b-add_to_list .expanded-options { box-shadow: 0 12px 28px rgba(0, 0, 0, .4); }
 
 :is(.headline, .midheadline, .subheadline):is(.red, .blue, .skyblue, .powderblue, .green, .yellow, .orange, .pink, .magenta, .purple, .brown, .gray) {
   background: transparent;
