@@ -48,7 +48,7 @@
 }
 .tooltip-inner:has(.b-catalog_entry-tooltip) .close:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
 /* крестик — своя иконка по центру вместо текстового символа шрифта Courier */
-.tooltip-inner .close { font-size: 0; }
+.tooltip-inner .close { display: grid; place-items: center; font-size: 0; }
 .tooltip-inner .close::before {
   content: "";
   display: block;

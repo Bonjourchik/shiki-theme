@@ -1841,7 +1841,7 @@ header.head .notice { color: var(--bj-mu); }
 }
 .tooltip-inner:has(.b-catalog_entry-tooltip) .close:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
 
-.tooltip-inner .close { font-size: 0; }
+.tooltip-inner .close { display: grid; place-items: center; font-size: 0; }
 .tooltip-inner .close::before {
   content: "";
   display: block;
