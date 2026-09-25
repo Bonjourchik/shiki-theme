@@ -1403,6 +1403,14 @@ html::after {
   .l-top_menu-v2 .submenu > a.icon-top { padding-left: 30px; }
   .l-top_menu-v2 .submenu > a.icon-top::before { position: static; margin: 0 0 0 5px; border: 0; border-radius: 0; }
   .l-top_menu-v2 .submenu > a.icon-top:not(.icon-mail)::after { left: 30px; }
+
+  .l-top_menu-v2 .submenu > a.icon-top,
+  .l-top_menu-v2 .submenu > a.icon-top:is(:hover, :active, .active) {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDEyIDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1YTYxNzIiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0xLjUgMFYxNFExLjUgMTkgNi41IDE5SDExIi8+PC9zdmc+);
+    background-position: 16px 0;
+    background-repeat: no-repeat;
+    background-size: 12px 24px;
+  }
   .l-top_menu-v2 .submenu > a:not(.icon-mail)::after {
     content: "";
     position: absolute;
@@ -1445,7 +1453,8 @@ html::after {
   }
   .l-top_menu-v2 .menu-dropdown.main .submenu > .legend { grid-column: 1 / -1; }
 
-  .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top { padding-left: 8px; }
+  .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top,
+  .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top:is(:hover, :active, .active) { padding-left: 8px; background-image: none; }
   .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top:not(.icon-mail)::after { left: 8px; }
 
   .l-top_menu-v2 .global-search input {
