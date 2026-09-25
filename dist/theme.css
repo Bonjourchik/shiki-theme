@@ -801,6 +801,16 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
 }
 .b-height_shortener .expand:hover { background: var(--bj-ac); color: var(--bj-bg); }
 
+.b-tooltipped.dotted {
+  border-bottom: 0;
+  color: var(--bj-tx2);
+  cursor: help;
+  transition: color .2s;
+}
+.b-tooltipped.dotted:hover { color: var(--bj-ac); }
+
+.b-upload_progress .bar { background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac)); }
+
 .c-ms-title { color: var(--bj-tx2); font-weight: 600; }
 .c-ms-control {
   min-height: 34px;

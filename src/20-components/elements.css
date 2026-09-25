@@ -200,3 +200,15 @@
   transition: background-color .2s, color .2s;
 }
 .b-height_shortener .expand:hover { background: var(--bj-ac); color: var(--bj-bg); }
+
+/* подсказки с пунктиром снизу («на сайте с 2021 г.» и т.п.) — без подчёркивания, выделяем цветом */
+.b-tooltipped.dotted {
+  border-bottom: 0;
+  color: var(--bj-tx2);
+  cursor: help;
+  transition: color .2s;
+}
+.b-tooltipped.dotted:hover { color: var(--bj-ac); }
+
+/* полоса загрузки файла (аватар, картинки в редакторе) — янтарная */
+.b-upload_progress .bar { background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac)); }
