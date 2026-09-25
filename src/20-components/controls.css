@@ -82,7 +82,8 @@ select,
 .b-shiki_editor-v2 .app-placeholder .textarea,
 .b-shiki_editor .links .link-value,
 .b-shiki_editor .images .link-value,
-.b-shiki_editor .quotes .link-value {
+.b-shiki_editor .quotes .link-value,
+.b-shiki_editor .body .editor textarea {
   background-color: var(--bj-bg);
   border: 1px solid var(--bj-ln2);
   border-radius: 9px;
@@ -103,13 +104,25 @@ select:focus,
 .b-shiki_editor-v2 .app-placeholder .textarea:focus,
 .b-shiki_editor .links .link-value:focus,
 .b-shiki_editor .images .link-value:focus,
-.b-shiki_editor .quotes .link-value:focus {
+.b-shiki_editor .quotes .link-value:focus,
+.b-shiki_editor .body .editor textarea:focus {
   border-color: var(--bj-ac);
   box-shadow: 0 0 0 3px var(--bj-ac-s);
   outline: none;
 }
 input::placeholder,
 textarea::placeholder { color: var(--bj-mu); }
+.b-shiki_editor .body .editor textarea { padding: 10px 12px; font-size: 14px; }
+
+/* панель кнопок редактора (жирный, курсив, ссылка, картинка…) — круглые кнопки с подсветкой */
+.b-shiki_editor .editor-controls > span {
+  border-radius: 8px;
+  color: var(--bj-tx2);
+  transition: background-color .2s, color .2s;
+}
+.b-shiki_editor .editor-controls > span:hover { background-color: var(--bj-ac-s); color: var(--bj-ac); }
+/* метка «оффтоп»: рамку рисует ::before сайта — только скругляем */
+.b-shiki_editor .b-offtopic_marker::before { padding: 0 8px; border-radius: 999px; }
 .b-input input[disabled] { background-color: var(--bj-sf2); color: var(--bj-mu); }
 input[type=checkbox],
 input[type=radio] { accent-color: var(--bj-ac); }

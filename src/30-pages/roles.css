@@ -1,0 +1,67 @@
+/* ===== Персонаж / человек: секции «Аниме», «Манга», «Роли» ===== */
+
+/* у сайта заголовок и сетка постеров — соседи без общей обёртки;
+   склеиваем их в одну карточку: заголовок — верх, сетка — низ */
+.p-db_entries-show .l-content > .subheadline:has(+ .cc-roles) {
+  margin: 0;
+  padding: 16px 18px 10px;
+  background:
+    linear-gradient(90deg, transparent, rgba(240, 168, 69, .5), transparent) top / 100% 1px no-repeat,
+    var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-bottom: 0;
+  border-radius: var(--bj-r) var(--bj-r) 0 0;
+}
+.p-db_entries-show .l-content > .subheadline + .cc-roles {
+  margin-bottom: 18px;
+  padding: 4px 18px 18px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-top: 0;
+  border-radius: 0 0 var(--bj-r) var(--bj-r);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+/* строки «ключ: значение» у человека идут без пробела между ними */
+.p-people-show .b-entry-info .line .key { margin-right: 5px; }
+
+/* «Лучшие работы» — сетка с ровными зазорами вместо узких плавающих колонок */
+.p-people-show .c-works {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 14px 12px;
+}
+.p-people-show .c-works::before,
+.p-people-show .c-works::after { display: none; }
+.p-people-show .c-works > .b-catalog_entry[class] {
+  float: none;
+  width: auto;
+  margin: 0 !important;
+}
+/* оценка — на углу постера (у сайта она привязана к низу карточки и наезжала на название) */
+.p-people-show .c-works .b-catalog_entry .collection_score {
+  top: 6px;
+  right: auto;
+  bottom: auto;
+  left: 6px;
+}
+/* роль отдельной строкой, под ней «тип · год» */
+.p-people-show .c-works .b-catalog_entry .misc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6px;
+  margin-top: 2px;
+  color: var(--bj-mu);
+  font-size: 11px;
+  line-height: 1.45;
+  text-align: left;
+}
+.p-people-show .c-works .b-catalog_entry .misc > span {
+  float: none;
+  width: auto;
+  max-width: 100%;
+  overflow: visible;
+  text-align: left;
+  white-space: normal;
+}
+.p-people-show .c-works .b-catalog_entry .misc > .role { flex-basis: 100%; color: var(--bj-tx2); }
