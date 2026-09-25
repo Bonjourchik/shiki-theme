@@ -164,3 +164,15 @@ input[type=radio] { accent-color: var(--bj-ac); }
   background-color: var(--bj-sf2);
   border-color: var(--bj-ln);
 }
+
+/* выпадающий список «добавить в список» */
+.b-add_to_list .expanded-options { background: var(--bj-sf2); }
+.b-add_to_list .trigger-arrow { color: var(--bj-mu); }
+.b-add_to_list.planned .trigger-arrow:hover,
+.b-add_to_list.watching .trigger-arrow:hover,
+.b-add_to_list.rewatching .trigger-arrow:hover { color: var(--bj-ac); }
+.b-add_to_list.completed .trigger-arrow:hover { color: var(--bj-ok); }
+.b-add_to_list.on_hold .trigger-arrow:hover { color: var(--bj-tx2); }
+.b-add_to_list.dropped .trigger-arrow:hover { color: var(--bj-warn); }
+.b-add_to_list .expanded-options .option:hover { background: var(--bj-ac-s); color: var(--bj-ac); }
+.b-add_to_list .expanded-options .remove-trigger .text { color: var(--bj-warn); }

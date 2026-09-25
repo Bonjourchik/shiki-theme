@@ -82,3 +82,53 @@
 .p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
 .p-user_rates-index .l-content .order-control { color: var(--bj-tx2); }
 .p-user_rates-index .list-lines tr td .episodes_total { color: var(--bj-mu); }
+
+/* спойлеры: содержимое раскрытого блока у сайта #f3f5f7 */
+.b-spoiler_block > div {
+  background-color: var(--bj-sf2);
+  border-left-color: var(--bj-ac);
+  border-radius: 0 var(--bj-r-sm) var(--bj-r-sm) 0;
+  color: var(--bj-tx2);
+}
+.b-spoiler_block > span:active { background-color: rgba(240, 168, 69, .32); }
+.b-spoiler_inline:not(.is-opened) { background-color: var(--bj-sf3); }
+.b-spoiler_inline:not(.is-opened):hover { background-color: var(--bj-ln2); }
+.b-spoiler_inline:not(.is-opened):active { background-color: var(--bj-mu); }
+.b-spoiler_inline:not(.is-opened) > span span,
+.b-spoiler_inline:not(.is-opened) > span div,
+.b-spoiler_inline:not(.is-opened) > span code { border-color: var(--bj-ln2); }
+.b-spoiler_inline.is-opened { background-color: rgba(240, 168, 69, .1); }
+.b-spoiler_inline.is-opened:active { background-color: rgba(240, 168, 69, .2); }
+.b-spoiler .content .before,
+.b-spoiler .content .after { color: var(--bj-ac); }
+.b-spoiler .content .inner { border-bottom-color: var(--bj-ac-line); }
+
+/* свёрнутые блоки и «развернуть» */
+.collapsed,
+.collapsed + .spoiler .hide-expanded {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln);
+  color: var(--bj-tx2);
+}
+.collapsed:hover,
+.collapsed + .spoiler .hide-expanded:hover,
+.collapsed + .spoiler .hide-expanded:active {
+  background-color: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
+/* затенение обрезанного длинного текста: у сайта градиент в белый */
+.b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(11, 13, 17, 0), var(--bj-bg)); }
+.b-comment .b-height_shortener .shade,
+.b-topic .b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(20, 23, 29, 0), var(--bj-sf)); }
+
+/* список аниме пользователя: наведение на строку, форма редактирования, сводка */
+.p-user_rates-index .list-lines .selectable:hover { background-color: var(--bj-ac-s); }
+.p-user_rates-index .list-lines tr.edit-form form {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln);
+}
+.p-user_rates-index .list-groups .summary.posters {
+  background-color: var(--bj-sf2);
+  border-color: var(--bj-ln);
+}

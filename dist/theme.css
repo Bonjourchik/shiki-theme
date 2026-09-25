@@ -167,7 +167,6 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .b-block_list li:active,
 .b-block_list li.selected { background: var(--bj-ac-s); }
 
-
 .b-tag { color: var(--bj-tx2); }
 
 .b-entry-info .line .value { color: var(--bj-tx2); }
@@ -181,16 +180,61 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .p-mangas-show .c-info-right .watch-online .kind,
 .p-ranobe-show .c-info-right .watch-online .kind { color: var(--bj-tx2); }
 
-
 .bar.horizontal .line .x_label,
 .bar.vertical .line .x_label { color: var(--bj-mu); }
 .bar.simple .bar.s3,
 .bar.simple .bar.s3:hover { background: var(--bj-sf3); }
 
-
 .p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
 .p-user_rates-index .l-content .order-control { color: var(--bj-tx2); }
 .p-user_rates-index .list-lines tr td .episodes_total { color: var(--bj-mu); }
+
+.b-spoiler_block > div {
+  background-color: var(--bj-sf2);
+  border-left-color: var(--bj-ac);
+  border-radius: 0 var(--bj-r-sm) var(--bj-r-sm) 0;
+  color: var(--bj-tx2);
+}
+.b-spoiler_block > span:active { background-color: rgba(240, 168, 69, .32); }
+.b-spoiler_inline:not(.is-opened) { background-color: var(--bj-sf3); }
+.b-spoiler_inline:not(.is-opened):hover { background-color: var(--bj-ln2); }
+.b-spoiler_inline:not(.is-opened):active { background-color: var(--bj-mu); }
+.b-spoiler_inline:not(.is-opened) > span span,
+.b-spoiler_inline:not(.is-opened) > span div,
+.b-spoiler_inline:not(.is-opened) > span code { border-color: var(--bj-ln2); }
+.b-spoiler_inline.is-opened { background-color: rgba(240, 168, 69, .1); }
+.b-spoiler_inline.is-opened:active { background-color: rgba(240, 168, 69, .2); }
+.b-spoiler .content .before,
+.b-spoiler .content .after { color: var(--bj-ac); }
+.b-spoiler .content .inner { border-bottom-color: var(--bj-ac-line); }
+
+.collapsed,
+.collapsed + .spoiler .hide-expanded {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln);
+  color: var(--bj-tx2);
+}
+.collapsed:hover,
+.collapsed + .spoiler .hide-expanded:hover,
+.collapsed + .spoiler .hide-expanded:active {
+  background-color: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
+
+.b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(11, 13, 17, 0), var(--bj-bg)); }
+.b-comment .b-height_shortener .shade,
+.b-topic .b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(20, 23, 29, 0), var(--bj-sf)); }
+
+.p-user_rates-index .list-lines .selectable:hover { background-color: var(--bj-ac-s); }
+.p-user_rates-index .list-lines tr.edit-form form {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln);
+}
+.p-user_rates-index .list-groups .summary.posters {
+  background-color: var(--bj-sf2);
+  border-color: var(--bj-ln);
+}
 
 .b-comment {
   background: var(--bj-sf);
@@ -436,6 +480,17 @@ input[type=radio] { accent-color: var(--bj-ac); }
   border-color: var(--bj-ln);
 }
 
+.b-add_to_list .expanded-options { background: var(--bj-sf2); }
+.b-add_to_list .trigger-arrow { color: var(--bj-mu); }
+.b-add_to_list.planned .trigger-arrow:hover,
+.b-add_to_list.watching .trigger-arrow:hover,
+.b-add_to_list.rewatching .trigger-arrow:hover { color: var(--bj-ac); }
+.b-add_to_list.completed .trigger-arrow:hover { color: var(--bj-ok); }
+.b-add_to_list.on_hold .trigger-arrow:hover { color: var(--bj-tx2); }
+.b-add_to_list.dropped .trigger-arrow:hover { color: var(--bj-warn); }
+.b-add_to_list .expanded-options .option:hover { background: var(--bj-ac-s); color: var(--bj-ac); }
+.b-add_to_list .expanded-options .remove-trigger .text { color: var(--bj-warn); }
+
 .l-page {
   background: transparent;
   color: var(--bj-tx);
@@ -540,6 +595,70 @@ html::after {
   border-color: var(--bj-ac);
 }
 
+.l-top_menu-v2 .menu-dropdown > span,
+.l-top_menu-v2 .menu-icon {
+  background: transparent;
+  color: var(--bj-tx2);
+  transition: background-color .2s, color .2s, box-shadow .3s var(--bj-ease);
+}
+.l-top_menu-v2 .menu-icon:hover,
+.l-top_menu-v2 .menu-icon:focus,
+.l-top_menu-v2 .menu-icon.active,
+.l-top_menu-v2 .menu-dropdown.active > span,
+.l-top_menu-v2 .menu-dropdown > span:focus {
+  background-color: rgba(255, 255, 255, .06);
+  color: var(--bj-tx);
+}
+.l-top_menu-v2 .menu-icon:active { background-color: var(--bj-ac-s); color: var(--bj-ac); }
+.l-top_menu-v2 .menu-dropdown > span a { color: var(--bj-tx2); }
+.l-top_menu-v2 .menu-dropdown > span a:hover {
+  background-color: rgba(255, 255, 255, .06);
+  color: var(--bj-tx);
+}
+.l-top_menu-v2 .menu-dropdown > span a:active { background-color: var(--bj-ac-s); color: var(--bj-ac); }
+.l-top_menu-v2 .submenu > a { border-bottom-color: var(--bj-ln); }
+.l-top_menu-v2 .submenu > a.icon-mail span.unread { color: var(--bj-mu); }
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span { color: var(--bj-tx); }
+.l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span { color: var(--bj-ac); }
+.l-top_menu-v2 .submenu > a.icon-mail span.unread span:not(:last-child)::after { background: var(--bj-ln2); }
+
+.l-top_menu-v2 .global-search .search-results::before { background: linear-gradient(to top, transparent, var(--bj-sf2)); }
+.l-top_menu-v2 .global-search .search-results::after { background: linear-gradient(to bottom, transparent, var(--bj-sf2)); }
+.l-top_menu-v2 .global-search .search-results .nothing_found,
+.l-top_menu-v2 .global-search .search-results .search-mode { color: var(--bj-tx2); }
+.l-top_menu-v2 .global-search .search-results .nothing_found,
+.l-top_menu-v2 .global-search .search-results .search-mode,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item { border-top-color: var(--bj-ln); }
+.l-top_menu-v2 .global-search .search-results .search-mode:hover {
+  background: linear-gradient(to left, var(--bj-ac-s), transparent);
+  color: var(--bj-tx);
+}
+.l-top_menu-v2 .global-search .search-results .search-mode:hover::before { background: rgba(240, 168, 69, .35); }
+.l-top_menu-v2 .global-search .search-results .nothing_found.active,
+.l-top_menu-v2 .global-search .search-results .nothing_found:focus,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item.active,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:focus,
+.l-top_menu-v2 .global-search .search-results .search-mode.active,
+.l-top_menu-v2 .global-search .search-results .search-mode:focus,
+.l-top_menu-v2 .global-search .search-results .search-mode:active,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:active {
+  background: linear-gradient(to left, rgba(240, 168, 69, .22), transparent), rgba(240, 168, 69, .06);
+  border-top-color: var(--bj-ac-line);
+  color: var(--bj-tx);
+}
+.l-top_menu-v2 .global-search .search-results .nothing_found.active::before,
+.l-top_menu-v2 .global-search .search-results .nothing_found:focus::before,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item.active::before,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:focus::before,
+.l-top_menu-v2 .global-search .search-results .search-mode.active::before,
+.l-top_menu-v2 .global-search .search-results .search-mode:focus::before,
+.l-top_menu-v2 .global-search .search-results .search-mode:active::before,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:active::before { background: var(--bj-ac); }
+.l-top_menu-v2 .global-search .search-results .nothing_found::before { background: var(--bj-warn); }
+.l-top_menu-v2 .global-search .search-results :is(.nothing_found, .search-mode, .b-db_entry-variant-list_item):is(.active, :focus, :active) + * { border-top-color: var(--bj-ac-line); }
+.l-top_menu-v2.is-search-focus .global-search .search-marker { color: var(--bj-ac); }
+.l-top_menu-v2.is-search-mobile .global-search { background: var(--bj-sf); }
+
 .tooltip-inner {
   background: var(--bj-sf2);
   border: 1px solid var(--bj-ln2);
@@ -589,6 +708,15 @@ header.head .notice { color: var(--bj-mu); }
 }
 
 .b-ajax:before { background: rgba(11, 13, 17, .75); }
+
+.tooltip-inner .close,
+.p-animes-franchise .sticky-tooltip .close,
+.p-mangas-franchise .sticky-tooltip .close,
+.p-ranobe-franchise .sticky-tooltip .close {
+  background: var(--bj-sf3);
+  color: var(--bj-tx2);
+}
+.tooltip-inner .close:hover { color: var(--bj-ac); }
 
 .b-catalog_entry .cover { color: var(--bj-tx2); }
 .b-catalog_entry .cover:hover { color: var(--bj-ac); }

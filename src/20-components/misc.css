@@ -48,3 +48,13 @@ header.head .notice { color: var(--bj-mu); }
 }
 /* полупрозрачная подложка спиннера при любой ajax-загрузке (не ловится аудитом — псевдоэлемент) */
 .b-ajax:before { background: rgba(11, 13, 17, .75); }
+
+/* кнопки закрытия в подсказках — у сайта белые кружки */
+.tooltip-inner .close,
+.p-animes-franchise .sticky-tooltip .close,
+.p-mangas-franchise .sticky-tooltip .close,
+.p-ranobe-franchise .sticky-tooltip .close {
+  background: var(--bj-sf3);
+  color: var(--bj-tx2);
+}
+.tooltip-inner .close:hover { color: var(--bj-ac); }
