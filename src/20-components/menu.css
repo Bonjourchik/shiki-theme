@@ -234,12 +234,13 @@
 }
 .l-top_menu-v2 .menu-dropdown.active .submenu-triangle::after { color: var(--bj-ac); transform: rotate(180deg); }
 
-/* счётчик непрочитанного — янтарная «таблетка» */
+/* счётчик непрочитанного — янтарная «таблетка» на углу кнопки, не поверх иконки */
 .l-top_menu-v2 .menu-icon[data-count]::after,
 .l-top_menu-v2 .menu-dropdown > span[data-unread_count]::after {
-  top: 3px;
-  right: 3px;
+  top: -5px;
+  right: -5px;
   left: auto;
+  z-index: 2;
   min-width: 16px;
   width: auto;
   height: 16px;

@@ -1279,9 +1279,10 @@ html::after {
 
 .l-top_menu-v2 .menu-icon[data-count]::after,
 .l-top_menu-v2 .menu-dropdown > span[data-unread_count]::after {
-  top: 3px;
-  right: 3px;
+  top: -5px;
+  right: -5px;
   left: auto;
+  z-index: 2;
   min-width: 16px;
   width: auto;
   height: 16px;
@@ -2239,8 +2240,8 @@ header.head .notice { color: var(--bj-mu); }
   line-height: 20px;
   transition: border-color .2s, color .2s;
 }
-.p-dashboards-show .v2 .my-list .misc-links a::before,
-.p-dashboards-show .v2 .my-list .misc-links a::after { display: none; }
+.p-dashboards-show .v2 .my-list .label .misc-links a::before,
+.p-dashboards-show .v2 .my-list .label .misc-links a::after { display: none; }
 .p-dashboards-show .v2 .my-list .misc-links a:hover { border-color: var(--bj-ac-line); color: var(--bj-ac); }
 
 .p-dashboards-show .v2 .my-list .b-user_rate-history {
@@ -2253,13 +2254,30 @@ header.head .notice { color: var(--bj-mu); }
   transition: border-color .25s;
 }
 .p-dashboards-show .v2 .my-list .b-user_rate-history:hover { border-color: var(--bj-ac-line); }
-.p-dashboards-show .v2 .my-list .b-user_rate-history img { border-radius: 8px; object-fit: cover; }
-.p-dashboards-show .v2 .my-list .b-user_rate-history .content { min-width: 0; }
-.p-dashboards-show .v2 .my-list .b-user_rate-history .title { color: var(--bj-tx); font-weight: 600; }
+
+.p-dashboards-show .v2 .my-list .b-user_rate-history,
+.p-dashboards-show .v2 .my-list .b-user_rate-history :is(picture, .content, .title) { height: auto; }
+.p-dashboards-show .v2 .my-list .b-user_rate-history { align-items: flex-start; }
+.p-dashboards-show .v2 .my-list .b-user_rate-history picture { flex: none; }
+.p-dashboards-show .v2 .my-list .b-user_rate-history img { display: block; width: 44px; height: 64px; border-radius: 8px; object-fit: cover; }
+.p-dashboards-show .v2 .my-list .b-user_rate-history .content {
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+.p-dashboards-show .v2 .my-list .b-user_rate-history .title {
+  overflow: hidden;
+  color: var(--bj-tx);
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .p-dashboards-show .v2 .my-list .b-user_rate-history:hover .title { color: var(--bj-ac); }
 .p-dashboards-show .v2 .my-list .progress {
   height: 4px;
-  margin: 8px 0;
+  margin: 6px 0;
   overflow: hidden;
   background: var(--bj-sf3);
   border-radius: 2px;
