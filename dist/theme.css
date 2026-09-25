@@ -1398,6 +1398,9 @@ html::after {
   }
   .l-top_menu-v2 .menu-dropdown.main .submenu > .legend { grid-column: 1 / -1; }
 
+  .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top { padding-left: 8px; }
+  .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top:not(.icon-mail)::after { left: 8px; }
+
   .l-top_menu-v2 .global-search { max-width: 560px; margin: 0 auto; }
   .l-top_menu-v2 .global-search input {
     height: 34px;

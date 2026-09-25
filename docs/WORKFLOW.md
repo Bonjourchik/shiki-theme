@@ -18,6 +18,17 @@ Node.js 24+. Зависимостей нет, `npm install` не нужен.
   список светлых фонов и тёмного текста. `h1.aliases` на профиле — известный ложный сигнал
   (ник залит градиентом через `background-clip: text`).
 
+- `node tools/icons.mjs` — пересоздать `src/20-components/icons.css` (SVG-иконки шапки как base64-маски).
+  Иконки и соответствие классам сайта — в самом скрипте; после него `npm run build`.
+
+## Проверка в залогиненной вкладке (без выпуска)
+
+Рабочие коммиты пушатся в ветку `dev` (`git push origin HEAD:dev`) — поле на сайте подключает только `main`.
+Во вкладке shikimori.io: `localStorage.bjSha = '<sha коммита>'`, затем `await eval(localStorage.getItem('bjDev'))` —
+скрипт скачивает `raw.githubusercontent.com/Bonjourchik/shiki-theme/<sha>/dist/theme.css` и подменяет `#custom_css`.
+Аудит оставшихся стандартных элементов: `eval(localStorage.getItem('bjAudit'))` (светлые фоны, синие цвета сайта,
+подчёркивания, пунктиры, тёмный текст).
+
 ## Выпуск изменения
 
 1. Правка в `src/` → `npm run build` → проверка в предпросмотре и аудит.
