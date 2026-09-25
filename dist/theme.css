@@ -1996,6 +1996,17 @@ header.head .notice { color: var(--bj-mu); }
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating > span { line-height: 1; }
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating > span:not(.text)::before { content: "★ "; font-size: 11px; }
 
+@supports (anchor-name: --bj-a) {
+  .tooltip-inner .b-catalog_entry-tooltip { anchor-scope: --bj-rate-btn; }
+  .tooltip-inner .b-catalog_entry-tooltip .b-add_to_list .trigger { anchor-name: --bj-rate-btn; }
+  .tooltip-inner .b-catalog_entry-tooltip .inner .rating[class] {
+    position-anchor: --bj-rate-btn;
+    top: anchor(center);
+    bottom: auto;
+    translate: 0 -50%;
+  }
+}
+
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating .text[class] { display: none; }
 .tooltip-inner .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 74px); }
 .b-catalog_entry-tooltip .flexible-button {

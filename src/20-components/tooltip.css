@@ -165,6 +165,17 @@
 }
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating > span { line-height: 1; }
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating > span:not(.text)::before { content: "★ "; font-size: 11px; }
+/* центр метки — точно по центру кнопки списка (anchor positioning); без поддержки — отступ снизу выше */
+@supports (anchor-name: --bj-a) {
+  .tooltip-inner .b-catalog_entry-tooltip { anchor-scope: --bj-rate-btn; }
+  .tooltip-inner .b-catalog_entry-tooltip .b-add_to_list .trigger { anchor-name: --bj-rate-btn; }
+  .tooltip-inner .b-catalog_entry-tooltip .inner .rating[class] {
+    position-anchor: --bj-rate-btn;
+    top: anchor(center);
+    bottom: auto;
+    translate: 0 -50%;
+  }
+}
 /* в метке — только «★ 9.01»: подпись «рейтинг» делала её шире кнопки */
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating .text[class] { display: none; }
 .tooltip-inner .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 74px); }
