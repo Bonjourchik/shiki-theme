@@ -3655,6 +3655,7 @@ body.p-profiles-show::after {
 .p-profiles-show .activity .graph .line .bar-container .bar .value { color: var(--bj-tx2); }
 .p-profiles-show .activity .graph .x_label { color: var(--bj-mu); font-size: 10px; }
 
+.p-profiles-show .activity .graph { z-index: 2; }
 .p-profiles-show .activity .graph .line { overflow: visible; }
 .p-profiles-show .activity .graph .line .bar-container .bar .value {
   top: auto;

@@ -130,6 +130,7 @@
 
 /* значение столбца при наведении — подсказкой над столбцом. У сайта оно внизу, внутри столбца,
    и обрезано overflow: hidden у .line (подпись оси x привязана к графику, её это не касается) */
+.p-profiles-show .activity .graph { z-index: 2; }
 .p-profiles-show .activity .graph .line { overflow: visible; }
 .p-profiles-show .activity .graph .line .bar-container .bar .value {
   top: auto;
