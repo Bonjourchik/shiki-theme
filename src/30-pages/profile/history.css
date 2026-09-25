@@ -81,3 +81,26 @@
   line-height: 1.35;
   margin-top: 0;
 }
+
+/* ===== Список аниме/манги (.p-user_rates-index) ===== */
+
+/* фильтр по статусам «Запланировано 39 / Смотрю 0 …» — таблетки с переносом вместо обрезанной строки */
+.p-user_rates-index .b-options-floated.mylist {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.p-user_rates-index .b-options-floated.mylist .b-link {
+  padding: 3px 12px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.p-user_rates-index .b-options-floated.mylist .b-link::after,
+.p-user_rates-index .b-options-floated.mylist .b-link::before { display: none; }
+.p-user_rates-index .b-options-floated.mylist .b-link span { color: var(--bj-mu); font-family: var(--bj-font-alt); font-size: 11px; }
+.p-user_rates-index .b-options-floated.mylist .b-link:hover,
+.p-user_rates-index .b-options-floated.mylist .b-link.active { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
+.p-user_rates-index .b-options-floated.mylist .b-link:is(:hover, .active) span { color: var(--bj-ac); }

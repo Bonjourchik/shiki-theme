@@ -59,6 +59,23 @@
 /* h1-ссылка «обновить страницу» (форум) — у сайта тёмно-синяя; [class] — перебить .p-topics header h1 a.reload */
 .l-page > div > header.head h1 a[class] { color: inherit; transition: color .2s; }
 .l-page > div > header.head h1 a[class]:hover { color: var(--bj-ac); }
+/* «← назад» перед заголовком (список, подстраницы профиля) — круглая кнопка вместо стрелки с подписью */
+.l-page > div > header.head h1 a.back[class] {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin: 0 12px 0 0;
+  vertical-align: middle;
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 50%;
+  color: var(--bj-tx2);
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.l-page > div > header.head h1 a.back[class]:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
+.l-page > div > header.head h1 a.back[class]::before { position: static; font: 400 16px/1 var(--bj-font); color: inherit; }
+.l-page > div > header.head h1 a.back[class]::after { display: none; }
 .l-page > div > header.head .b-breadcrumbs { margin-top: 8px; }
 .l-page > div > header.head .b-breadcrumbs a {
   display: inline-block;

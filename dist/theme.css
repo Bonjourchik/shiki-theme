@@ -1313,6 +1313,23 @@ header.head .notice { color: var(--bj-mu); }
 
 .l-page > div > header.head h1 a[class] { color: inherit; transition: color .2s; }
 .l-page > div > header.head h1 a[class]:hover { color: var(--bj-ac); }
+
+.l-page > div > header.head h1 a.back[class] {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin: 0 12px 0 0;
+  vertical-align: middle;
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 50%;
+  color: var(--bj-tx2);
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.l-page > div > header.head h1 a.back[class]:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
+.l-page > div > header.head h1 a.back[class]::before { position: static; font: 400 16px/1 var(--bj-font); color: inherit; }
+.l-page > div > header.head h1 a.back[class]::after { display: none; }
 .l-page > div > header.head .b-breadcrumbs { margin-top: 8px; }
 .l-page > div > header.head .b-breadcrumbs a {
   display: inline-block;
@@ -2563,6 +2580,26 @@ body.p-profiles-show::after {
   line-height: 1.35;
   margin-top: 0;
 }
+
+.p-user_rates-index .b-options-floated.mylist {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.p-user_rates-index .b-options-floated.mylist .b-link {
+  padding: 3px 12px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.p-user_rates-index .b-options-floated.mylist .b-link::after,
+.p-user_rates-index .b-options-floated.mylist .b-link::before { display: none; }
+.p-user_rates-index .b-options-floated.mylist .b-link span { color: var(--bj-mu); font-family: var(--bj-font-alt); font-size: 11px; }
+.p-user_rates-index .b-options-floated.mylist .b-link:hover,
+.p-user_rates-index .b-options-floated.mylist .b-link.active { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
+.p-user_rates-index .b-options-floated.mylist .b-link:is(:hover, .active) span { color: var(--bj-ac); }
 
 .p-profiles-show .b-stats_bar .bar {
   position: relative;
