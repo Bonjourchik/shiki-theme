@@ -1374,6 +1374,59 @@ header.head .notice { color: var(--bj-mu); }
 .c-filters .c-filters-head { justify-content: flex-start; }
 .c-filters .c-filters-head > span + * { margin-left: auto; }
 
+.b-clubs:has(> .b-club.detailed) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.b-clubs:has(> .b-club.detailed)::before,
+.b-clubs:has(> .b-club.detailed)::after { display: none; }
+.b-clubs > .b-club.detailed[class] {
+  float: none;
+  width: auto;
+  min-height: 72px;
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: 14px;
+  transition: border-color .25s, transform .25s var(--bj-ease), box-shadow .25s;
+}
+.b-clubs > .b-club.detailed:hover {
+  border-color: var(--bj-ac-line);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+  transform: translateY(-2px);
+}
+.b-clubs > .b-club.detailed .logo { border-radius: 10px; box-shadow: 0 0 0 1px var(--bj-ln); }
+.b-clubs > .b-club.detailed .name { color: var(--bj-tx); font-weight: 600; }
+.b-clubs > .b-club.detailed:hover .name { color: var(--bj-ac); }
+.b-clubs > .b-club.detailed .info { color: var(--bj-mu); }
+.b-clubs > .b-club.detailed .info .number { color: var(--bj-tx2); font-weight: 600; }
+
+.l-page > div > header.head h1 a.misc[class] {
+  margin-left: 12px;
+  padding: 2px 10px;
+  background: var(--bj-ac-s);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 999px;
+  color: var(--bj-ac);
+  font: 600 12px/1.4 var(--bj-font);
+  vertical-align: middle;
+}
+.l-page > div > header.head h1 a.misc[class]:hover { background: var(--bj-ac); color: var(--bj-on-ac); }
+
+.p-clubs-show .l-content > .block:first-child {
+  padding: 16px 18px;
+  background:
+    linear-gradient(90deg, transparent, rgba(240, 168, 69, .5), transparent) top / 100% 1px no-repeat,
+    var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+.p-clubs-show .l-content > .block > .b-topic-minified { margin-bottom: 12px; }
+
 @media screen and (min-width: 768px) {
   .p-db_entries-show .b-db_entry {
     display: grid;
