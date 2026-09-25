@@ -1347,14 +1347,16 @@ html::after {
   .l-top_menu-v2 .menu-dropdown > span a { gap: 10px; height: 40px; border-radius: 11px; }
 
   .l-top_menu-v2 .menu-dropdown.profile { margin-left: 4px; }
-  .l-top_menu-v2 .menu-dropdown.profile > span { padding: 0 12px 0 6px; }
+  .l-top_menu-v2 .menu-dropdown.profile > span { padding: 0 12px 0 9px; }
 
   .l-top_menu-v2 .menu-dropdown.profile > span a { margin: 0; padding: 0; }
+
   .l-top_menu-v2 .menu-dropdown.profile img {
-    width: 28px;
-    height: 28px;
+    flex: none;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--bj-sf2), 0 0 0 3px var(--bj-ac);
+    box-shadow: 0 0 0 1.5px var(--bj-sf2), 0 0 0 2.5px var(--bj-ac);
   }
   .l-top_menu-v2 .menu-dropdown.profile .nickname { font-weight: 600; }
 
