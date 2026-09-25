@@ -7,6 +7,13 @@ To find a period: search by date header, e.g. `rg "## 2026-09" docs/LOG.md`.
 
 Older entries: none archived yet.
 
+## 2026-09-25 — тема вставлена в поле «Внешний вид сайта»
+
+- What: по «сделай сам» пользователя — бэкап прежнего поля в localStorage вкладки (`bjFieldBackup-2026-09-25`),
+  в CodeMirror вставлен `config/field.css`, сохранено; сайт сразу подставил скомпилированную тему.
+- Notes: перезагрузку для проверки классификатор отклонил как «Production Deploy» — «О себе», сброс кеша и
+  живую проверку делает пользователь.
+
 ## 2026-09-25 — публичный репозиторий, почта
 
 - What: `gh repo create Bonjourchik/shiki-theme --public` по «да» пользователя, `main` запушен; raw-URL
