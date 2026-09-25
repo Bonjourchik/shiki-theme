@@ -15,7 +15,10 @@
   gap: 18px;
   margin-bottom: 18px;
 }
-.p-profiles-show .profile-content .c-right > .cc-2a > .c-column {
+/* у сайта .m30 { margin-bottom: 30px !important } */
+.p-profiles-show .profile-content .c-right > .cc-2a.m30 { margin-bottom: 18px !important; }
+/* [class] поднимает специфичность до сайтового .p-profiles-show.x1200 … .cc-2a>.c-column (6 классов) */
+.p-profiles-show[class] .profile-content .c-right > .cc-2a > .c-column {
   float: none;
   width: auto;
   margin: 0;
@@ -60,7 +63,7 @@
 /* появление лесенкой */
 .p-profiles-show .profile-head > *,
 .p-profiles-show .profile-content > .cc-2 > .c-column,
-.p-profiles-show .profile-content > .block:not(.cc-2) { animation: bj-rise .7s var(--bj-ease) both; }
+.p-profiles-show .profile-content > .block:not(.cc-2) { animation: bj-rise .7s var(--bj-ease) backwards; }
 .p-profiles-show .profile-head > .c-brief { animation-delay: .05s; }
 .p-profiles-show .profile-head > .c-info { animation-delay: .25s; }
 .p-profiles-show .profile-head > .c-history { animation-delay: .35s; }

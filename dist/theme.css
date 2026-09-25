@@ -140,6 +140,14 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .headline a,
 .midheadline a,
 .subheadline a { color: inherit; }
+
+.headline > a,
+.midheadline > a,
+.subheadline > a {
+  display: inline-block;
+  max-width: calc(100% - 17px);
+  vertical-align: top;
+}
 .headline a:hover,
 .midheadline a:hover,
 .subheadline a:hover { color: var(--bj-ac); }
@@ -159,6 +167,7 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .b-block_list li:active,
 .b-block_list li.selected { background: var(--bj-ac-s); }
 
+
 .b-tag { color: var(--bj-tx2); }
 
 .b-entry-info .line .value { color: var(--bj-tx2); }
@@ -172,10 +181,12 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .p-mangas-show .c-info-right .watch-online .kind,
 .p-ranobe-show .c-info-right .watch-online .kind { color: var(--bj-tx2); }
 
+
 .bar.horizontal .line .x_label,
 .bar.vertical .line .x_label { color: var(--bj-mu); }
 .bar.simple .bar.s3,
 .bar.simple .bar.s3:hover { background: var(--bj-sf3); }
+
 
 .p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
 .p-user_rates-index .l-content .order-control { color: var(--bj-tx2); }
@@ -591,7 +602,8 @@ header.head .notice { color: var(--bj-mu); }
   box-shadow: 0 0 0 1px var(--bj-ln);
   transition: transform .45s var(--bj-ease), box-shadow .45s var(--bj-ease);
 }
-.b-catalog_entry .image-decor::after {
+
+.b-catalog_entry:not(.planned):not(.watching):not(.rewatching):not(.completed):not(.on_hold):not(.dropped) .image-decor::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -604,7 +616,7 @@ header.head .notice { color: var(--bj-mu); }
   box-shadow: 0 0 0 1px var(--bj-ac), 0 14px 28px rgba(0, 0, 0, .5), 0 0 18px rgba(240, 168, 69, .3);
   transform: translateY(-5px) scale(1.04);
 }
-.b-catalog_entry .cover:hover .image-decor::after { transform: translateX(120%); }
+.b-catalog_entry:not(.planned):not(.watching):not(.rewatching):not(.completed):not(.on_hold):not(.dropped) .cover:hover .image-decor::after { transform: translateX(120%); }
 .b-catalog_entry-tooltip .inner {
   background: var(--bj-sf2);
   border: 1px solid var(--bj-ln2);
@@ -632,7 +644,10 @@ header.head .notice { color: var(--bj-mu); }
   gap: 18px;
   margin-bottom: 18px;
 }
-.p-profiles-show .profile-content .c-right > .cc-2a > .c-column {
+
+.p-profiles-show .profile-content .c-right > .cc-2a.m30 { margin-bottom: 18px !important; }
+
+.p-profiles-show[class] .profile-content .c-right > .cc-2a > .c-column {
   float: none;
   width: auto;
   margin: 0;
@@ -677,7 +692,7 @@ header.head .notice { color: var(--bj-mu); }
 
 .p-profiles-show .profile-head > *,
 .p-profiles-show .profile-content > .cc-2 > .c-column,
-.p-profiles-show .profile-content > .block:not(.cc-2) { animation: bj-rise .7s var(--bj-ease) both; }
+.p-profiles-show .profile-content > .block:not(.cc-2) { animation: bj-rise .7s var(--bj-ease) backwards; }
 .p-profiles-show .profile-head > .c-brief { animation-delay: .05s; }
 .p-profiles-show .profile-head > .c-info { animation-delay: .25s; }
 .p-profiles-show .profile-head > .c-history { animation-delay: .35s; }
@@ -1015,9 +1030,10 @@ body.p-profiles-show::after {
   left: 0;
   right: 0;
   top: 0;
-  height: calc(var(--bj-banner-h) + 2px);
+
+  height: calc(var(--bj-banner-h) + 60px);
   background:
-    linear-gradient(180deg, rgba(11, 13, 17, 0) 0%, rgba(11, 13, 17, .05) 45%, rgba(11, 13, 17, .6) 75%, var(--bj-bg) 100%),
+    linear-gradient(180deg, rgba(11, 13, 17, 0) 0, rgba(11, 13, 17, .05) calc(var(--bj-banner-h) * .45), rgba(11, 13, 17, .6) calc(var(--bj-banner-h) * .75), var(--bj-bg) var(--bj-banner-h)),
     linear-gradient(105deg, transparent 35%, rgba(255, 210, 150, .14) 50%, transparent 65%);
   background-repeat: no-repeat;
   background-size: 100% 100%, 250% 100%;
@@ -1614,36 +1630,36 @@ body.p-profiles-show::after {
 [data-progress="98"]{--bj-p:0.98}
 [data-progress="99"]{--bj-p:0.99}
 [data-progress="100"]{--bj-p:1}
-.b-achievement.level-1 .c-image::after{content:"1"}
-.b-achievement.level-2 .c-image::after{content:"2"}
-.b-achievement.level-3 .c-image::after{content:"3"}
-.b-achievement.level-4 .c-image::after{content:"4"}
-.b-achievement.level-5 .c-image::after{content:"5"}
-.b-achievement.level-6 .c-image::after{content:"6"}
-.b-achievement.level-7 .c-image::after{content:"7"}
-.b-achievement.level-8 .c-image::after{content:"8"}
-.b-achievement.level-9 .c-image::after{content:"9"}
-.b-achievement.level-10 .c-image::after{content:"10"}
-.b-achievement.level-11 .c-image::after{content:"11"}
-.b-achievement.level-12 .c-image::after{content:"12"}
-.b-achievement.level-13 .c-image::after{content:"13"}
-.b-achievement.level-14 .c-image::after{content:"14"}
-.b-achievement.level-15 .c-image::after{content:"15"}
-.b-achievement.level-16 .c-image::after{content:"16"}
-.b-achievement.level-17 .c-image::after{content:"17"}
-.b-achievement.level-18 .c-image::after{content:"18"}
-.b-achievement.level-19 .c-image::after{content:"19"}
-.b-achievement.level-20 .c-image::after{content:"20"}
-.b-achievement.level-21 .c-image::after{content:"21"}
-.b-achievement.level-22 .c-image::after{content:"22"}
-.b-achievement.level-23 .c-image::after{content:"23"}
-.b-achievement.level-24 .c-image::after{content:"24"}
-.b-achievement.level-25 .c-image::after{content:"25"}
-.b-achievement.level-26 .c-image::after{content:"26"}
-.b-achievement.level-27 .c-image::after{content:"27"}
-.b-achievement.level-28 .c-image::after{content:"28"}
-.b-achievement.level-29 .c-image::after{content:"29"}
-.b-achievement.level-30 .c-image::after{content:"30"}
+.p-profiles-show .achievements .b-achievement.level-1 .c-image::after{content:"1"}
+.p-profiles-show .achievements .b-achievement.level-2 .c-image::after{content:"2"}
+.p-profiles-show .achievements .b-achievement.level-3 .c-image::after{content:"3"}
+.p-profiles-show .achievements .b-achievement.level-4 .c-image::after{content:"4"}
+.p-profiles-show .achievements .b-achievement.level-5 .c-image::after{content:"5"}
+.p-profiles-show .achievements .b-achievement.level-6 .c-image::after{content:"6"}
+.p-profiles-show .achievements .b-achievement.level-7 .c-image::after{content:"7"}
+.p-profiles-show .achievements .b-achievement.level-8 .c-image::after{content:"8"}
+.p-profiles-show .achievements .b-achievement.level-9 .c-image::after{content:"9"}
+.p-profiles-show .achievements .b-achievement.level-10 .c-image::after{content:"10"}
+.p-profiles-show .achievements .b-achievement.level-11 .c-image::after{content:"11"}
+.p-profiles-show .achievements .b-achievement.level-12 .c-image::after{content:"12"}
+.p-profiles-show .achievements .b-achievement.level-13 .c-image::after{content:"13"}
+.p-profiles-show .achievements .b-achievement.level-14 .c-image::after{content:"14"}
+.p-profiles-show .achievements .b-achievement.level-15 .c-image::after{content:"15"}
+.p-profiles-show .achievements .b-achievement.level-16 .c-image::after{content:"16"}
+.p-profiles-show .achievements .b-achievement.level-17 .c-image::after{content:"17"}
+.p-profiles-show .achievements .b-achievement.level-18 .c-image::after{content:"18"}
+.p-profiles-show .achievements .b-achievement.level-19 .c-image::after{content:"19"}
+.p-profiles-show .achievements .b-achievement.level-20 .c-image::after{content:"20"}
+.p-profiles-show .achievements .b-achievement.level-21 .c-image::after{content:"21"}
+.p-profiles-show .achievements .b-achievement.level-22 .c-image::after{content:"22"}
+.p-profiles-show .achievements .b-achievement.level-23 .c-image::after{content:"23"}
+.p-profiles-show .achievements .b-achievement.level-24 .c-image::after{content:"24"}
+.p-profiles-show .achievements .b-achievement.level-25 .c-image::after{content:"25"}
+.p-profiles-show .achievements .b-achievement.level-26 .c-image::after{content:"26"}
+.p-profiles-show .achievements .b-achievement.level-27 .c-image::after{content:"27"}
+.p-profiles-show .achievements .b-achievement.level-28 .c-image::after{content:"28"}
+.p-profiles-show .achievements .b-achievement.level-29 .c-image::after{content:"29"}
+.p-profiles-show .achievements .b-achievement.level-30 .c-image::after{content:"30"}
 .p-profiles-show .activity .graph .line:nth-child(1) .bar{animation-delay:0.63s}
 .p-profiles-show .activity .graph .line:nth-child(2) .bar{animation-delay:0.66s}
 .p-profiles-show .activity .graph .line:nth-child(3) .bar{animation-delay:0.69s}

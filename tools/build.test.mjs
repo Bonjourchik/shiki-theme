@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { build } from './build.mjs';
 
 function fixture(files) {
@@ -40,4 +41,11 @@ test('при ошибках не пишет файл и называет фай�
   assert.equal(errors.length, 1);
   assert.ok(errors[0].includes('00-a.css:1:'));
   assert.ok(!fs.existsSync(out));
+});
+
+test('dist/theme.css совпадает со сборкой src/ (сайт импортирует именно его)', () => {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const { css, errors } = build({ srcDir: path.join(root, 'src') });
+  assert.deepEqual(errors, []);
+  assert.equal(fs.readFileSync(path.join(root, 'dist', 'theme.css'), 'utf8'), css, 'запустите npm run build');
 });

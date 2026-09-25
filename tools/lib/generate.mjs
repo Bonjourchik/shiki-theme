@@ -5,7 +5,7 @@ export function generateRules() {
     out.push(`[data-progress="${n}"]{--bj-p:${n / 100}}`);
   }
   for (let n = 1; n <= 30; n++) {
-    out.push(`.b-achievement.level-${n} .c-image::after{content:"${n}"}`);
+    out.push(`.p-profiles-show .achievements .b-achievement.level-${n} .c-image::after{content:"${n}"}`);
   }
   for (let n = 1; n <= 40; n++) {
     const delay = (0.6 + n * 0.03).toFixed(2);

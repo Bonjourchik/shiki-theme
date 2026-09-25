@@ -10,11 +10,12 @@ test('прогресс достижений 0..100 как доля', () => {
   assert.ok(css.includes('[data-progress="100"]{--bj-p:1}'));
 });
 
-test('значки уровней 1..30', () => {
+test('значки уровней 1..30 только в профиле', () => {
   const css = generateRules();
-  assert.ok(css.includes('.b-achievement.level-1 .c-image::after{content:"1"}'));
-  assert.ok(css.includes('.b-achievement.level-30 .c-image::after{content:"30"}'));
+  assert.ok(css.includes('.p-profiles-show .achievements .b-achievement.level-1 .c-image::after{content:"1"}'));
+  assert.ok(css.includes('.p-profiles-show .achievements .b-achievement.level-30 .c-image::after{content:"30"}'));
   assert.ok(!css.includes('level-31'));
+  assert.ok(!/^\.b-achievement\.level-/m.test(css), 'правило уровня без префикса профиля');
 });
 
 test('лесенка задержек графика активности 1..40', () => {

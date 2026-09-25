@@ -31,6 +31,14 @@
 .headline a,
 .midheadline a,
 .subheadline a { color: inherit; }
+/* у сайта ссылка в заголовке display: block — ромб ::before уезжал на отдельную строку */
+.headline > a,
+.midheadline > a,
+.subheadline > a {
+  display: inline-block;
+  max-width: calc(100% - 17px);
+  vertical-align: top;
+}
 .headline a:hover,
 .midheadline a:hover,
 .subheadline a:hover { color: var(--bj-ac); }
