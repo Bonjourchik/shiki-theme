@@ -226,3 +226,7 @@
 .b-review-topic > .inner .review-info .opinion.negative { background: rgba(224, 101, 90, .14); color: var(--bj-warn); }
 .b-review-topic > .inner .review-info .opinion.neutral { background: rgba(255, 255, 255, .06); color: var(--bj-tx2); }
 .b-review-topic > .inner .review-info .opinion { border-radius: 999px; }
+
+/* заголовок спойлера — без пунктирного подчёркивания, выделен цветом */
+.b-spoiler label { border-bottom: 0; color: var(--bj-ac); cursor: pointer; transition: color .2s; }
+.b-spoiler label:hover { color: var(--bj-ac-h); }
