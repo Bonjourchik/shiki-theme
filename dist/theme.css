@@ -1971,12 +1971,14 @@ header.head .notice { color: var(--bj-mu); }
 .b-catalog_entry-tooltip .inner .rating > span:not(.text) { grid-row: 1; grid-column: 2; }
 
 .tooltip-inner .b-catalog_entry-tooltip { position: relative; }
+
+.b-catalog_entry-tooltip .b-add_to_list[class] { margin-top: 0; padding-bottom: 0; }
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating[class] {
   position: absolute;
   z-index: 2;
   top: auto;
   right: 0;
-  bottom: 4px;
+  bottom: 2px;
   left: auto;
   display: flex;
   flex-direction: row-reverse;
