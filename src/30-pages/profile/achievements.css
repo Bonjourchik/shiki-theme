@@ -230,3 +230,80 @@
   box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ac), 0 8px 18px rgba(240, 168, 69, .35);
   transform: translateY(-4px) scale(1.15);
 }
+
+/* ===== Страница «Достижения» (.p-achievements-index) ===== */
+/* сетка вместо плавающих колонок: карточки одной высоты в ряду, ровный зазор */
+.p-achievements-index .cc-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.p-achievements-index .cc-achievements::before,
+.p-achievements-index .cc-achievements::after { display: none; }
+.p-achievements-index .cc-achievements > .b-achievement[class] {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+.p-achievements-index .b-achievement {
+  padding: 12px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: 16px;
+  transition: border-color .25s, transform .3s var(--bj-ease), box-shadow .3s;
+}
+.p-achievements-index .b-achievement:hover {
+  border-color: var(--bj-ac-line);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .35);
+  transform: translateY(-2px);
+}
+.p-achievements-index .b-achievement .c-image img,
+.p-achievements-index .b-achievement .c-image .border { border-radius: 10px; }
+.p-achievements-index .b-achievement .c-image img { object-fit: cover; }
+.p-achievements-index .b-achievement .title { color: var(--bj-tx); font-weight: 600; }
+.p-achievements-index .b-achievement:hover .title { color: var(--bj-ac); }
+.p-achievements-index .b-achievement .percent,
+.p-achievements-index .b-achievement .hint { color: var(--bj-mu); }
+.p-achievements-index .b-achievement .text { color: var(--bj-tx2); }
+.p-achievements-index .b-achievement .progress {
+  height: 4px;
+  overflow: hidden;
+  background: var(--bj-sf3);
+  border-radius: 2px;
+}
+.p-achievements-index .b-achievement .progress .bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac));
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(240, 168, 69, .5);
+}
+/* франшизы — сетка обложек со скруглением; авторы — сетка карточек */
+.p-achievements-index .block2 .cc:has(> .b-badge) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 8px;
+}
+.p-achievements-index .block2 .cc:has(> .b-badge)::before,
+.p-achievements-index .block2 .cc:has(> .b-badge)::after,
+.p-achievements-index .cc-authors::before,
+.p-achievements-index .cc-authors::after { display: none; }
+.p-achievements-index .block2 .cc > .b-badge {
+  float: none;
+  width: auto;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px var(--bj-ln);
+  transition: transform .3s var(--bj-ease), box-shadow .3s;
+}
+.p-achievements-index .block2 .cc > .b-badge img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.p-achievements-index .block2 .cc > .b-badge:hover {
+  box-shadow: 0 0 0 2px var(--bj-ac), 0 10px 22px rgba(0, 0, 0, .4);
+  transform: translateY(-3px);
+}
+.p-achievements-index .cc-authors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.p-achievements-index .cc-authors > .b-achievement[class] { float: none; width: auto; margin: 0; }
