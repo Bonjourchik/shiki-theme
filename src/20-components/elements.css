@@ -63,6 +63,9 @@
 .b-rate .stars.score.hovered { color: var(--bj-mu); }
 
 /* вкладки навигации по отзывам — «таблетки» вместо плашек с полосой слева */
+/* вкладки переносятся на вторую строку, а не обрезаются («ОТРИЦАТЕ…») на планшете */
+.b-reviews_navigation .navigation-container { flex-wrap: wrap; height: auto; }
+.b-reviews_navigation .navigation-container .navigation-node { flex: 0 0 auto; width: auto; max-width: none; font-size: 12px; }
 .b-reviews_navigation .navigation-node {
   --bj-nav: var(--bj-tx);
   margin: 0 6px 6px 0;
@@ -112,3 +115,78 @@
 }
 /* иконка X чёрная — на тёмном фоне её не видно */
 .devise .social .b-oauth_token.twitter::before { filter: invert(1); }
+
+/* строки «постер + описание» (связанное, авторы, роли…): без разделителей, мягкая подсветка */
+.b-db_entry-variant-list_item {
+  margin: 0 -8px 4px;
+  padding: 8px;
+  border: 0;
+  border-radius: 12px;
+  transition: background-color .2s;
+}
+.b-db_entry-variant-list_item:hover { background: rgba(255, 255, 255, .03); }
+.b-db_entry-variant-list_item > .image img {
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--bj-ln);
+}
+.b-db_entry-variant-list_item .name a { color: var(--bj-tx); font-weight: 600; }
+.b-db_entry-variant-list_item .name a:hover { color: var(--bj-ac); }
+
+/* кадры и превью видео: скругление, увеличение при наведении */
+.c-screenshot,
+.b-video .video-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.c-screenshot img,
+.b-video .video-link img {
+  display: block;
+  border-radius: 10px;
+  transition: transform .5s var(--bj-ease), filter .3s;
+}
+.c-screenshot:hover img,
+.b-video .video-link:hover img { filter: saturate(1.1); transform: scale(1.06); }
+
+/* аватары пользователей и обложки клубов в боковых блоках */
+.b-user.avatar img,
+.b-club.avatar img {
+  border-radius: 10px;
+  transition: transform .25s var(--bj-ease), box-shadow .25s;
+}
+.b-user.avatar img { border-radius: 50%; }
+.b-user.avatar a:hover img,
+.b-club.avatar a:hover img {
+  box-shadow: 0 0 0 2px var(--bj-ac);
+  transform: scale(1.1);
+}
+
+/* списки ссылок в боковой колонке («На других сайтах», «В коллекциях») — строки с подсветкой */
+.l-menu .b-menu-line {
+  margin: 0 -8px;
+  padding: 3px 8px;
+  border-radius: 8px;
+  transition: background-color .2s;
+}
+.l-menu .b-menu-line:hover { background: var(--bj-ac-s); }
+.l-menu .b-menu-line a { color: var(--bj-tx2); }
+.l-menu .b-menu-line:hover a { color: var(--bj-ac); }
+
+/* свёрнутые блоки («Связанное» и др.): плавное затухание вместо обрезанной строки, «развернуть» — кнопкой */
+.b-height_shortened { mask-image: linear-gradient(#000 70%, transparent); }
+.b-height_shortener { margin-top: 8px; }
+.b-height_shortener .expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 12px;
+  background: var(--bj-ac-s);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 999px;
+  color: var(--bj-ac);
+  font-size: 12px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+.b-height_shortener .expand:hover { background: var(--bj-ac); color: var(--bj-bg); }

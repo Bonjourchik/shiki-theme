@@ -13,8 +13,6 @@
     row-gap: 16px;
   }
   .p-db_entries-show .b-db_entry > .c-image {
-    position: sticky;
-    top: calc(var(--top-menu-height) + 16px);
     grid-column: 1;
     grid-row: 1 / span 2;
     float: none;
@@ -34,9 +32,25 @@
     clear: none;
     margin: 0;
   }
+  /* clearfix-псевдоэлементы становились лишней строкой сетки (+16px под описанием) */
+  .p-db_entries-show .b-db_entry::before,
+  .p-db_entries-show .b-db_entry::after { display: none; }
+  .p-db_entries-show .l-content > .block > .b-db_entry { margin-bottom: 18px; }
+}
+
+/* постер «прилипает» при прокрутке только на десктопе: на планшете сайт прокручивает
+   не окно, и sticky сдвигал постер ниже «Информации» */
+@media screen and (min-width: 1024px) {
+  .p-db_entries-show .b-db_entry > .c-image { position: sticky; top: calc(var(--top-menu-height) + 16px); }
+}
+/* планшет: «Информация» и «Рейтинг» друг под другом — в две колонки оценка не помещалась */
+@media screen and (max-width: 1023px) {
+  .p-db_entries-show .b-db_entry > .c-about > .cc { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* кнопки под постером: комментарий, отзыв, рецензия, избранное, правка */
+/* у обёртки постера и кнопок margin-bottom 30px — зазор до кнопки статуса задают сами кнопки */
+.p-db_entries-show .b-db_entry > .c-image > .cc.block { margin-bottom: 0 !important; }
 .p-db_entries-show .b-subposter-actions {
   display: flex;
   justify-content: space-between;
@@ -72,7 +86,7 @@
 /* твой статус, эпизоды и оценка — карточка под кнопкой статуса */
 .p-db_entries-show .b-db_entry .c-image .rate-show {
   margin-top: 10px;
-  padding: 12px 14px;
+  padding: 12px 10px;
   background: var(--bj-sf);
   border: 1px solid var(--bj-ln);
   border-radius: 14px;
@@ -89,4 +103,65 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
-.p-db_entries-show .b-db_entry .c-image .rate-show .b-rate .score-value { color: var(--bj-tx); font-family: var(--bj-font-alt); }
+.p-db_entries-show .b-db_entry .c-image .rate-show .b-rate .score-value { color: var(--bj-tx); font-family: var(--bj-font-alt); font-size: 22px; }
+/* звёзды мельче, чтобы оценка и подпись («Эпик вин!») помещались в колонку постера */
+.p-db_entries-show .b-db_entry .c-image .rate-show .b-rate .stars-container { zoom: .85; }
+
+/* «Связанное / Авторы» и «Кадры / Видео» — пары карточек одинаковой высоты */
+@media screen and (min-width: 768px) {
+  .p-db_entries-show .resources-loader > .cc-related-authors,
+  .p-db_entries-show .resources-loader > .two-videos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 18px;
+  }
+  /* у сайта ::before/::after — сброс обтекания; в сетке они становились лишними ячейками */
+  .p-db_entries-show .resources-loader > .cc-related-authors::before,
+  .p-db_entries-show .resources-loader > .cc-related-authors::after,
+  .p-db_entries-show .resources-loader > .two-videos::before,
+  .p-db_entries-show .resources-loader > .two-videos::after { display: none; }
+  /* у сайта отступы колонок и контейнеров (.m0, .c-screenshots…) — с !important */
+  .p-db_entries-show .resources-loader > .cc-related-authors[class],
+  .p-db_entries-show .resources-loader > .two-videos[class] { margin-bottom: 18px !important; }
+  .p-db_entries-show .resources-loader > .cc-related-authors > .c-column[class],
+  .p-db_entries-show .resources-loader > .two-videos > :is(.c-screenshots, .c-videos)[class] {
+    float: none;
+    width: auto;
+    margin: 0 !important;
+  }
+}
+
+/* «Главные герои» и «Похожее» — ровная сетка вместо плавающих колонок с отступом 30px снизу */
+@media screen and (min-width: 768px) {
+  .p-db_entries-show .resources-loader :is(.c-characters > .cc, .cc-similar) {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 16px 3%;
+  }
+  .p-db_entries-show .resources-loader :is(.c-characters > .cc, .cc-similar)::before,
+  .p-db_entries-show .resources-loader :is(.c-characters > .cc, .cc-similar)::after { display: none; }
+  .p-db_entries-show .resources-loader :is(.c-characters > .cc, .cc-similar) > .b-catalog_entry[class] {
+    float: none;
+    width: auto;
+    margin: 0 !important;
+  }
+}
+
+/* ссылки «Напрямую / Хронология / Франшиза» — таблетки; на узких карточках под заголовком,
+   а не поверх него */
+.b-options-floated a {
+  padding: 1px 8px;
+  border-radius: 999px;
+  transition: background-color .2s, color .2s;
+}
+.b-options-floated a:hover { background: var(--bj-ac-s); color: var(--bj-ac); }
+@media screen and (max-width: 1023px) {
+  .p-db_entries-show .resources-loader .c-column:has(> .b-options-floated) { display: flex; flex-direction: column; }
+  .p-db_entries-show .resources-loader .c-column > .b-options-floated {
+    position: static;
+    order: 1;
+    margin: -4px 0 10px -8px;
+  }
+  .p-db_entries-show .resources-loader .c-column:has(> .b-options-floated) > :not(.subheadline, .b-options-floated) { order: 2; }
+}
