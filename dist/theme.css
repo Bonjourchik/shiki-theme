@@ -679,6 +679,8 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
 
 .b-add_to_list .trigger .text { font-size: 13px; }
 
+.body:has(.b-add_to_list.expanded) { overflow: visible; }
+
 :is(.headline, .midheadline, .subheadline):is(.red, .blue, .skyblue, .powderblue, .green, .yellow, .orange, .pink, .magenta, .purple, .brown, .gray) {
   background: transparent;
   color: var(--bj-tx);
@@ -1694,6 +1696,16 @@ header.head .notice { color: var(--bj-mu); }
 .b-catalog_entry-tooltip .inner .rating,
 .b-catalog_entry-tooltip .inner .rating .text { color: var(--bj-mu); }
 
+.b-catalog_entry:is(.planned, .watching, .rewatching, .completed, .on_hold, .dropped) .user_rates-minified .image-decor::before {
+  top: 4px;
+  right: 4px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--bj-bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .25), 0 2px 6px rgba(0, 0, 0, .5);
+}
+
 .l-page .l-menu > .block,
 .l-page .l-menu > .block2,
 .l-page .l-menu > .c-filters,
@@ -2078,6 +2090,24 @@ header.head .notice { color: var(--bj-mu); }
   transition: border-color .2s, background-color .2s;
 }
 .b-catalog_entry .image-decor a.image-cutter.see-more:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); }
+
+.p-contests .match-day .match-link {
+  padding: 3px 8px;
+  border-radius: 8px;
+  transition: background-color .2s;
+}
+.p-contests .match-day .match-link:hover { background-color: rgba(255, 255, 255, .05); }
+.p-contests .match-day .match-link.active { background-color: var(--bj-ac-s); }
+.p-contests .match-day .match-link:active { background-color: var(--bj-ac-s) !important; }
+.p-contests .match-day .match-link .c-column.loser a,
+.p-contests .match-day .match-link .c-column.created a,
+.p-contests .match-day .match-link:is(.voted-none, .voted-left, .voted-right) > .c-column a { color: var(--bj-tx2); }
+.p-contests .match-day .match-link .winner::before { color: var(--bj-ok); }
+.p-contests .match-day .match-link .loser::before { color: var(--bj-warn); }
+.p-contests .match-day .match-link :is(.started, .freezed)::before { color: var(--bj-mu); }
+.p-contests .match-day .match-link .created::before { color: var(--bj-mu); }
+.p-contests .match-day .match-link .draw::before { background-color: var(--bj-ac); }
+.p-contests .c-rounds > .label { color: var(--bj-mu); }
 
 @media screen and (min-width: 768px) {
   .p-db_entries-show .b-db_entry {

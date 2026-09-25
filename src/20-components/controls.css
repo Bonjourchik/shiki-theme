@@ -323,3 +323,5 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
 
 /* подпись кнопки «Добавить в список» — 13px: в 14px она не влезала в кнопку 200px и обрезалась «…» */
 .b-add_to_list .trigger .text { font-size: 13px; }
+/* в новостях почты и комментариях карточка тайтла лежит в .body с overflow: hidden — пока список открыт, не обрезаем */
+.body:has(.b-add_to_list.expanded) { overflow: visible; }

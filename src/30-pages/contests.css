@@ -1,0 +1,20 @@
+/* ===== Турниры (.p-contests) ===== */
+
+/* строки матчей «Соперники» — у сайта светло-серый фон при наведении и у активного, тёмный текст */
+.p-contests .match-day .match-link {
+  padding: 3px 8px;
+  border-radius: 8px;
+  transition: background-color .2s;
+}
+.p-contests .match-day .match-link:hover { background-color: rgba(255, 255, 255, .05); }
+.p-contests .match-day .match-link.active { background-color: var(--bj-ac-s); }
+.p-contests .match-day .match-link:active { background-color: var(--bj-ac-s) !important; }
+.p-contests .match-day .match-link .c-column.loser a,
+.p-contests .match-day .match-link .c-column.created a,
+.p-contests .match-day .match-link:is(.voted-none, .voted-left, .voted-right) > .c-column a { color: var(--bj-tx2); }
+.p-contests .match-day .match-link .winner::before { color: var(--bj-ok); }
+.p-contests .match-day .match-link .loser::before { color: var(--bj-warn); }
+.p-contests .match-day .match-link :is(.started, .freezed)::before { color: var(--bj-mu); }
+.p-contests .match-day .match-link .created::before { color: var(--bj-mu); }
+.p-contests .match-day .match-link .draw::before { background-color: var(--bj-ac); }
+.p-contests .c-rounds > .label { color: var(--bj-mu); }
