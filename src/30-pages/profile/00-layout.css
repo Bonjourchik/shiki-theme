@@ -72,3 +72,27 @@
 .p-profiles-show .profile-content > .block:nth-child(2) { animation-delay: .8s; }
 .p-profiles-show .profile-content > .block:nth-child(3) { animation-delay: .9s; }
 .p-profiles-show .profile-content > .block:nth-child(4) { animation-delay: 1s; }
+
+/* ===== Настройки (.p-profiles-edit): вкладки разделов таблетками над формой ===== */
+.p-profiles-edit .block > .b-options-floated {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 16px;
+}
+.p-profiles-edit .block > .b-options-floated a[href] {
+  padding: 4px 12px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+}
+.p-profiles-edit .block > .b-options-floated a::before,
+.p-profiles-edit .block > .b-options-floated a::after { display: none; }
+.p-profiles-edit .block > .b-options-floated a[href]:hover,
+.p-profiles-edit .block > .b-options-floated a.selected {
+  background: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
