@@ -12,7 +12,7 @@
   border-radius: 14px;
   transition: border-color .25s, transform .3s var(--bj-ease);
 }
-.b-search-results > .b-user.detailed[class]:hover { border-color: var(--bj-ac-line); transform: translateX(3px); }
+.b-search-results > .b-user.detailed[class]:hover { border-color: var(--bj-ac-line); }
 .b-search-results > .b-user.detailed img {
   border-radius: 50%;
   box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ln2);

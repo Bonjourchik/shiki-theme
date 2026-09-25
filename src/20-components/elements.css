@@ -22,6 +22,9 @@
   transition: background-color .2s, border-color .2s, color .2s;
 }
 .b-tag { margin: 0 4px 4px 0; }
+/* у сайта `.b-tag[href]:hover` и `.active` меняют поля и отступы — тег «прыгал»; держим те же размеры */
+.b-tag.b-tag[href]:is(:hover, .active),
+.b-tag.b-tag[href]:last-child:hover { margin: 0 4px 4px 0; padding: 0 10px; }
 .p-dashboards-show .v2 .fc-user-sections .tag-link:is(.anime-tag, .manga-tag, .ranobe-tag):hover,
 .b-tag:hover {
   background: var(--bj-ac-s);
@@ -111,7 +114,6 @@
 .devise .social .b-oauth_token:hover {
   background-color: var(--bj-ac-s);
   border-color: var(--bj-ac-line);
-  transform: translateY(-2px);
 }
 /* иконка X чёрная — на тёмном фоне её не видно */
 .devise .social .b-oauth_token.twitter::before { filter: invert(1); }

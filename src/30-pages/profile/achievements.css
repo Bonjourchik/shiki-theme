@@ -174,7 +174,6 @@
 .p-profiles-show .achievements .cc-achievements .b-achievement:hover {
   z-index: 2;
   box-shadow: 0 14px 30px rgba(0, 0, 0, .5), 0 0 22px rgba(240, 168, 69, .35);
-  transform: translateY(-4px) scale(1.04);
 }
 .p-profiles-show .achievements .cc-achievements .b-achievement:hover img { filter: saturate(1.15); transform: scale(1.15); }
 .p-profiles-show .achievements .cc-achievements .b-achievement:hover .c-image .inner a .border { opacity: 1; }
@@ -228,7 +227,6 @@
 .p-profiles-show .achievements .cc-franchises .b-badge:hover,
 .p-profiles-show .achievements .cc-authors .b-achievement:hover {
   box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ac), 0 8px 18px rgba(240, 168, 69, .35);
-  transform: translateY(-4px) scale(1.15);
 }
 
 /* ===== Страница «Достижения» (.p-achievements-index) ===== */
@@ -255,7 +253,6 @@
 .p-achievements-index .b-achievement:hover {
   border-color: var(--bj-ac-line);
   box-shadow: 0 12px 26px rgba(0, 0, 0, .35);
-  transform: translateY(-2px);
 }
 .p-achievements-index .b-achievement .c-image img,
 .p-achievements-index .b-achievement .c-image .border { border-radius: 10px; }
@@ -299,7 +296,6 @@
 .p-achievements-index .block2 .cc > .b-badge img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .p-achievements-index .block2 .cc > .b-badge:hover {
   box-shadow: 0 0 0 2px var(--bj-ac), 0 10px 22px rgba(0, 0, 0, .4);
-  transform: translateY(-3px);
 }
 .p-achievements-index .cc-authors {
   display: grid;

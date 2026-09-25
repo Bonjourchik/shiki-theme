@@ -21,7 +21,6 @@
 }
 .p-profiles-show .cc-favourites .cover:hover .image-decor {
   z-index: 2;
-  transform: translateY(-6px) rotateX(6deg) scale(1.06);
 }
 .p-profiles-show .cc-friends .b-nothing_here,
 .p-profiles-show .b-clubs .b-nothing_here { margin: 0; }

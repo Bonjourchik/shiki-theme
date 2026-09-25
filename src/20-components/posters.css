@@ -22,7 +22,6 @@
 }
 .b-catalog_entry .cover:hover .image-decor {
   box-shadow: 0 0 0 1px var(--bj-ac), 0 14px 28px rgba(0, 0, 0, .5), 0 0 18px rgba(240, 168, 69, .3);
-  transform: translateY(-5px) scale(1.04);
 }
 .b-catalog_entry:not(.planned):not(.watching):not(.rewatching):not(.completed):not(.on_hold):not(.dropped) .cover:hover .image-decor::after { transform: translateX(120%); }
 .b-catalog_entry-tooltip .inner {

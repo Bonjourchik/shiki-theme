@@ -77,7 +77,6 @@
 .p-dashboards-show .v2 .b-news_wall-topic:hover {
   border-color: var(--bj-ac-line);
   box-shadow: 0 16px 34px rgba(0, 0, 0, .45), 0 0 22px rgba(240, 168, 69, .12);
-  transform: translateY(-4px);
 }
 .p-dashboards-show .v2 .b-news_wall-topic .poster {
   position: relative;
@@ -151,7 +150,6 @@
 .p-dashboards-show .v2 .hot-topics .b-news_line-topic:hover {
   background: var(--bj-sf2);
   border-color: var(--bj-ac-line);
-  transform: translateX(3px);
 }
 .p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .title {
   margin-bottom: 6px;
@@ -174,7 +172,6 @@
 .p-dashboards-show .v2 .db-updates .db-update:hover {
   border-color: var(--bj-ac-line);
   box-shadow: 0 12px 26px rgba(0, 0, 0, .4);
-  transform: translateY(-3px);
 }
 .p-dashboards-show .v2 .db-updates .db-update .poster { width: 60px; margin-right: 12px; }
 .p-dashboards-show .v2 .db-updates .db-update .poster img {
@@ -286,3 +283,71 @@
   font-size: 11px;
   line-height: 18px;
 }
+
+/* «Мой список» слева от разделов — у сайта светло-голубая плашка; делаем карточкой темы */
+.p-dashboards-show .v2 .fc-user-sections .my-list {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 14px 16px;
+  background:
+    linear-gradient(90deg, transparent, rgba(240, 168, 69, .5), transparent) top / 100% 1px no-repeat,
+    var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+.p-dashboards-show .v2 .my-list .label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-bottom: 12px;
+}
+.p-dashboards-show .v2 .my-list .label > span {
+  color: var(--bj-tx);
+  font: 600 11px/1.4 var(--bj-font-alt);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.p-dashboards-show .v2 .my-list .misc-links { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+.p-dashboards-show .v2 .my-list .misc-links a {
+  padding: 0 8px;
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+  font-size: 11px;
+  line-height: 20px;
+  transition: border-color .2s, color .2s;
+}
+.p-dashboards-show .v2 .my-list .misc-links a::before,
+.p-dashboards-show .v2 .my-list .misc-links a::after { display: none; }
+.p-dashboards-show .v2 .my-list .misc-links a:hover { border-color: var(--bj-ac-line); color: var(--bj-ac); }
+/* последняя запись списка — строка-карточка */
+.p-dashboards-show .v2 .my-list .b-user_rate-history {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln);
+  border-radius: 12px;
+  transition: border-color .25s;
+}
+.p-dashboards-show .v2 .my-list .b-user_rate-history:hover { border-color: var(--bj-ac-line); }
+.p-dashboards-show .v2 .my-list .b-user_rate-history img { border-radius: 8px; object-fit: cover; }
+.p-dashboards-show .v2 .my-list .b-user_rate-history .content { min-width: 0; }
+.p-dashboards-show .v2 .my-list .b-user_rate-history .title { color: var(--bj-tx); font-weight: 600; }
+.p-dashboards-show .v2 .my-list .b-user_rate-history:hover .title { color: var(--bj-ac); }
+.p-dashboards-show .v2 .my-list .progress {
+  height: 4px;
+  margin: 8px 0;
+  overflow: hidden;
+  background: var(--bj-sf3);
+  border-radius: 2px;
+}
+.p-dashboards-show .v2 .my-list .progress > * {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac));
+  border-radius: 2px;
+}
+.p-dashboards-show .v2 .my-list .status { color: var(--bj-tx2); }
+.p-dashboards-show .v2 .my-list time { color: var(--bj-mu); }

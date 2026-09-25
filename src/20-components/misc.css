@@ -68,3 +68,60 @@ header.head .notice { color: var(--bj-mu); }
   color: var(--bj-tx2);
 }
 
+
+/* кнопка «наверх» у левого края: вместо светло-серой полосы — янтарное свечение от края,
+   вместо чёрной стрелки внизу — плавающая кнопка со своей иконкой (--bj-i-up из icons.css) */
+.b-to-top .slide::before {
+  width: 90px;
+  background: linear-gradient(90deg, rgba(240, 168, 69, .14), transparent);
+}
+.b-to-top.active .slide:hover::before { opacity: 1; }
+.b-to-top.active .slide:active::before { opacity: 1; background: linear-gradient(90deg, rgba(240, 168, 69, .24), transparent); }
+.b-to-top.active .arrow,
+.x1200 .b-to-top.active .arrow,
+.x1000 .b-to-top.active .arrow {
+  bottom: 22px;
+  left: 16px;
+  width: 44px;
+  height: 44px;
+  background: rgba(27, 31, 39, .92);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .45);
+  color: var(--bj-ac);
+  opacity: .7;
+  text-shadow: none;
+  transition: opacity .25s, background-color .25s, box-shadow .25s;
+}
+.b-to-top.active .arrow::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  -webkit-mask: var(--bj-i-up) center / contain no-repeat;
+  mask: var(--bj-i-up) center / contain no-repeat;
+  text-shadow: none;
+}
+.b-to-top.active .slide:hover + .arrow,
+.x1200 .b-to-top.active .arrow:hover,
+.x1000 .b-to-top.active .arrow:hover {
+  background: rgba(240, 168, 69, .16);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .45), 0 0 18px rgba(240, 168, 69, .35);
+  opacity: 1;
+}
+.x1200 .b-to-top.active .arrow:active,
+.x1000 .b-to-top.active .arrow:active { background: rgba(240, 168, 69, .26); }
+
+/* ярлык «Сообщить об ошибке» у левого края — у сайта синий */
+.b-feedback > .hover-activator { background: var(--bj-ac); opacity: .6; }
+.b-feedback > .marker-positioner > .marker-text,
+.b-feedback > .marker-positioner > .marker-text:is(:hover, :active) {
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ac-line);
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+.b-feedback > .marker-positioner > .marker-text::after { color: var(--bj-tx2); font-size: 11px; }
+.b-feedback > .marker-positioner > .marker-text:hover { background: var(--bj-ac-s); }
+.b-feedback > .marker-positioner > .marker-text:hover::after { color: var(--bj-ac); }

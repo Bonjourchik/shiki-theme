@@ -31,7 +31,6 @@
 .p-profiles-show .c-history .entry > a:hover {
   border-color: rgba(240, 168, 69, .5);
   box-shadow: 0 12px 26px rgba(0, 0, 0, .4);
-  transform: translateY(-3px);
 }
 .p-profiles-show .c-history .entry .image-name { display: contents; }
 .p-profiles-show .c-history .entry picture {

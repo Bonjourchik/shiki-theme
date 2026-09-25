@@ -73,7 +73,6 @@
   background: var(--bj-ac-s);
   border-color: var(--bj-ac-line);
   color: var(--bj-ac);
-  transform: translateY(-2px);
 }
 .p-db_entries-show .b-subposter-actions .b-subposter-action::before { margin: 0; color: inherit; }
 /* «в избранном» — янтарная */

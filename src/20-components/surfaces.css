@@ -97,7 +97,6 @@
 }
 .p-db_entries-show .b-db_entry .c-poster:hover img {
   box-shadow: 0 0 0 1px var(--bj-ac-line), 0 22px 46px rgba(0, 0, 0, .55), 0 0 26px rgba(240, 168, 69, .18);
-  transform: translateY(-3px);
 }
 
 /* таблицы (список аниме и т.п.) */

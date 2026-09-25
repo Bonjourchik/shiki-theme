@@ -22,7 +22,6 @@
 .b-clubs > .b-club.detailed:hover {
   border-color: var(--bj-ac-line);
   box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
-  transform: translateY(-2px);
 }
 .b-clubs > .b-club.detailed .logo { border-radius: 10px; box-shadow: 0 0 0 1px var(--bj-ln); }
 .b-clubs > .b-club.detailed .name { color: var(--bj-tx); font-weight: 600; }

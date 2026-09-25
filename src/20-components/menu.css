@@ -326,7 +326,7 @@
   /* «Топ» — подпункт «Аниме»: у сайта абсолютная «ветка» ::before — делаем отступом */
   .l-top_menu-v2 .submenu > a.icon-top { padding-left: 30px; }
   .l-top_menu-v2 .submenu > a.icon-top::before { position: static; margin: 0 0 0 5px; border: 0; border-radius: 0; }
-  .l-top_menu-v2 .submenu > a.icon-top::after { left: 30px; }
+  .l-top_menu-v2 .submenu > a.icon-top:not(.icon-mail)::after { left: 30px; }
   .l-top_menu-v2 .submenu > a:not(.icon-mail)::after {
     content: "";
     position: absolute;

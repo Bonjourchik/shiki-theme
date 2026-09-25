@@ -28,7 +28,6 @@
 }
 .p-profiles-show .about.block .bj-card:hover {
   border-color: rgba(240, 168, 69, .4);
-  transform: translateY(-3px);
 }
 .p-profiles-show .about.block .bj-card:hover::after { transform: scale(1.6); }
 .p-profiles-show .about.block .bj-card-title {

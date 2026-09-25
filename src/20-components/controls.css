@@ -17,7 +17,6 @@ input[type=submit]:hover {
   background-color: var(--bj-ac-h);
   color: var(--bj-on-ac);
   box-shadow: 0 6px 16px rgba(240, 168, 69, .3);
-  transform: translateY(-1px);
 }
 .b-button:active,
 .b-button.blue:active,
@@ -59,7 +58,6 @@ input[type=submit]:active {
   border-color: var(--bj-ac);
   box-shadow: 0 6px 18px rgba(240, 168, 69, .3);
   color: var(--bj-on-ac);
-  transform: translateY(-1px);
 }
 .b-spoiler_block > span {
   background-color: var(--bj-ac-s);
