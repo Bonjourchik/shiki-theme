@@ -1348,7 +1348,8 @@ html::after {
 
   .l-top_menu-v2 .menu-dropdown.profile { margin-left: 4px; }
   .l-top_menu-v2 .menu-dropdown.profile > span { padding: 0 12px 0 6px; }
-  .l-top_menu-v2 .menu-dropdown.profile > span a { padding: 0; }
+
+  .l-top_menu-v2 .menu-dropdown.profile > span a { margin: 0; padding: 0; }
   .l-top_menu-v2 .menu-dropdown.profile img {
     width: 28px;
     height: 28px;
