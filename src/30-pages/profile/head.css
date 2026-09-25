@@ -156,3 +156,62 @@
   text-transform: uppercase;
 }
 .p-profiles-show .c-info .c-additionals { margin-top: 12px; color: var(--bj-mu); font-size: 11.5px; }
+
+/* ===== «Список аниме / манги» в шапке профиля: легенда-таблетки вместо мелкой подписи ===== */
+/* цвета статусов: отрезки полосы first/second/third = просмотрено / в планах и прочее / брошено */
+.p-profiles-show .c-lists-info .b-stats_bar {
+  --bj-st-done: var(--bj-ac);
+  --bj-st-plan: #9aa3b5;
+  --bj-st-drop: var(--bj-warn);
+}
+.p-profiles-show .c-lists-info .b-stats_bar .bar {
+  gap: 3px;
+  height: 10px;
+  margin: 10px 0 12px;
+  background: transparent;
+  border-radius: 5px;
+  overflow: visible;
+}
+.p-profiles-show .c-lists-info .b-stats_bar .bar > div { min-width: 4px; border-radius: 5px; }
+.p-profiles-show .c-lists-info .b-stats_bar .bar > .first { background: linear-gradient(90deg, var(--bj-ac2), var(--bj-st-done)); box-shadow: 0 0 10px rgba(240, 168, 69, .35); }
+.p-profiles-show .c-lists-info .b-stats_bar .bar > .second { background: var(--bj-st-plan); }
+.p-profiles-show .c-lists-info .b-stats_bar .bar > .third { background: var(--bj-st-drop); }
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names { gap: 6px; }
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name {
+  --bj-dot: var(--bj-st-plan);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid var(--bj-ln);
+  border-radius: 10px;
+  transition: border-color .2s, background-color .2s;
+}
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name[data-type="completed"] { --bj-dot: var(--bj-st-done); }
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name[data-type="dropped"] { --bj-dot: var(--bj-st-drop); }
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  background: var(--bj-dot);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--bj-dot);
+}
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name::after { display: none; }
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name:hover { background: rgba(255, 255, 255, .07); border-color: var(--bj-ln2); }
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--bj-tx2);
+  font-size: 12px;
+}
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name .size {
+  color: var(--bj-tx);
+  font: 700 14px/1 var(--bj-font-alt);
+}
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name .size::before,
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name .size::after { display: none; }
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name[data-type="completed"] .size { color: var(--bj-ac); }
