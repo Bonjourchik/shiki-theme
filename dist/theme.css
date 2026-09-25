@@ -167,7 +167,6 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .b-block_list li:active,
 .b-block_list li.selected { background: var(--bj-ac-s); }
 
-
 .b-tag { color: var(--bj-tx2); }
 
 .b-entry-info .line .value { color: var(--bj-tx2); }
@@ -180,7 +179,6 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .p-animes-show .c-info-right .watch-online .kind,
 .p-mangas-show .c-info-right .watch-online .kind,
 .p-ranobe-show .c-info-right .watch-online .kind { color: var(--bj-tx2); }
-
 
 .bar.horizontal .line .x_label,
 .bar.vertical .line .x_label { color: var(--bj-mu); }
@@ -197,11 +195,9 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .bar.simple .bar.s3 .value { color: var(--bj-tx2); }
 .bar.simple .bar { border-radius: 4px; transition: background .2s; }
 
-
 .p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
 .p-user_rates-index .l-content .order-control { color: var(--bj-tx2); }
 .p-user_rates-index .list-lines tr td .episodes_total { color: var(--bj-mu); }
-
 
 .b-spoiler_block > div {
   background-color: var(--bj-sf2);
@@ -222,7 +218,6 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .b-spoiler .content .after { color: var(--bj-ac); }
 .b-spoiler .content .inner { border-bottom-color: var(--bj-ac-line); }
 
-
 .collapsed,
 .collapsed + .spoiler .hide-expanded {
   background: var(--bj-sf2);
@@ -237,9 +232,7 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
   color: var(--bj-ac);
 }
 
-
 .b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(20, 23, 29, 0), var(--bj-sf)); }
-
 
 .p-user_rates-index .list-lines .selectable:hover { background-color: var(--bj-ac-s); }
 .p-user_rates-index .list-lines tr.edit-form form {
