@@ -257,24 +257,27 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
   color: var(--bj-on-ac);
 }
 
-/* «Добавить в список» в свёрнутом блоке («Связанное»): у блока фиксированная высота и overflow: hidden —
-   открытый список обрезался. Пока список открыт, блок раскрывается целиком (высоту сайт пишет в style) */
-.b-height_shortened:has(.b-add_to_list.expanded) {
-  height: auto !important;
-  -webkit-mask-image: none;
-  mask-image: none;
-}
-/* варианты статуса: у сайта высота списка задана в style (162px) — с отступами последний пункт обрезался */
-.b-add_to_list .expanded-options[style] {
-  height: auto !important;
-  margin: 6px 0 10px;
+/* «Добавить в список»: варианты выпадают поверх содержимого, а не раздвигают блок.
+   Высоту списка и анимацию раскрытия/сворачивания задаёт скрипт сайта (style="height: …") — её не трогаем:
+   content-box, пункты по 27px, без отступов между ними — сумма совпадает с высотой, которую считает сайт */
+.b-add_to_list .expanded-options {
+  position: absolute;
+  z-index: 40;
+  box-sizing: content-box;
+  width: calc(100% - 14px);
+  margin-top: 6px;
   padding: 6px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .55);
 }
 .b-add_to_list .expanded-options .option {
-  height: 32px;
-  padding: 0 12px;
-  line-height: 32px;
+  height: 27px;
+  margin: 0;
+  padding: 0 10px;
+  line-height: 27px;
 }
-.b-add_to_list .expanded-options .option + .option { margin-top: 2px; }
-.b-add_to_list .expanded-options .option .text { padding: 0; line-height: 32px; font-size: 13px; }
+.b-add_to_list .expanded-options .option .text { padding: 0; line-height: 27px; font-size: 13px; }
+/* в «Связанном» строка лежит в блоках с overflow: hidden (свёрнутый блок, .info); если снять
+   позиционирование с обёрток, список привязывается к карточке и не обрезается */
+.b-height_shortened,
+.b-height_shortened .b-user_rate { position: static; }
+.b-height_shortened .b-add_to_list .expanded-options { width: 220px; }
