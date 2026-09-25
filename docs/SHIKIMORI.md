@@ -137,3 +137,20 @@ Source: code (`app/assets/stylesheets/globals.scss`, `application.sass`).
   `img { visibility: hidden }`; персонаж в углу через
   `.p-profiles-show .b-feedback::after { position: fixed; pointer-events: none }`;
   замена постеров через `custom_posters.min.css` из CSS-club.
+
+## Подтверждено при реализации темы (2026-09-25)
+
+Source: live site CSS (`/static/css/application.css`) и DOM профиля.
+
+- `<html data-color-mode="light">`: сайт переопределяет `--link-color`, `--headline-*`, `--icon-color`
+  в `[data-color-mode=light]` — перекрытие этих переменных в теме должно быть и на `:root[data-color-mode]`.
+- Ширина страницы — класс на `body`: `x1200` (или другая настройка). Колонки профиля задаются правилами
+  вида `.p-profiles-show.x1200 .profile-content .c-right .cc-2a>.c-column` (6 классов).
+- Хелпер отступов `.m30` — `margin-bottom: 30px !important`; история профиля
+  (`.p-profiles .profile-head .c-history .entry .misc`) — цвета с `!important`.
+- Заголовки страниц — `header.head h1` (не `.head h1`); ссылка в `.subheadline > a` — `display: block`.
+- Значки статуса на постерах (у залогиненных) — `.b-catalog_entry.<status> .image-decor:after`,
+  статусы: planned, watching, rewatching, completed, on_hold, dropped.
+- Карточки достижений: `.block.achievements .cc-achievements .b-achievement` с сайтовыми
+  `::before` (`attr(data-hint)`) и `::after` (`attr(data-progress) "%"`); `.border` — div внутри `a`.
+- График активности `.activity .graph` строит JS сайта, в серверном HTML только `data-stats`.

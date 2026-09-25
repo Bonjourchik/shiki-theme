@@ -7,6 +7,18 @@ To find a period: search by date header, e.g. `rg "## 2026-09" docs/LOG.md`.
 
 Older entries: none archived yet.
 
+## 2026-09-25 — реализация этапов 1–2 темы Dark Amber
+
+- What: задачи 1–12 плана (субагент на задачу + ревью), затем финальное ревью ветки и доводка
+  (уже без субагентов — пользователь попросил быстрее). Итог: 21 тест, `dist/theme.css` ~55 КБ.
+- Решения пользователя: `@keyframes` — только transform/opacity/filter/background-position
+  (bj-ping, bj-blink переписаны), transition при наведении — любые; «preview» в dev-инструменте не трогать.
+- Files: src/**, tools/**, config/field.css, about/about.bb, dist/theme.css, docs/WORKFLOW.md, .gitattributes.
+- Commits: 930c3ed … 3d7c704 (ветка dark-amber, слита в main).
+- Notes: сайт почти везде специфичнее плана — `header.head h1`, `.p-profiles-show.x1200 … .cc-2a>.c-column`,
+  `.achievements .cc-achievements`, `!important` в истории и `.m30`. Переменные сайта переопределены
+  в `html[data-color-mode=light]` — перекрываем и там.
+
 ## 2026-09-24 — план реализации темы
 
 - What: написан план из 13 задач с готовым кодом сборщика, тестов, предпросмотра и всего CSS.
