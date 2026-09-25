@@ -25,21 +25,27 @@ input[type=submit]:active {
   background-color: var(--bj-ac2);
   transform: none;
 }
+/* второстепенные кнопки сайта («Онлайн просмотр», «Написать новость», «Вход по паролю»…) —
+   янтарная подложка, при наведении заливаются акцентом */
 .b-link_button,
 .b-link_button.dark,
 .b-link_button.dark-2 {
-  background-color: var(--bj-sf3);
-  border: 1px solid var(--bj-ln2);
-  border-radius: 9px;
-  color: var(--bj-tx);
+  background-color: var(--bj-ac-s);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 10px;
+  color: var(--bj-ac);
   font-family: var(--bj-font);
-  transition: border-color .2s, color .2s;
+  font-weight: 600;
+  transition: background-color .2s, border-color .2s, color .2s, box-shadow .2s, transform .2s var(--bj-ease);
 }
 .b-link_button:hover,
 .b-link_button.dark:hover,
 .b-link_button.dark-2:hover {
+  background-color: var(--bj-ac);
   border-color: var(--bj-ac);
-  color: var(--bj-ac);
+  box-shadow: 0 6px 18px rgba(240, 168, 69, .3);
+  color: var(--bj-on-ac);
+  transform: translateY(-1px);
 }
 .b-spoiler_block > span {
   background-color: var(--bj-ac-s);
@@ -94,31 +100,50 @@ textarea::placeholder { color: var(--bj-mu); }
 input[type=checkbox],
 input[type=radio] { accent-color: var(--bj-ac); }
 
-/* кнопка «добавить в список» на странице тайтла: у сайта светлые фоны по статусам */
+/* кнопка «добавить в список»: полупрозрачная заливка цветом статуса вместо плашки с полосой слева */
+.b-add_to_list { --bj-st: var(--bj-ac); }
+.b-add_to_list.completed { --bj-st: var(--bj-ok); }
+.b-add_to_list.on_hold { --bj-st: var(--bj-mu); }
+.b-add_to_list.dropped { --bj-st: var(--bj-warn); }
 .b-add_to_list .trigger,
-.b-add_to_list .option,
 .b-add_to_list.planned .trigger,
-.b-add_to_list.planned .option,
 .b-add_to_list.watching .trigger,
-.b-add_to_list.watching .option,
 .b-add_to_list.rewatching .trigger,
-.b-add_to_list.rewatching .option,
 .b-add_to_list.completed .trigger,
-.b-add_to_list.completed .option,
 .b-add_to_list.on_hold .trigger,
-.b-add_to_list.on_hold .option,
-.b-add_to_list.dropped .trigger,
-.b-add_to_list.dropped .option {
-  background: var(--bj-sf2);
-  border-color: var(--bj-ln);
+.b-add_to_list.dropped .trigger {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--bj-st) 28%, transparent), color-mix(in srgb, var(--bj-st) 8%, transparent));
+  border: 1px solid color-mix(in srgb, var(--bj-st) 45%, transparent);
+  border-radius: 10px;
+  box-shadow: none;
   color: var(--bj-tx);
+  transition: border-color .2s, box-shadow .25s;
 }
-.b-add_to_list.planned .trigger,
-.b-add_to_list.watching .trigger,
-.b-add_to_list.rewatching .trigger { box-shadow: inset 3px 0 0 var(--bj-ac); }
-.b-add_to_list.completed .trigger { box-shadow: inset 3px 0 0 var(--bj-ok); }
-.b-add_to_list.on_hold .trigger { box-shadow: inset 3px 0 0 var(--bj-mu); }
-.b-add_to_list.dropped .trigger { box-shadow: inset 3px 0 0 var(--bj-warn); }
+.b-add_to_list .trigger:hover {
+  border-color: var(--bj-st);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--bj-st) 30%, transparent);
+}
+.b-add_to_list .trigger .plus,
+.b-add_to_list .trigger .plus::before { color: var(--bj-st); }
+.b-add_to_list .expanded-options {
+  margin-top: 4px;
+  padding: 4px;
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 10px;
+}
+.b-add_to_list .option,
+.b-add_to_list.planned .option,
+.b-add_to_list.watching .option,
+.b-add_to_list.rewatching .option,
+.b-add_to_list.completed .option,
+.b-add_to_list.on_hold .option,
+.b-add_to_list.dropped .option {
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: var(--bj-tx2);
+}
 
 /* переключатель «другие названия» / «доп. информация» на странице тайтла */
 .p-animes-show .other-names,
@@ -134,36 +159,6 @@ input[type=radio] { accent-color: var(--bj-ac); }
 
 /* заголовок группы в боковых фильтрах каталога/списка */
 .c-ms-title { color: var(--bj-tx2); }
-
-/* вкладки навигации по рецензиям (все / положительные / нейтральные / отрицательные) */
-.b-reviews_navigation .navigation-node-all {
-  background-color: var(--bj-sf2);
-  color: var(--bj-tx);
-  border-color: var(--bj-ln2);
-}
-.b-reviews_navigation .navigation-node-positive {
-  background-color: var(--bj-sf2);
-  color: var(--bj-ok);
-  border-color: var(--bj-ln2);
-}
-.b-reviews_navigation .navigation-node-neutral {
-  background-color: var(--bj-sf2);
-  color: var(--bj-mu);
-  border-color: var(--bj-ln2);
-}
-.b-reviews_navigation .navigation-node-negative {
-  background-color: var(--bj-sf2);
-  color: var(--bj-warn);
-  border-color: var(--bj-ln2);
-}
-
-/* тег-фильтры жанров в виджете «выбери интересы» на главной */
-.p-dashboards-show .v2 .fc-user-sections .tag-link.anime-tag,
-.p-dashboards-show .v2 .fc-user-sections .tag-link.manga-tag,
-.p-dashboards-show .v2 .fc-user-sections .tag-link.ranobe-tag {
-  background-color: var(--bj-sf2);
-  border-color: var(--bj-ln);
-}
 
 /* выпадающий список «добавить в список» */
 .b-add_to_list .expanded-options { background: var(--bj-sf2); }

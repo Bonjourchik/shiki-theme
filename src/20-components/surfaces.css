@@ -93,3 +93,27 @@
 }
 .b-table td { border-color: var(--bj-ln); }
 .b-table tbody tr { transition: background-color .2s; }
+
+/* страница тайтла: «Описание» у сайта не плавающее и лежит под «Информацией»/«Рейтингом» —
+   без clear его карточка обволакивает обе колонки (карточка в карточке) */
+.p-db_entries-show .b-db_entry > .c-description {
+  clear: left;
+  margin-top: 16px;
+}
+/* «Информация» и «Рейтинг» — сетка с ровным зазором вместо плавающих колонок */
+.p-db_entries-show .b-db_entry > .c-about > .cc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+.p-db_entries-show .b-db_entry > .c-about > .cc::after { display: none; }
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-left,
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-right {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .p-db_entries-show .b-db_entry > .c-about > .cc { grid-template-columns: minmax(0, 1fr); }
+}

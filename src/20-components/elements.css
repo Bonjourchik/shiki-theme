@@ -1,0 +1,113 @@
+/* ===== Единый язык мелких элементов: теги, чипы, статусы, вкладки, рейтинг ===== */
+
+/* заголовки секций с цветными хелперами сайта (.red, .blue …) — без цветных плашек */
+:is(.headline, .midheadline, .subheadline):is(.red, .blue, .skyblue, .powderblue, .green, .yellow, .orange, .pink, .magenta, .purple, .brown, .gray) {
+  background: transparent;
+  color: var(--bj-tx);
+}
+:is(.headline, .midheadline, .subheadline):is(.red, .blue, .skyblue, .powderblue, .green, .yellow, .orange, .pink, .magenta, .purple, .brown, .gray) > a { color: inherit; }
+:is(.headline, .midheadline, .subheadline):is(.red, .blue, .skyblue, .powderblue, .green, .yellow, .orange, .pink, .magenta, .purple, .brown, .gray) > a:hover { color: var(--bj-ac); }
+
+/* чипы: хэштеги на главной и жанры/темы тайтла */
+.p-dashboards-show .v2 .fc-user-sections .tag-link:is(.anime-tag, .manga-tag, .ranobe-tag),
+.b-tag {
+  display: inline-block;
+  padding: 0 10px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+  line-height: 22px;
+  text-decoration: none;
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.b-tag { margin: 0 4px 4px 0; }
+.p-dashboards-show .v2 .fc-user-sections .tag-link:is(.anime-tag, .manga-tag, .ranobe-tag):hover,
+.b-tag:hover {
+  background: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
+.p-dashboards-show .v2 .fc-user-sections .tag-link::before { color: var(--bj-ac); }
+
+/* теги-статусы: полупрозрачные «пилюли» цвета своего типа вместо сплошных плашек */
+.b-anime_status_tag { --bj-tag: var(--bj-mu); }
+.b-anime_status_tag:is(.news, .article, .anons, .cosplay, .collection-tag) { --bj-tag: var(--bj-ac); }
+.b-anime_status_tag:is(.released, .collection) { --bj-tag: var(--bj-ok); }
+.b-anime_status_tag:is(.spoilers, .review-negative, .censored, .ignored) { --bj-tag: var(--bj-warn); }
+.b-anime_status_tag:is(.review, .critique, .broadcast, .offtopic) { --bj-tag: #f28fbd; }
+.b-anime_status_tag:is(.ongoing, .promo) { --bj-tag: #7fb2ff; }
+.b-anime_status_tag.contest { --bj-tag: #b39cff; }
+.b-anime_status_tag[class] {
+  padding: 0 8px;
+  background-color: color-mix(in srgb, var(--bj-tag) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bj-tag) 40%, transparent);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--bj-tag) 75%, #fff);
+  font-family: var(--bj-font);
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+.b-anime_status_tag[class][href]:hover,
+.b-anime_status_tag[class][href]:active {
+  background-color: color-mix(in srgb, var(--bj-tag) 30%, transparent);
+  border-color: var(--bj-tag);
+  color: #fff;
+}
+
+/* рейтинг звёздами — янтарь вместо синего */
+.b-rate .stars.score { color: var(--bj-ac); text-shadow: 0 0 14px rgba(240, 168, 69, .35); }
+.b-rate .stars.background { color: var(--bj-sf3); }
+.b-rate .stars.hover { color: var(--bj-ac-h); }
+.b-rate .stars.score.hovered { color: var(--bj-mu); }
+
+/* вкладки навигации по отзывам — «таблетки» вместо плашек с полосой слева */
+.b-reviews_navigation .navigation-node {
+  --bj-nav: var(--bj-tx);
+  margin: 0 6px 6px 0;
+  padding: 4px 12px;
+  background-color: var(--bj-sf2);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  color: var(--bj-nav);
+  transition: background-color .2s, border-color .2s;
+}
+.b-reviews_navigation .navigation-node-all { --bj-nav: var(--bj-ac); }
+.b-reviews_navigation .navigation-node-positive { --bj-nav: var(--bj-ok); }
+.b-reviews_navigation .navigation-node-neutral { --bj-nav: var(--bj-tx2); }
+.b-reviews_navigation .navigation-node-negative { --bj-nav: var(--bj-warn); }
+.b-reviews_navigation .navigation-node:is(.navigation-node-all, .navigation-node-positive, .navigation-node-neutral, .navigation-node-negative) {
+  background-color: var(--bj-sf2);
+  border-color: var(--bj-ln2);
+  color: var(--bj-nav);
+}
+.b-reviews_navigation .navigation-node:is(.navigation-node-all, .navigation-node-positive, .navigation-node-neutral, .navigation-node-negative):not(.is-active):not(.is-empty):hover,
+.b-reviews_navigation .navigation-node:is(.navigation-node-all, .navigation-node-positive, .navigation-node-neutral, .navigation-node-negative):not(.is-active):not(.is-empty):active {
+  background-color: color-mix(in srgb, var(--bj-nav) 12%, transparent);
+  border-color: color-mix(in srgb, var(--bj-nav) 45%, transparent);
+  color: var(--bj-nav);
+}
+.b-reviews_navigation .navigation-node:is(.navigation-node-all, .navigation-node-positive, .navigation-node-neutral, .navigation-node-negative).is-active {
+  background-color: color-mix(in srgb, var(--bj-nav) 18%, transparent);
+  border-color: var(--bj-nav);
+}
+.b-reviews_navigation a.navigation-node.is-active .label span { text-decoration: none; }
+.b-reviews_navigation .navigation-node .count::before,
+.b-reviews_navigation .navigation-node .count::after { color: var(--bj-mu); }
+.b-reviews_navigation .navigation-node.is-empty:not(.is-active) .label,
+.b-reviews_navigation .navigation-node.is-empty:not(.is-active) .count { color: var(--bj-mu); opacity: .6; }
+
+/* кнопки входа через соцсети на главной (сайт стилизует их прямо в HTML) */
+.devise .social .b-oauth_token {
+  background-color: var(--bj-sf2);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 12px;
+  transition: border-color .2s, background-color .2s, transform .2s var(--bj-ease);
+}
+.devise .social .b-oauth_token:hover {
+  background-color: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  transform: translateY(-2px);
+}
+/* иконка X чёрная — на тёмном фоне её не видно */
+.devise .social .b-oauth_token.twitter::before { filter: invert(1); }

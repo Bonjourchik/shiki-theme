@@ -58,8 +58,6 @@
 .b-block_list li:active,
 .b-block_list li.selected { background: var(--bj-ac-s); }
 
-/* базовый цвет текста для всех тегов (жанры, теги произведений и т.п.) */
-.b-tag { color: var(--bj-tx2); }
 /* строки «параметр: значение» в инфо-блоке тайтла */
 .b-entry-info .line .value { color: var(--bj-tx2); }
 /* рейтинг тайтла: значение и подпись под ним */
