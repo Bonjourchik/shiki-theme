@@ -26,14 +26,15 @@
   .p-profiles-show .c-brief header.head h1 { font-size: 26px; }
   .p-profiles-show .c-history > div:not(.subheadline) { grid-template-columns: minmax(0, 1fr); }
   .p-profiles-show .profile-content > .cc-2 { grid-template-columns: minmax(0, 1fr); }
-  .p-profiles-show .cc-favourites { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  /* планшет: 4 колонки давали постеры по 170px — слишком крупно; ~6–7 в ряд */
+  .p-profiles-show .cc-favourites { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); }
   .p-profiles-show .achievements .cc-2 { grid-template-columns: minmax(0, 1fr); }
   /* .achievements добавлен для специфичности: desktop-правило в
      achievements.css — `.p-profiles-show .achievements .cc-achievements`
      (3 класса) — без префикса это правило (2 класса) проигрывало бы и
      сетка оставалась 4-колоночной (проверено на 768px: без префикса
      computed grid-template-columns оставался repeat(4, …)). */
-  .p-profiles-show .achievements .cc-achievements { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .p-profiles-show .achievements .cc-achievements { grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); }
   .p-profiles-show .about.block .bj-cards { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
