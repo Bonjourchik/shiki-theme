@@ -2,7 +2,6 @@
 
 /* внешняя рамка подсказки: одна карточка вместо «карточки в карточке» */
 .tooltip-inner:has(.b-catalog_entry-tooltip) {
-  width: 340px;
   padding: 16px 16px 14px;
   background:
     linear-gradient(90deg, transparent, rgba(240, 168, 69, .6), transparent) top / 100% 1px no-repeat,
@@ -79,7 +78,7 @@
 .b-catalog_entry-tooltip .inner .line-container { margin: 0 0 7px; }
 .b-catalog_entry-tooltip .inner .line-container .line {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: 76px minmax(0, 1fr);
   align-items: baseline;
   column-gap: 10px;
 }
@@ -124,8 +123,8 @@
   text-transform: uppercase;
 }
 .b-catalog_entry-tooltip .flexible-button {
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 8px;
+  padding-top: 10px;
   border-top: 1px solid var(--bj-ln);
 }
 .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 110px); }

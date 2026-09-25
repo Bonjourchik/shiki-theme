@@ -1776,7 +1776,6 @@ header.head .notice { color: var(--bj-mu); }
 }
 
 .tooltip-inner:has(.b-catalog_entry-tooltip) {
-  width: 340px;
   padding: 16px 16px 14px;
   background:
     linear-gradient(90deg, transparent, rgba(240, 168, 69, .6), transparent) top / 100% 1px no-repeat,
@@ -1852,7 +1851,7 @@ header.head .notice { color: var(--bj-mu); }
 .b-catalog_entry-tooltip .inner .line-container { margin: 0 0 7px; }
 .b-catalog_entry-tooltip .inner .line-container .line {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: 76px minmax(0, 1fr);
   align-items: baseline;
   column-gap: 10px;
 }
@@ -1896,8 +1895,8 @@ header.head .notice { color: var(--bj-mu); }
   text-transform: uppercase;
 }
 .b-catalog_entry-tooltip .flexible-button {
-  margin-top: 12px;
-  padding-top: 12px;
+  margin-top: 8px;
+  padding-top: 10px;
   border-top: 1px solid var(--bj-ln);
 }
 .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 110px); }
@@ -2116,6 +2115,33 @@ header.head .notice { color: var(--bj-mu); }
   }
   .p-db_entries-show .resources-loader .c-column:has(> .b-options-floated) > :not(.subheadline, .b-options-floated) { order: 2; }
 }
+
+.b-watch_banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(240, 168, 69, .22), rgba(255, 122, 61, .12));
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 14px;
+  color: var(--bj-tx);
+  transition: border-color .25s, box-shadow .25s;
+}
+.b-watch_banner:hover,
+.b-watch_banner:active {
+  border-color: var(--bj-ac);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .4), 0 0 20px rgba(240, 168, 69, .25);
+  color: var(--bj-tx);
+  filter: none;
+  transform: none;
+}
+.b-watch_banner::before { background: linear-gradient(90deg, transparent, rgba(255, 210, 150, .18), transparent); }
+.b-watch_banner__icon {
+  background: var(--bj-ac);
+  box-shadow: 0 0 16px rgba(240, 168, 69, .45);
+}
+.b-watch_banner__icon .play { border-left-color: var(--bj-on-ac); }
+.b-watch_banner__title { font-family: var(--bj-font-alt); font-size: 14px; letter-spacing: .3px; }
+.b-watch_banner__subtitle { color: var(--bj-tx2); opacity: 1; }
+.b-watch_banner__arrow { color: var(--bj-ac); }
 
 .b-hot_topics-v2 {
 
