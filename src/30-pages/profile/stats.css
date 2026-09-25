@@ -127,3 +127,40 @@
 }
 .p-profiles-show .activity .graph .line .bar-container .bar .value { color: var(--bj-tx2); }
 .p-profiles-show .activity .graph .x_label { color: var(--bj-mu); font-size: 10px; }
+
+/* значение столбца при наведении — подсказкой над столбцом. У сайта оно внизу, внутри столбца,
+   и обрезано overflow: hidden у .line (подпись оси x привязана к графику, её это не касается) */
+.p-profiles-show .activity .graph .line { overflow: visible; }
+.p-profiles-show .activity .graph .line .bar-container .bar .value {
+  top: auto;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  z-index: 5;
+  width: auto;
+  padding: 3px 7px;
+  background: var(--bj-sf3);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 7px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .45);
+  color: var(--bj-tx);
+  font: 700 10px/1.2 var(--bj-font-alt);
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+/* столбцы — с зазором 2px и скруглённым верхом */
+.p-profiles-show .activity .graph .line { border-right: 0; padding: 0 1px; box-sizing: border-box; }
+
+/* десктоп: статистика во всю ширину — «Время за аниме» слева, график активности справа
+   (в колонке 380px 26 столбцов получались тонкими штрихами) */
+@media screen and (min-width: 1024px) {
+  .p-profiles-show .profile-content > .cc-2 { grid-template-columns: minmax(0, 1fr); }
+  .p-profiles-show .profile-content > .cc-2 > .c-left {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    align-items: end;
+    column-gap: 36px;
+  }
+  .p-profiles-show .profile-content > .cc-2 > .c-left > .activity { margin-top: 0; }
+  .p-profiles-show .profile-content > .cc-2 > .c-left > .activity .graph { height: 160px; }
+}
