@@ -1,0 +1,27 @@
+/* ===== Пользователи (.p-users-index) и прочие списки .b-user.detailed ===== */
+
+/* строки пользователей — карточки вместо пунктирных разделителей */
+.b-search-results > .b-user.detailed[class] {
+  display: flow-root;
+  height: auto;
+  min-height: 96px;
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: 14px;
+  transition: border-color .25s, transform .3s var(--bj-ease);
+}
+.b-search-results > .b-user.detailed[class]:hover { border-color: var(--bj-ac-line); transform: translateX(3px); }
+.b-search-results > .b-user.detailed img {
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--bj-bg), 0 0 0 3px var(--bj-ln2);
+}
+.b-search-results > .b-user.detailed .name { color: var(--bj-tx); font-weight: 600; }
+.b-search-results > .b-user.detailed:hover .name { color: var(--bj-ac); }
+/* «Регистрация на сайте» и прочие события — у сайта тёмно-синие на тёмном фоне */
+.b-user.detailed .history .line .event[class] { color: var(--bj-mu); }
+/* событие-ссылка на тайтл — янтарное */
+.b-user.detailed .history .line a .event[class] { color: var(--bj-ac); }
+.b-user.detailed .line time,
+.b-user.detailed .line .date { color: var(--bj-mu); }
