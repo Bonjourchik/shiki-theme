@@ -661,6 +661,14 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
   letter-spacing: .2px;
   white-space: nowrap;
 }
+
+.b-anime_status_tag:is(.other, .misc-data, .studio, .episode, .unpublished-collection)[class] {
+  --bj-tag: var(--bj-ac);
+  background-color: rgba(255, 255, 255, .04);
+  border-color: var(--bj-ln2);
+  color: var(--bj-tx2);
+  font-weight: 500;
+}
 .b-anime_status_tag[class][href]:hover,
 .b-anime_status_tag[class][href]:active {
   background-color: color-mix(in srgb, var(--bj-tag) 30%, transparent);
@@ -2218,6 +2226,36 @@ header.head .notice { color: var(--bj-mu); }
 }
 .p-dashboards-show .v2 .my-list .status { color: var(--bj-tx2); }
 .p-dashboards-show .v2 .my-list time { color: var(--bj-mu); }
+
+@media screen and (max-width: 1023px) {
+  .p-dashboards-show .v2 :is(.mobile-slider-prev, .mobile-slider-next)::before,
+  .p-dashboards-show .v2 :is(.mobile-slider-prev, .mobile-slider-next).bright::before,
+  .p-dashboards-show .v2 :is(.mobile-slider-prev, .mobile-slider-next).bright:active::before {
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    max-height: none;
+    background: rgba(27, 31, 39, .92);
+    border: 1px solid var(--bj-ac-line);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .5);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  .p-dashboards-show .v2 :is(.mobile-slider-prev, .mobile-slider-next)::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    background: var(--bj-ac);
+    -webkit-mask: var(--bj-i-chevron) center / contain no-repeat;
+    mask: var(--bj-i-chevron) center / contain no-repeat;
+    text-shadow: none;
+  }
+  .p-dashboards-show .v2 .mobile-slider-next::after { transform: rotate(-90deg); }
+  .p-dashboards-show .v2 .mobile-slider-prev::after { transform: rotate(90deg); }
+}
 
 .p-profiles-show .profile-content > .cc-2 {
   display: grid;

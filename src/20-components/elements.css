@@ -52,6 +52,14 @@
   letter-spacing: .2px;
   white-space: nowrap;
 }
+/* нейтральные метки (тип, год, студия, эпизод) — как жанровые чипы, без серо-синего оттенка */
+.b-anime_status_tag:is(.other, .misc-data, .studio, .episode, .unpublished-collection)[class] {
+  --bj-tag: var(--bj-ac);
+  background-color: rgba(255, 255, 255, .04);
+  border-color: var(--bj-ln2);
+  color: var(--bj-tx2);
+  font-weight: 500;
+}
 .b-anime_status_tag[class][href]:hover,
 .b-anime_status_tag[class][href]:active {
   background-color: color-mix(in srgb, var(--bj-tag) 30%, transparent);
