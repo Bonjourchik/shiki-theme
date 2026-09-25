@@ -1891,29 +1891,31 @@ header.head .notice { color: var(--bj-mu); }
 .b-catalog_entry-tooltip .inner .line .value .b-tag.b-tag[href]:is(:hover, .active, :last-child:hover) { margin: 0; padding: 0 8px; }
 
 .b-catalog_entry-tooltip .inner .rating[class] {
-  right: 0;
-  bottom: 13px;
-  display: flex;
-  flex-direction: row-reverse;
+  position: static;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
   align-items: baseline;
-  gap: 6px;
+  column-gap: 10px;
+  margin: 2px 0 0;
   color: var(--bj-ac);
-  font: 700 20px/1 var(--bj-font-alt);
+  font: 700 18px/1 var(--bj-font-alt);
 }
 .b-catalog_entry-tooltip .inner .rating .text[class] {
+  grid-row: 1;
+  grid-column: 1;
   float: none;
   margin: 0;
   color: var(--bj-mu);
-  font: 600 9.5px/1 var(--bj-font-alt);
+  font: 600 9.5px/20px var(--bj-font-alt);
   letter-spacing: .8px;
   text-transform: uppercase;
 }
+.b-catalog_entry-tooltip .inner .rating > span:not(.text) { grid-row: 1; grid-column: 2; }
 .b-catalog_entry-tooltip .flexible-button {
-  margin-top: 8px;
-  padding-top: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
   border-top: 1px solid var(--bj-ln);
 }
-.b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 110px); }
 
 .b-clubs:has(> .b-club.detailed) {
   display: grid;
