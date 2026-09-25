@@ -256,3 +256,21 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
   border-color: var(--bj-ac);
   color: var(--bj-on-ac);
 }
+
+/* «Добавить в список» внутри строк «Связанное»/«Похожее»: варианты выпадают поверх, а не раздвигают
+   строку; свёрнутый блок (фиксированная высота + overflow: hidden) на время открытия не обрезает список */
+.b-db_entry-variant-list_item .b-add_to_list { position: relative; }
+.b-db_entry-variant-list_item .b-add_to_list .expanded-options {
+  position: absolute;
+  z-index: 30;
+  left: 0;
+  right: 0;
+  top: calc(100% + 2px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .55);
+}
+.b-height_shortened:has(.b-add_to_list.expanded) {
+  overflow: visible;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.b-db_entry-variant-list_item:has(.b-add_to_list.expanded) { position: relative; z-index: 5; }

@@ -1,0 +1,131 @@
+/* ===== Всплывающая карточка тайтла при наведении на постер (.b-catalog_entry-tooltip) ===== */
+
+/* внешняя рамка подсказки: одна карточка вместо «карточки в карточке» */
+.tooltip-inner:has(.b-catalog_entry-tooltip) {
+  width: 340px;
+  padding: 16px 16px 14px;
+  background:
+    linear-gradient(90deg, transparent, rgba(240, 168, 69, .6), transparent) top / 100% 1px no-repeat,
+    linear-gradient(180deg, #1c2029, #15181f);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .6), 0 0 0 1px rgba(0, 0, 0, .3);
+  animation: bj-drop .2s var(--bj-ease);
+}
+/* у сайта тень — восемь картинок по краям */
+.tooltip-inner [class^="dropshadow-"] { display: none; }
+/* стрелка — повёрнутый квадрат в цвет карточки вместо белой картинки */
+.tooltip-inner .tooltip-arrow {
+  width: 12px;
+  height: 12px;
+  margin: 8px 0 0;
+  background: #1c2029;
+  border: 1px solid var(--bj-ln2);
+  border-top: 0;
+  border-right: 0;
+  transform: translateX(7px) rotate(45deg);
+}
+.tooltip-left .tooltip-inner .tooltip-arrow {
+  border: 1px solid var(--bj-ln2);
+  border-bottom: 0;
+  border-left: 0;
+  transform: translateX(-7px) rotate(45deg);
+}
+/* закрыть — круглая кнопка в углу */
+.tooltip-inner:has(.b-catalog_entry-tooltip) .close {
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 50%;
+  color: var(--bj-mu);
+  font-size: 12px;
+  line-height: 1;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.tooltip-inner:has(.b-catalog_entry-tooltip) .close:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
+
+/* содержимое — без своей рамки и фона */
+.b-catalog_entry-tooltip .inner[class] {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+.b-catalog_entry-tooltip .inner .line.name { margin: 0 30px 8px 0; }
+.b-catalog_entry-tooltip .inner a.name {
+  display: block;
+  margin: 0;
+  color: var(--bj-tx);
+  font: 700 15px/1.3 var(--bj-font);
+  transition: color .2s;
+}
+.b-catalog_entry-tooltip .inner a.name:hover { color: var(--bj-ac); }
+/* описание — отдельным абзацем с разделителем снизу */
+.b-catalog_entry-tooltip .inner .text {
+  margin: 0 0 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bj-ln);
+  color: var(--bj-tx2);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+.b-catalog_entry-tooltip .inner .text a { color: var(--bj-ac); }
+/* «ключ: значение» — ключ колонкой слева, значения чипами с переносом */
+.b-catalog_entry-tooltip .inner .line-container { margin: 0 0 7px; }
+.b-catalog_entry-tooltip .inner .line-container .line {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 10px;
+}
+.b-catalog_entry-tooltip .inner .line .key[class] {
+  color: var(--bj-mu);
+  font: 600 9.5px/20px var(--bj-font-alt);
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+.b-catalog_entry-tooltip .inner .line .value {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  color: var(--bj-tx);
+  line-height: 20px;
+}
+.b-catalog_entry-tooltip .inner .line .value :is(.b-tag, .b-anime_status_tag)[class] {
+  margin: 0;
+  padding: 0 8px;
+  font-size: 11.5px;
+  line-height: 18px;
+}
+.b-catalog_entry-tooltip .inner .line .value .b-tag.b-tag[href]:is(:hover, .active, :last-child:hover) { margin: 0; padding: 0 8px; }
+
+/* рейтинг — янтарная метка справа от кнопки «Добавить в список» */
+.b-catalog_entry-tooltip .inner .rating[class] {
+  right: 0;
+  bottom: 13px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--bj-ac);
+  font: 700 20px/1 var(--bj-font-alt);
+}
+.b-catalog_entry-tooltip .inner .rating .text[class] {
+  float: none;
+  margin: 0;
+  color: var(--bj-mu);
+  font: 600 9.5px/1 var(--bj-font-alt);
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+.b-catalog_entry-tooltip .flexible-button {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bj-ln);
+}
+.b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 110px); }
