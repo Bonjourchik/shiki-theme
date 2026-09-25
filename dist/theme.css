@@ -1244,6 +1244,7 @@ html::after {
 .l-top_menu-v2 .menu-dropdown > span[data-unread_count]::after {
   top: 3px;
   right: 3px;
+  left: auto;
   min-width: 16px;
   width: auto;
   height: 16px;
@@ -1326,7 +1327,11 @@ html::after {
     border-bottom: 0;
     border-radius: 10px;
   }
-  .l-top_menu-v2 .submenu > a::before { margin-left: 5px; color: var(--bj-mu); transition: color .2s; }
+  .l-top_menu-v2 .submenu > a::before { margin: 0 0 0 5px; color: var(--bj-mu); transition: color .2s; }
+
+  .l-top_menu-v2 .submenu > a.icon-top { padding-left: 30px; }
+  .l-top_menu-v2 .submenu > a.icon-top::before { position: static; margin: 0 0 0 5px; border: 0; border-radius: 0; }
+  .l-top_menu-v2 .submenu > a.icon-top::after { left: 30px; }
   .l-top_menu-v2 .submenu > a:not(.icon-mail)::after {
     content: "";
     position: absolute;
