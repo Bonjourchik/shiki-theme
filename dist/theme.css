@@ -1405,7 +1405,7 @@ html::after {
 
   .l-top_menu-v2 .submenu > a.icon-top { padding-left: 30px; }
   .l-top_menu-v2 .submenu > a.icon-top::before { position: static; margin: 0 0 0 5px; border: 0; border-radius: 0; }
-  .l-top_menu-v2 .submenu > a.icon-top:not(.icon-mail)::after { left: 30px; }
+  .l-top_menu-v2 .submenu > a.icon-top::after { left: 30px; }
 
   .l-top_menu-v2 .submenu > a.icon-top,
   .l-top_menu-v2 .submenu > a.icon-top:is(:hover, :active, .active) {
@@ -1414,7 +1414,7 @@ html::after {
     background-repeat: no-repeat;
     background-size: 12px 24px;
   }
-  .l-top_menu-v2 .submenu > a:not(.icon-mail)::after {
+  .l-top_menu-v2 .submenu > a::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -1458,7 +1458,7 @@ html::after {
 
   .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top,
   .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top:is(:hover, :active, .active) { padding-left: 8px; background-image: none; }
-  .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top:not(.icon-mail)::after { left: 8px; }
+  .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top::after { left: 8px; }
 
   .l-top_menu-v2 .global-search input {
     height: 40px;
