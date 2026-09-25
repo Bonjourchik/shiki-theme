@@ -55,7 +55,7 @@
 .p-clubs-show .l-content > .block > .b-topic-minified { margin-bottom: 12px; }
 
 /* коллекции: счётчик элементов и плитка «ещё +N» */
-.collection-size { color: var(--bj-mu); }
+.b-status-line .section.main .collection-size { color: var(--bj-mu); }
 .b-catalog_entry .image-decor a.image-cutter.see-more {
   background: var(--bj-sf2);
   border-color: var(--bj-ln2);
