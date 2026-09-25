@@ -1983,6 +1983,41 @@ header.head .notice { color: var(--bj-mu); }
   color: var(--bj-ac);
 }
 
+.CodeMirror.cm-s-solarized.cm-s-light {
+  background: var(--bj-bg);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 12px;
+  color: var(--bj-tx);
+  text-shadow: none;
+}
+.CodeMirror.cm-s-solarized .CodeMirror-gutters { background: var(--bj-sf); border-right: 1px solid var(--bj-ln); }
+.CodeMirror.cm-s-solarized .CodeMirror-linenumber { color: var(--bj-mu); }
+.CodeMirror.cm-s-solarized .CodeMirror-cursor { border-left-color: var(--bj-ac); }
+.CodeMirror.cm-s-solarized .CodeMirror-selected { background: var(--bj-ac-s); }
+.CodeMirror.cm-s-solarized :is(.cm-def, .cm-keyword, .cm-tag, .cm-qualifier) { color: var(--bj-ac); }
+.CodeMirror.cm-s-solarized :is(.cm-property, .cm-attribute) { color: #7fb2ff; }
+.CodeMirror.cm-s-solarized :is(.cm-string, .cm-string-2) { color: #9fd18b; }
+.CodeMirror.cm-s-solarized :is(.cm-number, .cm-atom) { color: #f28fbd; }
+.CodeMirror.cm-s-solarized :is(.cm-variable, .cm-variable-2, .cm-variable-3, .cm-builtin) { color: var(--bj-tx2); }
+.CodeMirror.cm-s-solarized .cm-comment { color: var(--bj-mu); }
+
+.noUi-target {
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  box-shadow: none;
+}
+.noUi-connect { background: var(--bj-ac); }
+.noUi-horizontal .noUi-handle {
+  background: var(--bj-ac);
+  border: 2px solid var(--bj-bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--bj-ac-line), 0 4px 10px rgba(0, 0, 0, .4);
+  cursor: grab;
+}
+.noUi-handle::before,
+.noUi-handle::after { display: none; }
+
 .p-profiles-show .about.block .bj-cards {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
