@@ -130,3 +130,5 @@
   padding-top: 12px;
   border-top: 1px solid var(--bj-ln);
 }
+/* кнопка списка — во всю строку, без обрезанной подписи «Добавить в спис…» */
+.b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: none; min-width: 230px; }

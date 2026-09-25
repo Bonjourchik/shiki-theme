@@ -1920,6 +1920,8 @@ header.head .notice { color: var(--bj-mu); }
   border-top: 1px solid var(--bj-ln);
 }
 
+.b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: none; min-width: 230px; }
+
 .b-clubs:has(> .b-club.detailed) {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
