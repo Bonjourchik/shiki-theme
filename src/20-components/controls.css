@@ -281,3 +281,10 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
 .b-height_shortened,
 .b-height_shortened .b-user_rate { position: static; }
 .b-height_shortened .b-add_to_list .expanded-options { width: 220px; }
+/* маска затухания обрезает всё содержимое блока, включая выпавший список — снимаем, пока он открыт */
+.b-height_shortened:has(.b-add_to_list.expanded) {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+/* после сворачивания сайт оставляет height: 0 — без этого видны поля и рамка пустого списка */
+.b-add_to_list:not(.expanded) .expanded-options { visibility: hidden; }
