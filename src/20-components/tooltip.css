@@ -157,7 +157,7 @@
   align-items: center;
   gap: 6px;
   margin: 0;
-  padding: 6px 11px;
+  padding: 6px 9px;
   background: var(--bj-ac-s);
   border: 1px solid var(--bj-ac-line);
   border-radius: 999px;
@@ -167,7 +167,7 @@
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating > span:not(.text)::before { content: "★ "; font-size: 11px; }
 /* в метке — только «★ 9.01»: подпись «рейтинг» делала её шире кнопки */
 .tooltip-inner .b-catalog_entry-tooltip .inner .rating .text[class] { display: none; }
-.tooltip-inner .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 92px); }
+.tooltip-inner .b-catalog_entry-tooltip .flexible-button .b-add_to_list { max-width: calc(100% - 76px); }
 .b-catalog_entry-tooltip .flexible-button {
   margin-top: 12px;
   padding-top: 12px;
