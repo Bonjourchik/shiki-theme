@@ -139,3 +139,11 @@
 /* заголовок «Фильтры»: у сайта flex с space-between — ромб слева, текст уезжал вправо */
 .c-filters .c-filters-head { justify-content: flex-start; }
 .c-filters .c-filters-head > span + * { margin-left: auto; }
+
+/* списки в боковой колонке форума (календарь, рецензии, клубы, закреплённые темы):
+   у сайта пунктирные светлые разделители — тонкие тёмные линии */
+.p-topics .l-menu .entry.entry:not(:first-child),
+.p-topics .l-menu .sticky-topics .topic:not(:first-child) {
+  border-top-style: solid;
+  border-top-color: var(--bj-ln);
+}

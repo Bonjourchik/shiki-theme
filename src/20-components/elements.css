@@ -22,6 +22,10 @@
   transition: background-color .2s, border-color .2s, color .2s;
 }
 .b-tag { margin: 0 4px 4px 0; }
+/* у сайта `.b-tag[href]` — синяя нижняя рамка */
+.b-tag[href] { border-bottom-color: var(--bj-ln2); }
+.b-tag[href]:hover,
+.b-tag.active[href] { border-color: var(--bj-ac-line); }
 /* у сайта `.b-tag[href]:hover` и `.active` меняют поля и отступы — тег «прыгал»; держим те же размеры */
 .b-tag.b-tag[href]:is(:hover, .active),
 .b-tag.b-tag[href]:last-child:hover { margin: 0 4px 4px 0; padding: 0 10px; }
@@ -212,3 +216,13 @@
 
 /* полоса загрузки файла (аватар, картинки в редакторе) — янтарная */
 .b-upload_progress .bar { background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac)); }
+
+/* упоминание @ник в тексте — у сайта голубое */
+.b-mention s { color: var(--bj-ac); }
+.b-mention:hover s { color: var(--bj-ac-h); }
+
+/* «понравилось / не понравилось» в шапке отзыва — у сайта светлые плашки */
+.b-review-topic > .inner .review-info .opinion.positive { background: rgba(95, 191, 119, .14); color: var(--bj-ok); }
+.b-review-topic > .inner .review-info .opinion.negative { background: rgba(224, 101, 90, .14); color: var(--bj-warn); }
+.b-review-topic > .inner .review-info .opinion.neutral { background: rgba(255, 255, 255, .06); color: var(--bj-tx2); }
+.b-review-topic > .inner .review-info .opinion { border-radius: 999px; }
