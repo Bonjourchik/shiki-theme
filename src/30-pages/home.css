@@ -56,7 +56,8 @@
 }
 .p-dashboards-show .v2 .headline .misc-links a:hover { border-color: var(--bj-ac-line); color: var(--bj-ac); }
 
-/* блок «Аниме / Манга / Ранобэ» с тегами — карточка */
+/* блок «Аниме / Манга / Ранобэ» с тегами — карточка; заголовки и теги — одна сетка из трёх колонок
+   (на планшетной ширине сайт растворяет колонки тегов, и теги разделов сливаются в один поток) */
 .p-dashboards-show .v2 .fc-user-sections .f-sections {
   padding: 14px 18px 12px;
   background: var(--bj-sf);
@@ -125,7 +126,6 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-left: auto;
   color: var(--bj-mu);
   font-size: 11.5px;
   line-height: 1;
@@ -203,10 +203,67 @@
 .p-dashboards-show .v2 .headline .misc-links a[href]:hover { color: var(--bj-ac); }
 /* строка тегов новости: теги переносятся, время и счётчик не рвутся */
 .p-dashboards-show .v2 .b-news_wall-topic .status-line { flex-wrap: wrap; row-gap: 6px; }
-.p-dashboards-show .v2 .b-news_wall-topic .status-line .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+/* теги — своей строкой, ниже: время слева и счётчик справа (одинаково на любой ширине) */
+.p-dashboards-show .v2 .b-news_wall-topic .status-line .tags { display: flex; flex: 1 1 100%; flex-wrap: wrap; gap: 4px; }
+.p-dashboards-show .v2 .b-news_wall-topic .status-line .comments { margin-left: auto; }
 .p-dashboards-show .v2 .b-news_wall-topic .status-line time,
 .p-dashboards-show .v2 .status-line .comments { flex: none; white-space: nowrap; }
 /* разделители «/» у ссылок в заголовке не нужны — ссылки и так таблетками */
 .p-dashboards-show .v2 .headline .misc-links a::before,
 .p-dashboards-show .v2 .headline .misc-links a::after { display: none; }
 .p-dashboards-show .v2 .headline .misc-links { display: inline-flex; gap: 6px; }
+
+@media screen and (min-width: 768px) {
+  /* селекторы с .f-sections — тот же вес, что у раскладки сайта */
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-headlines,
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 16px;
+    width: auto;
+    margin: 0;
+  }
+  /* карточка — колонка, сетка тегов растягивается на всю её высоту:
+     так «Форум» (margin-top: auto) встаёт внизу колонки «Ранобэ», а не сразу под тегами */
+  .p-dashboards-show .v2 .fc-user-sections .f-sections {
+    display: flex;
+    flex-direction: column;
+  }
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags { flex: 1 1 auto; }
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags::before,
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags::after { display: none; }
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-headlines .f-headline,
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags .f-tags {
+    display: flex;
+    flex-direction: column;
+    float: none;
+    width: auto;
+    margin: 0;
+  }
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags .f-tags .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    height: auto;
+    margin-top: 8px;
+  }
+  .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags .f-tags .tag-link[class] { float: none; margin: 0; }
+  .p-dashboards-show .v2 .fc-user-sections .f-tags.ranobe-tags .forum-container { margin-top: auto; padding: 12px 0 0; }
+  /* на 768–1023px сайт делает кнопку absolute, шириной 224px и прижимает вправо — она выпадала из карточки */
+  .p-dashboards-show .v2 .fc-user-sections .f-tags.ranobe-tags .forum-container .b-link_button {
+    display: inline-flex;
+    position: static;
+    width: auto;
+    max-width: none;
+  }
+}
+.p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .status-line .comments { margin-left: auto; }
+/* узкая колонка «Темы дня»: длинный статус сокращается, счётчик не обрезается */
+.p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .status-line { min-width: 0; }
+.p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .status-line .b-anime_status_tag {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .status-line .comments { flex: none; }

@@ -47,6 +47,7 @@
   font-family: var(--bj-font);
   font-weight: 600;
   letter-spacing: .2px;
+  white-space: nowrap;
 }
 .b-anime_status_tag[class][href]:hover,
 .b-anime_status_tag[class][href]:active {
