@@ -1,0 +1,208 @@
+/* ===== Главная (dashboards v2): карточки новостей, строки-карточки, обновления ===== */
+
+/* лента «Темы дня» под шапкой: таблетки с круглыми постерами */
+.p-dashboards-show .b-hot_topics-v2 {
+  gap: 6px;
+  padding: 8px 15px;
+  background: rgba(20, 23, 29, .8);
+  border-bottom: 1px solid var(--bj-ln);
+}
+.p-dashboards-show .b-hot_topics-v2 .subject {
+  color: var(--bj-ac);
+  font-family: var(--bj-font-alt);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.p-dashboards-show .b-hot_topics-v2 .b-link {
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px 0 3px;
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+  transition: border-color .2s, color .2s, background-color .2s;
+}
+.p-dashboards-show .b-hot_topics-v2 .b-link:hover {
+  background: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
+.p-dashboards-show .b-hot_topics-v2 .b-link .poster {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* заголовок секции: ссылки справа (коллекции / рецензии / статьи) — таблетками */
+.p-dashboards-show .v2 .headline .misc-links a {
+  padding: 1px 8px;
+  border: 1px solid var(--bj-ln2);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+  font-family: var(--bj-font);
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.p-dashboards-show .v2 .headline .misc-links a:hover { border-color: var(--bj-ac-line); color: var(--bj-ac); }
+
+/* блок «Аниме / Манга / Ранобэ» с тегами — карточка */
+.p-dashboards-show .v2 .fc-user-sections .f-sections {
+  padding: 14px 18px 12px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+}
+
+/* новости: карточки с превью */
+.p-dashboards-show .v2 .b-news_wall-topic {
+  overflow: hidden;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  transition: transform .35s var(--bj-ease), border-color .3s, box-shadow .35s var(--bj-ease);
+}
+.p-dashboards-show .v2 .b-news_wall-topic:hover {
+  border-color: var(--bj-ac-line);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .45), 0 0 22px rgba(240, 168, 69, .12);
+  transform: translateY(-4px);
+}
+.p-dashboards-show .v2 .b-news_wall-topic .poster {
+  position: relative;
+  margin: 0 0 12px;
+  overflow: hidden;
+}
+.p-dashboards-show .v2 .b-news_wall-topic .poster img {
+  transition: transform .6s var(--bj-ease), filter .4s;
+}
+.p-dashboards-show .v2 .b-news_wall-topic:hover .poster img {
+  filter: saturate(1.1);
+  transform: scale(1.06);
+}
+/* затемнение низа превью, чтобы карточка «читалась» */
+.p-dashboards-show .v2 .b-news_wall-topic .poster::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, rgba(20, 23, 29, .75));
+  pointer-events: none;
+}
+.p-dashboards-show .v2 .b-news_wall-topic .status-line,
+.p-dashboards-show .v2 .b-news_wall-topic .title { padding: 0 14px; }
+.p-dashboards-show .v2 .b-news_wall-topic .status-line { align-items: center; gap: 8px; }
+.p-dashboards-show .v2 .b-news_wall-topic .status-line time { color: var(--bj-mu); font-size: 11.5px; }
+.p-dashboards-show .v2 .b-news_wall-topic .title {
+  padding-bottom: 14px;
+  color: var(--bj-tx);
+  font-weight: 600;
+  line-height: 1.4;
+  transition: color .2s;
+}
+.p-dashboards-show .v2 .b-news_wall-topic:hover .title { color: var(--bj-ac); }
+.p-dashboards-show .v2 .b-video .marker {
+  padding: 1px 8px;
+  background: rgba(11, 13, 17, .75);
+  border-radius: 999px;
+  color: var(--bj-tx);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+/* счётчик комментариев: иконка по центру строки */
+.p-dashboards-show .v2 .status-line .comments {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  color: var(--bj-mu);
+  font-size: 11.5px;
+  line-height: 1;
+}
+.p-dashboards-show .v2 .status-line .comments::before {
+  padding: 0;
+  color: var(--bj-ac);
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* «Контент» и «Темы дня»: строки-карточки */
+.p-dashboards-show .v2 .content-updates .b-news_line-topic,
+.p-dashboards-show .v2 .hot-topics .b-news_line-topic {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: 12px;
+  transition: border-color .25s, transform .3s var(--bj-ease), background-color .25s;
+}
+.p-dashboards-show .v2 .content-updates .b-news_line-topic:hover,
+.p-dashboards-show .v2 .hot-topics .b-news_line-topic:hover {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ac-line);
+  transform: translateX(3px);
+}
+.p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .title {
+  margin-bottom: 6px;
+  color: var(--bj-tx);
+  font-weight: 600;
+  transition: color .2s;
+}
+.p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic:hover .title { color: var(--bj-ac); }
+.p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .status-line { align-items: center; gap: 6px; }
+
+/* «Обновления аниме»: карточки с постером */
+.p-dashboards-show .v2 .db-updates .db-update {
+  align-items: stretch;
+  overflow: hidden;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: 14px;
+  transition: border-color .25s, transform .3s var(--bj-ease), box-shadow .3s;
+}
+.p-dashboards-show .v2 .db-updates .db-update:hover {
+  border-color: var(--bj-ac-line);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .4);
+  transform: translateY(-3px);
+}
+.p-dashboards-show .v2 .db-updates .db-update .poster { width: 60px; margin-right: 12px; }
+.p-dashboards-show .v2 .db-updates .db-update .poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.p-dashboards-show .v2 .db-updates .db-update .info { padding: 8px 10px 8px 0; }
+.p-dashboards-show .v2 .db-updates .db-update .name { color: var(--bj-tx); font-weight: 600; }
+.p-dashboards-show .v2 .db-updates .db-update:hover .name { color: var(--bj-ac); }
+.p-dashboards-show .v2 .db-updates .db-update time { color: var(--bj-mu); }
+
+/* «Загрузить ещё» */
+.p-dashboards-show .v2 .b-postloader {
+  background: var(--bj-ac-s);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 10px;
+  color: var(--bj-ac);
+}
+.p-dashboards-show .v2 .b-postloader:hover { background: var(--bj-ac); color: var(--bj-on-ac); }
+
+/* заголовки секций главной: сайт красит ссылки по цвету секции (.headline.magenta a …) */
+.p-dashboards-show .v2 :is(.headline, .midheadline, .subheadline)[class] a { color: inherit; }
+.p-dashboards-show .v2 :is(.headline, .midheadline, .subheadline)[class] a:hover { color: var(--bj-ac); }
+.p-dashboards-show .v2 .headline .misc-links a[href] { color: var(--bj-tx2); }
+.p-dashboards-show .v2 .headline .misc-links a[href]:hover { color: var(--bj-ac); }
+/* строка тегов новости: теги переносятся, время и счётчик не рвутся */
+.p-dashboards-show .v2 .b-news_wall-topic .status-line { flex-wrap: wrap; row-gap: 6px; }
+.p-dashboards-show .v2 .b-news_wall-topic .status-line .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.p-dashboards-show .v2 .b-news_wall-topic .status-line time,
+.p-dashboards-show .v2 .status-line .comments { flex: none; white-space: nowrap; }
+/* разделители «/» у ссылок в заголовке не нужны — ссылки и так таблетками */
+.p-dashboards-show .v2 .headline .misc-links a::before,
+.p-dashboards-show .v2 .headline .misc-links a::after { display: none; }
+.p-dashboards-show .v2 .headline .misc-links { display: inline-flex; gap: 6px; }

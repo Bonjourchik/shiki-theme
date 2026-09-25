@@ -96,10 +96,11 @@
 
 /* страница тайтла: «Описание» у сайта не плавающее и лежит под «Информацией»/«Рейтингом» —
    без clear его карточка обволакивает обе колонки (карточка в карточке) */
-.p-db_entries-show .b-db_entry > .c-description {
-  clear: left;
-  margin-top: 16px;
-}
+.p-db_entries-show .b-db_entry > .c-description { clear: left; }
+/* зазор — нижним отступом плавающего блока: верхний отступ у элемента с clear поглощается */
+.p-db_entries-show .b-db_entry > .c-about,
+.p-db_entries-show .b-db_entry > .c-image { margin-bottom: 16px; padding-bottom: 0; }
+.p-db_entries-show .b-db_entry > .c-about > .cc { margin-bottom: 0; padding-bottom: 0; }
 /* «Информация» и «Рейтинг» — сетка с ровным зазором вместо плавающих колонок */
 .p-db_entries-show .b-db_entry > .c-about > .cc {
   display: grid;
@@ -108,8 +109,9 @@
   gap: 16px;
 }
 .p-db_entries-show .b-db_entry > .c-about > .cc::after { display: none; }
-.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-left,
-.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-right {
+/* [class] — у сайта c-info-right получает margin-bottom: 30px более весомым правилом */
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-left[class],
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-right[class] {
   float: none;
   width: auto;
   margin: 0;
@@ -117,3 +119,5 @@
 @media screen and (max-width: 767px) {
   .p-db_entries-show .b-db_entry > .c-about > .cc { grid-template-columns: minmax(0, 1fr); }
 }
+/* у сайта .c-info-*:last-child { margin-bottom: 30px !important } — лишний зазор под сеткой */
+.p-db_entries-show .b-db_entry > .c-about > .cc > :is(.c-info-left, .c-info-right):last-child { margin-bottom: 0 !important; }
