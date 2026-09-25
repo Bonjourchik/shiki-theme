@@ -188,7 +188,8 @@
   border-radius: 10px;
   transition: border-color .2s, background-color .2s;
 }
-.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name[data-type="completed"] { --bj-dot: var(--bj-st-done); }
+/* «Просмотрено» / «Прочитано» — первым, как и его отрезок на полосе */
+.p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name[data-type="completed"] { --bj-dot: var(--bj-st-done); order: -1; }
 .p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name[data-type="dropped"] { --bj-dot: var(--bj-st-drop); }
 .p-profiles-show .c-lists-info .b-stats_bar .stat_names .stat_name::before {
   content: "";
