@@ -52,7 +52,7 @@
   transition: border-color .3s;
 }
 .b-topic:hover { border-color: var(--bj-ln2); }
-.b-forum > .b-topic { margin-bottom: 18px; }
+.b-topic.b-topic-preview[class] { margin-bottom: 18px; }
 .b-hot_topics-v2 { background: var(--bj-sf); border-radius: var(--bj-r); }
 .b-db_entry-variant-list_item,
 .b-block_list li { border-color: var(--bj-ln); }
