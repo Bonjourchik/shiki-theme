@@ -58,3 +58,41 @@ header.head .notice { color: var(--bj-mu); }
   color: var(--bj-tx2);
 }
 .tooltip-inner .close:hover { color: var(--bj-ac); }
+
+/* блок входа на главной и заглушка 18+ — у сайта голубые #e9f7fb */
+.p-dashboards-show .v2 .devise,
+.b-age_restricted .devise .inner {
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  color: var(--bj-tx2);
+}
+
+/* теги-статусы: скругление и наш шрифт; светлые варианты — графитовые */
+.b-anime_status_tag {
+  border-radius: 6px;
+  font-family: var(--bj-font);
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+.b-anime_status_tag.episode,
+.b-anime_status_tag.studio,
+.b-anime_status_tag.review {
+  background-color: var(--bj-sf3);
+  border-color: var(--bj-ln2);
+  color: var(--bj-tx2);
+}
+.b-anime_status_tag.episode[href]:hover,
+.b-anime_status_tag.studio[href]:hover,
+.b-anime_status_tag.review[href]:hover {
+  background-color: var(--bj-ac-s);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
+.b-anime_status_tag.other,
+.b-anime_status_tag.misc-data,
+.b-anime_status_tag.unpublished-collection {
+  background-color: var(--bj-sf3);
+  border-color: var(--bj-ln2);
+  color: var(--bj-tx);
+}

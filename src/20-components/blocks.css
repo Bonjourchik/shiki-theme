@@ -75,8 +75,18 @@
 /* столбчатые графики распределения (оценки, типы, активность) */
 .bar.horizontal .line .x_label,
 .bar.vertical .line .x_label { color: var(--bj-mu); }
+/* s0…s3 — ранг значения (s0 — самое большое): янтарь убывающей яркости вместо синих оттенков */
+.bar.simple .bar.s0 { background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac)); }
+.bar.simple .bar.s1 { background: rgba(240, 168, 69, .72); }
+.bar.simple .bar.s2 { background: rgba(240, 168, 69, .45); }
+.bar.simple .bar.s0:hover,
+.bar.simple .bar.s1:hover,
+.bar.simple .bar.s2:hover { background: var(--bj-ac-h); }
 .bar.simple .bar.s3,
 .bar.simple .bar.s3:hover { background: var(--bj-sf3); }
+.bar.simple .bar .value { color: var(--bj-on-ac); }
+.bar.simple .bar.s3 .value { color: var(--bj-tx2); }
+.bar.simple .bar { border-radius: 4px; transition: background .2s; }
 
 /* список пользователя: сводка и заголовки сортировки таблицы */
 .p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
@@ -118,9 +128,8 @@
   color: var(--bj-ac);
 }
 /* затенение обрезанного длинного текста: у сайта градиент в белый */
-.b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(11, 13, 17, 0), var(--bj-bg)); }
-.b-comment .b-height_shortener .shade,
-.b-topic .b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(20, 23, 29, 0), var(--bj-sf)); }
+/* почти весь контент лежит в карточках (surfaces.css), поэтому затенение — в цвет карточки */
+.b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(20, 23, 29, 0), var(--bj-sf)); }
 
 /* список аниме пользователя: наведение на строку, форма редактирования, сводка */
 .p-user_rates-index .list-lines .selectable:hover { background-color: var(--bj-ac-s); }

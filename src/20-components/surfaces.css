@@ -1,0 +1,95 @@
+/* Карточки-поверхности для основных контейнеров страниц сайта.
+   Янтарная кромка сверху — фоновым градиентом, без псевдоэлементов
+   (у контейнеров сайта ::before/::after бывают заняты). */
+.l-page .l-menu > .block,
+.l-page .l-menu > .block2,
+.l-page .l-menu > .c-filters,
+.l-page .l-menu > .b-forums,
+.l-page .l-menu > .b-animes-menu > .block,
+.l-page .l-menu > .b-animes-menu > .b-favoured,
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-left,
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-right,
+.p-db_entries-show .b-db_entry > .c-description,
+.p-db_entries-show .resources-loader > .cc-related-authors > .c-column,
+.p-db_entries-show .resources-loader > .cc-characters,
+.p-db_entries-show .resources-loader > .two-videos > .c-screenshots,
+.p-db_entries-show .resources-loader > .two-videos > .c-videos,
+.p-db_entries-show .resources-loader > .block,
+.p-user_rates-index .l-content > .list-groups {
+  padding: 16px 18px;
+  background:
+    linear-gradient(90deg, transparent, rgba(240, 168, 69, .5), transparent) top / 100% 1px no-repeat,
+    var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  transition: border-color .3s;
+}
+.l-page .l-menu > .block:hover,
+.l-page .l-menu > .block2:hover,
+.l-page .l-menu > .c-filters:hover,
+.l-page .l-menu > .b-forums:hover,
+.l-page .l-menu > .b-animes-menu > .block:hover,
+.l-page .l-menu > .b-animes-menu > .b-favoured:hover,
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-left:hover,
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-right:hover,
+.p-db_entries-show .b-db_entry > .c-description:hover,
+.p-db_entries-show .resources-loader > .cc-related-authors > .c-column:hover,
+.p-db_entries-show .resources-loader > .cc-characters:hover,
+.p-db_entries-show .resources-loader > .two-videos > .c-screenshots:hover,
+.p-db_entries-show .resources-loader > .two-videos > .c-videos:hover,
+.p-db_entries-show .resources-loader > .block:hover { border-color: var(--bj-ln2); }
+.l-page .l-menu > .block,
+.l-page .l-menu > .block2,
+.l-page .l-menu > .c-filters,
+.l-page .l-menu > .b-animes-menu > .block,
+.l-page .l-menu > .b-animes-menu > .b-favoured { margin-bottom: 16px; }
+.p-db_entries-show .resources-loader > .cc-related-authors,
+.p-db_entries-show .resources-loader > .cc-characters,
+.p-db_entries-show .resources-loader > .two-videos { margin-bottom: 18px; }
+
+/* заголовок страницы: крупнее, янтарная линия снизу, акцентный разделитель */
+.l-page > div > header.head {
+  margin-bottom: 20px;
+  padding: 14px 0 12px;
+  background: linear-gradient(90deg, var(--bj-ac), rgba(240, 168, 69, .15) 40%, transparent 75%) left bottom / 100% 1px no-repeat;
+}
+.l-page > div > header.head h1 { font-size: 26px; line-height: 1.2; }
+.l-page > div > header.head h1 .b-separator { color: var(--bj-ac); padding: 0 8px; }
+.l-page > div > header.head .b-breadcrumbs { margin-top: 8px; }
+.l-page > div > header.head .b-breadcrumbs a {
+  display: inline-block;
+  padding: 1px 9px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid var(--bj-ln);
+  border-radius: 999px;
+  color: var(--bj-tx2);
+  font-size: 11px;
+  transition: border-color .2s, color .2s;
+}
+.l-page > div > header.head .b-breadcrumbs a:hover { border-color: var(--bj-ac-line); color: var(--bj-ac); }
+
+/* постер на странице тайтла */
+.p-db_entries-show .b-db_entry .c-poster img {
+  border-radius: var(--bj-r);
+  box-shadow: 0 0 0 1px var(--bj-ln), 0 18px 40px rgba(0, 0, 0, .5);
+  transition: transform .5s var(--bj-ease), box-shadow .5s var(--bj-ease);
+}
+.p-db_entries-show .b-db_entry .c-poster:hover img {
+  box-shadow: 0 0 0 1px var(--bj-ac-line), 0 22px 46px rgba(0, 0, 0, .55), 0 0 26px rgba(240, 168, 69, .18);
+  transform: translateY(-3px);
+}
+
+/* таблицы (список аниме и т.п.) */
+.b-table th {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln);
+  color: var(--bj-mu);
+  font-family: var(--bj-font-alt);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.b-table td { border-color: var(--bj-ln); }
+.b-table tbody tr { transition: background-color .2s; }

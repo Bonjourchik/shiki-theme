@@ -34,7 +34,8 @@
     const cs = getComputedStyle(el);
     if (cs.visibility === 'hidden' || Number(cs.opacity) === 0) continue;
     const bg = parse(cs.backgroundColor);
-    if (bg && bg.a >= 0.5 && !ACCENTS.has(cs.backgroundColor) && lum(bg) > 0.45) add(`светлый фон: ${describe(el)}`);
+    const amber = bg && bg.r > 200 && bg.g > 120 && bg.g < 210 && bg.b < 130;
+    if (bg && bg.a >= 0.5 && !ACCENTS.has(cs.backgroundColor) && !amber && lum(bg) > 0.45) add(`светлый фон: ${describe(el)}`);
     const hasText = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim());
     const tx = parse(cs.color);
     if (hasText && tx && lum(tx) < 0.12 && effectiveBg(el) < 0.2) add(`тёмный текст: ${describe(el)}`);

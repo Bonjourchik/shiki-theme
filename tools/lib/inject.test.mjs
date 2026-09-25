@@ -33,3 +33,8 @@ test('из поля убирается @import', () => {
   const field = '@import url("https://raw.githubusercontent.com/x/y/main/dist/theme.css");\n@media all { :root { --bj-ghost: "X"; } }';
   assert.equal(fieldToPreviewCss(field).trim(), '@media all { :root { --bj-ghost: "X"; } }');
 });
+
+test('base href можно задать (предпросмотр ставит свой прокси)', () => {
+  const out = injectTheme('<html><head></head></html>', '', '/');
+  assert.ok(out.includes('<head><base href="/">'));
+});
