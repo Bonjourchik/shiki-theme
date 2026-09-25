@@ -167,35 +167,29 @@
 .l-top_menu-v2.is-search-focus .global-search .search-marker { color: var(--bj-ac); }
 .l-top_menu-v2.is-search-mobile .global-search { background: var(--bj-sf); }
 
-/* ===== шапка: стеклянная «капсула», свои иконки (src/20-components/icons.css) ===== */
+/* ===== шапка: высокая полоса по ширине страницы, свои иконки (src/20-components/icons.css) ===== */
+/* высота шапки — через переменную сайта: от неё считаются отступы, выпадающие списки и поиск */
+@media screen and (min-width: 768px) {
+  :root,
+  :root[data-color-mode] { --top-menu-height: 60px; }
+}
 .l-top_menu-v2 {
   isolation: isolate;
+  gap: 8px;
   padding: 0 14px;
-  background: linear-gradient(180deg, rgba(11, 13, 17, .97), rgba(11, 13, 17, .86));
-  border-bottom: 0;
-  box-shadow: none;
+  background: linear-gradient(180deg, #151820, #0f1116);
+  border-bottom: 1px solid var(--bj-ln);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
 }
-/* сама капсула — подложка под содержимым шапки */
-.l-top_menu-v2::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 3px 6px;
-  background: linear-gradient(180deg, rgba(30, 34, 43, .94), rgba(20, 23, 29, .94));
-  border: 1px solid rgba(255, 255, 255, .07);
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .05);
-  pointer-events: none;
-}
-/* янтарный блик по нижнему краю капсулы */
+/* янтарный блик по нижнему краю */
 .l-top_menu-v2::after {
   content: "";
   position: absolute;
-  left: 18%;
-  right: 18%;
-  bottom: 3px;
+  left: 0;
+  right: 0;
+  bottom: -1px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(240, 168, 69, .75) 50%, transparent);
+  background: linear-gradient(90deg, transparent 5%, rgba(240, 168, 69, .7) 50%, transparent 95%);
   pointer-events: none;
 }
 /* логотип: янтарный знак + текст «shikimori» вместо картинки */
@@ -255,16 +249,25 @@
 }
 
 @media screen and (min-width: 768px) {
-  /* переключатель раздела и профиль — «таблетки» внутри капсулы */
+  /* содержимое шапки — по ширине страницы, а не от края до края */
+  .l-top_menu-v2 { padding: 0 max(20px, calc((100% - 1200px) / 2)); }
+  .l-top_menu-v2 .menu-logo { gap: 18px; margin-right: auto; }
+  .l-top_menu-v2 .menu-dropdown.main { margin-right: 0; }
+  .l-top_menu-v2 .logo-container { gap: 11px; padding: 0; }
+  .l-top_menu-v2 .logo-container .glyph { width: 30px; height: 30px; background-size: contain; }
+  .l-top_menu-v2 .logo-container .logo { font-size: 19px; }
+  /* переключатель раздела и профиль — крупные «таблетки» */
   .l-top_menu-v2 .menu-dropdown > span {
     gap: 10px;
-    height: 32px;
-    margin: 7px 0;
-    padding: 0 12px;
-    background: rgba(255, 255, 255, .035);
-    border: 1px solid rgba(255, 255, 255, .06);
-    border-radius: 10px;
+    height: 40px;
+    margin: 0;
+    padding: 0 14px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid var(--bj-ln2);
+    border-radius: 12px;
+    font-size: 14px;
   }
+  .l-top_menu-v2 .menu-dropdown.main > span:not(.mobile) { min-width: 200px; padding-left: 14px; }
   .l-top_menu-v2 .menu-dropdown > span span { margin: 0; }
   .l-top_menu-v2 .menu-dropdown > span:hover,
   .l-top_menu-v2 .menu-dropdown > span:focus,
@@ -274,28 +277,37 @@
     box-shadow: none;
     color: var(--bj-tx);
   }
-  .l-top_menu-v2 .menu-dropdown.main .submenu-triangle::before { color: var(--bj-ac); filter: drop-shadow(0 0 4px rgba(240, 168, 69, .5)); }
-  .l-top_menu-v2 .menu-dropdown > span a { gap: 10px; height: 32px; border-radius: 9px; }
-  /* аватар в профиле — с янтарным кольцом */
+  .l-top_menu-v2 .menu-dropdown.main .submenu-triangle::before {
+    width: 20px;
+    height: 20px;
+    color: var(--bj-ac);
+    filter: drop-shadow(0 0 4px rgba(240, 168, 69, .5));
+  }
+  .l-top_menu-v2 .menu-dropdown > span a { gap: 10px; height: 40px; border-radius: 11px; }
+  /* профиль: аватар с янтарным кольцом */
+  .l-top_menu-v2 .menu-dropdown.profile { margin-left: 4px; }
+  .l-top_menu-v2 .menu-dropdown.profile > span { padding: 0 12px 0 6px; }
+  .l-top_menu-v2 .menu-dropdown.profile > span a { padding: 0; }
   .l-top_menu-v2 .menu-dropdown.profile img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     box-shadow: 0 0 0 2px var(--bj-sf2), 0 0 0 3px var(--bj-ac);
   }
   .l-top_menu-v2 .menu-dropdown.profile .nickname { font-weight: 600; }
-  /* иконки справа — квадратные кнопки со скруглением */
+  /* кнопки-иконки — квадраты 40px */
   .l-top_menu-v2 .menu-icon {
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    margin: 6px 3px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
     padding: 0;
-    background: rgba(255, 255, 255, .035);
-    border: 1px solid rgba(255, 255, 255, .06);
-    border-radius: 10px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid var(--bj-ln2);
+    border-radius: 12px;
     color: var(--bj-tx2);
   }
+  .l-top_menu-v2 .menu-icon::before { width: 20px; height: 20px; }
   .l-top_menu-v2 .menu-icon:hover,
   .l-top_menu-v2 .menu-icon:focus,
   .l-top_menu-v2 .menu-icon.active {
@@ -303,9 +315,9 @@
     border-color: var(--bj-ac-line);
     color: var(--bj-ac);
   }
-  /* подменю: отступ от капсулы, скругления, выезд */
+  /* подменю: отступ от шапки, скругления, выезд */
   .l-top_menu-v2 .menu-dropdown.active .submenu {
-    margin-top: 8px;
+    margin-top: 10px;
     padding: 6px;
     background: rgba(24, 27, 34, .98);
     border: 1px solid var(--bj-ln2);
@@ -313,6 +325,7 @@
     box-shadow: 0 22px 50px rgba(0, 0, 0, .55);
     animation: bj-drop .22s var(--bj-ease);
   }
+  .l-top_menu-v2 .menu-dropdown.profile.active .submenu { right: 0; left: auto; min-width: 230px; }
   /* пункт: иконка в скруглённом квадрате (подложка — ::after под иконкой) */
   .l-top_menu-v2 .submenu > a {
     isolation: isolate;
@@ -347,6 +360,15 @@
   .l-top_menu-v2 .submenu > .legend { padding: 8px 10px 2px; color: var(--bj-ac); opacity: .85; }
 }
 @media screen and (min-width: 1024px) {
+  /* поиск растягивается между разделом и кнопками; кнопки прижаты к профилю */
+  .l-top_menu-v2 .menu-logo { margin-right: 0; }
+  .l-top_menu-v2 .global-search {
+    flex: 1 1 auto;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .l-top_menu-v2 .menu-dropdown.profile { margin-left: 4px; }
   /* главное меню — две колонки, легенды разделов на всю ширину */
   .l-top_menu-v2 .menu-dropdown.main.active .submenu {
     display: grid !important;
@@ -358,27 +380,31 @@
   /* в две колонки «Топ» стоит рядом с «Аниме» — отступ подпункта не нужен */
   .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top { padding-left: 8px; }
   .l-top_menu-v2 .menu-dropdown.main .submenu > a.icon-top:not(.icon-mail)::after { left: 8px; }
-  /* поиск: капсула с лупой */
-  .l-top_menu-v2 .global-search { max-width: 560px; margin: 0 auto; }
+  /* поле поиска */
   .l-top_menu-v2 .global-search input {
-    height: 34px;
-    padding-left: 40px;
-    background: rgba(0, 0, 0, .25);
-    border: 1px solid rgba(255, 255, 255, .07);
-    border-radius: 11px;
+    height: 40px;
+    padding-left: 44px;
+    background: rgba(0, 0, 0, .28);
+    border: 1px solid var(--bj-ln2);
+    border-radius: 12px;
+    font-size: 14px;
   }
+  .l-top_menu-v2 .global-search input:hover { border-color: rgba(240, 168, 69, .25); }
   .l-top_menu-v2 .global-search .search-marker {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 34px;
+    left: 24px;
+    width: 44px;
+    height: 40px;
     color: var(--bj-mu);
     line-height: 1;
   }
   .l-top_menu-v2.is-search-focus .global-search .search-marker { color: var(--bj-ac); }
-  .l-top_menu-v2 .global-search .hotkey-marker { border-radius: 6px; }
+  .l-top_menu-v2 .global-search .hotkey-marker { right: 34px; border-radius: 6px; }
   .l-top_menu-v2 .global-search .search-results {
+    left: 24px;
+    width: calc(100% - 48px);
     margin-top: 10px;
     overflow: hidden;
     border-radius: 12px;
