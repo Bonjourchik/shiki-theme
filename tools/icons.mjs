@@ -37,6 +37,7 @@ const ICONS = {
   burger: '<path d="M4 7h16M4 12h16M4 17h11"/>',
   chevron: '<path d="m6 9 6 6 6-6"/>',
   up: '<path d="m6 15 6-6 6 6"/>',
+  close: '<path d="M6 6l12 12M18 6 6 18"/>',
 };
 
 // класс сайта → иконка; селекторы — внутри шапки .l-top_menu-v2
