@@ -37,9 +37,10 @@
   --link-color: var(--bj-ac);
   --link-hover-color: var(--bj-ac-h);
   --link-active-color: var(--bj-ac2);
-  --link-border-color: var(--bj-ac-line);
-  --link-border-hover-color: var(--bj-ac-h);
-  --link-border-active-color: var(--bj-ac2);
+  /* сайт рисует ссылкам нижнюю рамку этими цветами — в теме ссылок без подчёркиваний */
+  --link-border-color: transparent;
+  --link-border-hover-color: transparent;
+  --link-border-active-color: transparent;
   --headline-color: var(--bj-tx);
   --headline-background-color: transparent;
   --headline-border-color: transparent;

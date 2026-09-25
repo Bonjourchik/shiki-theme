@@ -24,3 +24,9 @@ hr { background-image: linear-gradient(90deg, transparent, var(--bj-ln2), transp
 .b-breadcrumbs,
 .b-show_more { color: var(--bj-mu); }
 mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
+
+/* ссылки без подчёркиваний: у сайта ~250 правил `:hover { text-decoration: underline }` —
+   перебиваем разом; подчёркивание в тексте через [u] (тег u вне ссылки) остаётся */
+a, a:hover, a:active, a *, a:hover *,
+.b-link, .link, .b-bracket-details, .spoiler, .abuser,
+.b-add_to_list :is(.trigger, .option) .text { text-decoration: none !important; }

@@ -1,0 +1,108 @@
+/* СГЕНЕРИРОВАНО tools/icons.mjs — не править руками */
+:root {
+  --bj-i-home: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMyAxMS41IDEyIDRsOSA3LjUiLz48cGF0aCBkPSJNNS41IDEwdjEwaDEzVjEwIi8+PHBhdGggZD0iTTEwIDIwdi01LjVoNFYyMCIvPjwvc3ZnPg==);
+  --bj-i-search: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI2LjUiLz48cGF0aCBkPSJtMjAgMjAtNC4yLTQuMiIvPjwvc3ZnPg==);
+  --bj-i-chat: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjAuNSAxMmE4LjUgOC41IDAgMCAxLTEyLjMgNy42TDMuNSAyMC41bDEtNC40QTguNSA4LjUgMCAxIDEgMjAuNSAxMloiLz48cGF0aCBkPSJNOC41IDEyaC4wMU0xMiAxMmguMDFNMTUuNSAxMmguMDEiLz48L3N2Zz4=);
+  --bj-i-mail: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzIiB5PSI1IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIyLjUiLz48cGF0aCBkPSJtMy41IDcuNSA4LjUgNiA4LjUtNiIvPjwvc3ZnPg==);
+  --bj-i-anime: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyLjUiIHk9IjUiIHdpZHRoPSIxOSIgaGVpZ2h0PSIxMyIgcng9IjMiLz48cGF0aCBkPSJtMTAgOC44IDQuOCAyLjctNC44IDIuN1oiLz48cGF0aCBkPSJNOCAyMWg4Ii8+PC9zdmc+);
+  --bj-i-top: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNOCA0aDh2NS41YTQgNCAwIDAgMS04IDBaIi8+PHBhdGggZD0iTTggNkg1LjVBMi41IDIuNSAwIDAgMCA4IDEwLjVNMTYgNmgyLjVBMi41IDIuNSAwIDAgMSAxNiAxMC41Ii8+PHBhdGggZD0iTTEyIDEzLjVWMTdNOC41IDIwLjVoN00xMCAxN2g0Ii8+PC9zdmc+);
+  --bj-i-manga: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMi41IDUuNUg5YTMgMyAwIDAgMSAzIDN2MTFhMiAyIDAgMCAwLTItMkgyLjVaIi8+PHBhdGggZD0iTTIxLjUgNS41SDE1YTMgMyAwIDAgMC0zIDN2MTFhMiAyIDAgMCAxIDItMmg3LjVaIi8+PC9zdmc+);
+  --bj-i-ranobe: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNiAzaDguNUwxOSA3LjVWMjFINloiLz48cGF0aCBkPSJNMTQgM3Y1aDUiLz48cGF0aCBkPSJNOSAxMi41aDdNOSAxNi41aDUiLz48L3N2Zz4=);
+  --bj-i-clubs: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSI5IiBjeT0iOCIgcj0iMy41Ii8+PHBhdGggZD0iTTIuNSAyMGE2LjUgNi41IDAgMCAxIDEzIDAiLz48cGF0aCBkPSJNMTUuNSA0LjZhMy41IDMuNSAwIDAgMSAwIDYuOE0xOCAxNC41YTYuNSA2LjUgMCAwIDEgMy41IDUuNSIvPjwvc3ZnPg==);
+  --bj-i-collections: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJtMTIgMyA5IDUtOSA1LTktNVoiLz48cGF0aCBkPSJtMyAxMi41IDkgNSA5LTUiLz48cGF0aCBkPSJtMyAxNyA5IDUgOS01Ii8+PC9zdmc+);
+  --bj-i-tierlists: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzIiB5PSI0IiB3aWR0aD0iMTgiIGhlaWdodD0iNCIgcng9IjEuNSIvPjxyZWN0IHg9IjMiIHk9IjEwIiB3aWR0aD0iMTMiIGhlaWdodD0iNCIgcng9IjEuNSIvPjxyZWN0IHg9IjMiIHk9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSI0IiByeD0iMS41Ii8+PC9zdmc+);
+  --bj-i-pen: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNCAyMGg0TDE5LjUgOC41YTIuOCAyLjggMCAwIDAtNC00TDQgMTZaIi8+PHBhdGggZD0ibTEzLjUgNi41IDQgNCIvPjwvc3ZnPg==);
+  --bj-i-articles: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzIiB5PSI0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTYiIHJ4PSIyLjUiLz48cGF0aCBkPSJNNyA4LjVoMTBNNyAxMmgxME03IDE1LjVoNiIvPjwvc3ZnPg==);
+  --bj-i-user: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjgiIHI9IjQiLz48cGF0aCBkPSJNNCAyMWE4IDggMCAwIDEgMTYgMCIvPjwvc3ZnPg==);
+  --bj-i-star: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJtMTIgMyAyLjcgNS42IDYuMS44LTQuNSA0LjIgMS4xIDZMMTIgMTYuN2wtNS40IDIuOSAxLjEtNi00LjUtNC4yIDYuMS0uOFoiLz48L3N2Zz4=);
+  --bj-i-flag: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNSAyMVY0Ii8+PHBhdGggZD0iTTUgNC41aDEybC0yLjUgNCAyLjUgNEg1Ii8+PC9zdmc+);
+  --bj-i-calendar: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIzIiB5PSI1IiB3aWR0aD0iMTgiIGhlaWdodD0iMTYiIHJ4PSIyLjUiLz48cGF0aCBkPSJNMyAxMGgxOE04IDN2NE0xNiAzdjQiLz48L3N2Zz4=);
+  --bj-i-info: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI5Ii8+PHBhdGggZD0iTTEyIDExdjZNMTIgNy41aC4wMSIvPjwvc3ZnPg==);
+  --bj-i-share: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSI2IiBjeT0iMTIiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjE4IiBjeT0iNiIgcj0iMi41Ii8+PGNpcmNsZSBjeD0iMTgiIGN5PSIxOCIgcj0iMi41Ii8+PHBhdGggZD0ibTguMyAxMC45IDcuNC0zLjdNOC4zIDEzLjFsNy40IDMuNyIvPjwvc3ZnPg==);
+  --bj-i-shield: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMyAyMCA2djZjMCA1LTMuNCA4LTggOS00LjYtMS04LTQtOC05VjZaIi8+PHBhdGggZD0ibTkgMTIgMiAyIDQtNCIvPjwvc3ZnPg==);
+  --bj-i-list: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNOSA2aDEyTTkgMTJoMTJNOSAxOGgxMiIvPjxwYXRoIGQ9Im0zIDUgMS41IDEuNUw3IDRNMyAxMWwxLjUgMS41TDcgMTBNMyAxN2wxLjUgMS41TDcgMTYiLz48L3N2Zz4=);
+  --bj-i-bookmark: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNi41IDNoMTF2MThMMTIgMTdsLTUuNSA0WiIvPjwvc3ZnPg==);
+  --bj-i-medal: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjkiIHI9IjYiLz48cGF0aCBkPSJNOC42IDE0IDcgMjJsNS0zIDUgMy0xLjYtOCIvPjxwYXRoIGQ9Im0xMiA2LjUuOSAxLjggMiAuMy0xLjQgMS40LjMgMi0xLjgtMS0xLjggMSAuMy0yLTEuNC0xLjQgMi0uM1oiLz48L3N2Zz4=);
+  --bj-i-sliders: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNCA2aDlNMTcgNmgzTTQgMTJoM00xMSAxMmg5TTQgMThoMTFNMTkgMThoMSIvPjxjaXJjbGUgY3g9IjE1IiBjeT0iNiIgcj0iMiIvPjxjaXJjbGUgY3g9IjkiIGN5PSIxMiIgcj0iMiIvPjxjaXJjbGUgY3g9IjE3IiBjeT0iMTgiIHI9IjIiLz48L3N2Zz4=);
+  --bj-i-rules: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSI0LjUiIHk9IjMiIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgcng9IjIuNSIvPjxwYXRoIGQ9Ik04LjUgOGg3TTguNSAxMmg3TTguNSAxNmg0Ii8+PC9zdmc+);
+  --bj-i-help: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI5Ii8+PHBhdGggZD0iTTkuNiA5LjRhMi41IDIuNSAwIDEgMSAzLjYgMi4zYy0uOC40LTEuMiAxLTEuMiAxLjhNMTIgMTdoLjAxIi8+PC9zdmc+);
+  --bj-i-logout: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTQuNSA0SDE4YTIgMiAwIDAgMSAyIDJ2MTJhMiAyIDAgMCAxLTIgMmgtMy41Ii8+PHBhdGggZD0ibTEwIDgtNCA0IDQgNE02IDEyaDEwIi8+PC9zdmc+);
+  --bj-i-burger: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNCA3aDE2TTQgMTJoMTZNNCAxN2gxMSIvPjwvc3ZnPg==);
+  --bj-i-chevron: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJtNiA5IDYgNiA2LTYiLz48L3N2Zz4=);
+  --bj-i-up: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJtNiAxNSA2LTYgNiA2Ii8+PC9zdmc+);
+}
+.l-top_menu-v2 .icon-home::before,
+.l-top_menu-v2 .icon-anime::before,
+.l-top_menu-v2 .icon-top::before,
+.l-top_menu-v2 .icon-manga::before,
+.l-top_menu-v2 .icon-ranobe::before,
+.l-top_menu-v2 .icon-forum::before,
+.l-top_menu-v2 .icon-clubs::before,
+.l-top_menu-v2 .icon-collections::before,
+.l-top_menu-v2 .icon-tierlists::before,
+.l-top_menu-v2 .icon-critiques::before,
+.l-top_menu-v2 .icon-articles::before,
+.l-top_menu-v2 .icon-users::before,
+.l-top_menu-v2 .icon-recommendations::before,
+.l-top_menu-v2 .icon-contests::before,
+.l-top_menu-v2 .icon-calendar::before,
+.l-top_menu-v2 .icon-info::before,
+.l-top_menu-v2 .icon-socials::before,
+.l-top_menu-v2 .icon-moderation::before,
+.l-top_menu-v2 .icon-profile::before,
+.l-top_menu-v2 .icon-anime_list::before,
+.l-top_menu-v2 .icon-manga_list::before,
+.l-top_menu-v2 .icon-mail::before,
+.l-top_menu-v2 .icon-achievements::before,
+.l-top_menu-v2 .icon-settings::before,
+.l-top_menu-v2 .icon-site_rules::before,
+.l-top_menu-v2 .icon-faq::before,
+.l-top_menu-v2 .icon-sign_out::before,
+.l-top_menu-v2 .menu-icon.forum::before,
+.l-top_menu-v2 .menu-icon.mail::before,
+.l-top_menu-v2 .menu-icon.search::before,
+.l-top_menu-v2 .menu-icon.trigger::before,
+.l-top_menu-v2 .global-search .search-marker::before {
+  content: "";
+  flex: none;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: var(--bj-i) center / contain no-repeat;
+  mask: var(--bj-i) center / contain no-repeat;
+  font-size: 0;
+  line-height: 0;
+}
+.l-top_menu-v2 .icon-home { --bj-i: var(--bj-i-home); }
+.l-top_menu-v2 .icon-anime { --bj-i: var(--bj-i-anime); }
+.l-top_menu-v2 .icon-top { --bj-i: var(--bj-i-top); }
+.l-top_menu-v2 .icon-manga { --bj-i: var(--bj-i-manga); }
+.l-top_menu-v2 .icon-ranobe { --bj-i: var(--bj-i-ranobe); }
+.l-top_menu-v2 .icon-forum { --bj-i: var(--bj-i-chat); }
+.l-top_menu-v2 .icon-clubs { --bj-i: var(--bj-i-clubs); }
+.l-top_menu-v2 .icon-collections { --bj-i: var(--bj-i-collections); }
+.l-top_menu-v2 .icon-tierlists { --bj-i: var(--bj-i-tierlists); }
+.l-top_menu-v2 .icon-critiques { --bj-i: var(--bj-i-pen); }
+.l-top_menu-v2 .icon-articles { --bj-i: var(--bj-i-articles); }
+.l-top_menu-v2 .icon-users { --bj-i: var(--bj-i-user); }
+.l-top_menu-v2 .icon-recommendations { --bj-i: var(--bj-i-star); }
+.l-top_menu-v2 .icon-contests { --bj-i: var(--bj-i-flag); }
+.l-top_menu-v2 .icon-calendar { --bj-i: var(--bj-i-calendar); }
+.l-top_menu-v2 .icon-info { --bj-i: var(--bj-i-info); }
+.l-top_menu-v2 .icon-socials { --bj-i: var(--bj-i-share); }
+.l-top_menu-v2 .icon-moderation { --bj-i: var(--bj-i-shield); }
+.l-top_menu-v2 .icon-profile { --bj-i: var(--bj-i-user); }
+.l-top_menu-v2 .icon-anime_list { --bj-i: var(--bj-i-list); }
+.l-top_menu-v2 .icon-manga_list { --bj-i: var(--bj-i-bookmark); }
+.l-top_menu-v2 .icon-mail { --bj-i: var(--bj-i-mail); }
+.l-top_menu-v2 .icon-achievements { --bj-i: var(--bj-i-medal); }
+.l-top_menu-v2 .icon-settings { --bj-i: var(--bj-i-sliders); }
+.l-top_menu-v2 .icon-site_rules { --bj-i: var(--bj-i-rules); }
+.l-top_menu-v2 .icon-faq { --bj-i: var(--bj-i-help); }
+.l-top_menu-v2 .icon-sign_out { --bj-i: var(--bj-i-logout); }
+.l-top_menu-v2 .menu-icon.forum { --bj-i: var(--bj-i-chat); }
+.l-top_menu-v2 .menu-icon.mail { --bj-i: var(--bj-i-mail); }
+.l-top_menu-v2 .menu-icon.search { --bj-i: var(--bj-i-search); }
+.l-top_menu-v2 .menu-icon.trigger { --bj-i: var(--bj-i-burger); }
+.l-top_menu-v2 .global-search .search-marker { --bj-i: var(--bj-i-search); }
