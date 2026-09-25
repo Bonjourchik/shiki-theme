@@ -9,6 +9,17 @@
 .b-comment:hover { border-color: var(--bj-ln2); }
 /* у сайта первый комментарий без верхней рамки и отступа — карточка выглядела обрезанной */
 .b-comment:first-child { border-top-width: 1px; padding-top: 12px; }
+/* сообщения почты (новости сайта, уведомления, диалоги) — такие же карточки */
+.b-comments > .b-message[class] {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  transition: border-color .3s;
+}
+.b-comments > .b-message[class]:hover { border-color: var(--bj-ln2); }
+.b-comments > .b-message header img { border-radius: 50%; }
 .b-comment header img,
 .b-topic header img { border-radius: 50%; }
 /* у топика про тайтл вместо аватара постер — прямоугольник, а не сплюснутый овал */

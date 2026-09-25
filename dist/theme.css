@@ -255,6 +255,17 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
 .b-comment:hover { border-color: var(--bj-ln2); }
 
 .b-comment:first-child { border-top-width: 1px; padding-top: 12px; }
+
+.b-comments > .b-message[class] {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+  transition: border-color .3s;
+}
+.b-comments > .b-message[class]:hover { border-color: var(--bj-ln2); }
+.b-comments > .b-message header img { border-radius: 50%; }
 .b-comment header img,
 .b-topic header img { border-radius: 50%; }
 
@@ -1960,24 +1971,24 @@ header.head .notice { color: var(--bj-mu); }
 .p-profiles-show .profile-content > .block:nth-child(3) { animation-delay: .9s; }
 .p-profiles-show .profile-content > .block:nth-child(4) { animation-delay: 1s; }
 
-.p-profiles-edit .block > .b-options-floated {
+.block.is-own-profile > .b-options-floated {
   position: static;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin: 0 0 16px;
 }
-.p-profiles-edit .block > .b-options-floated a[href] {
+.block.is-own-profile > .b-options-floated a[href] {
   padding: 4px 12px;
   background: var(--bj-sf);
   border: 1px solid var(--bj-ln2);
   border-radius: 999px;
   color: var(--bj-tx2);
 }
-.p-profiles-edit .block > .b-options-floated a::before,
-.p-profiles-edit .block > .b-options-floated a::after { display: none; }
-.p-profiles-edit .block > .b-options-floated a[href]:hover,
-.p-profiles-edit .block > .b-options-floated a.selected {
+.block.is-own-profile > .b-options-floated a::before,
+.block.is-own-profile > .b-options-floated a::after { display: none; }
+.block.is-own-profile > .b-options-floated a[href]:hover,
+.block.is-own-profile > .b-options-floated a.selected {
   background: var(--bj-ac-s);
   border-color: var(--bj-ac-line);
   color: var(--bj-ac);
