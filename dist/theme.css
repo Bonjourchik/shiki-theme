@@ -133,7 +133,8 @@ mark { background: var(--bj-ac-s); color: var(--bj-ac-h); }
   margin: -2px 10px 0 0;
   border-radius: 2px;
   background: var(--bj-ac);
-  box-shadow: 0 0 10px var(--bj-ac);
+
+  filter: drop-shadow(0 0 3px rgba(240, 168, 69, .85));
   transform: rotate(45deg);
   animation: bj-blink 2.6s ease-in-out infinite;
 }
@@ -355,6 +356,14 @@ input[type=submit]:active {
 .b-link_button,
 .b-link_button.dark,
 .b-link_button.dark-2 {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 18px;
+  line-height: 1.2;
   background-color: var(--bj-ac-s);
   border: 1px solid var(--bj-ac-line);
   border-radius: 10px;
@@ -362,6 +371,12 @@ input[type=submit]:active {
   font-family: var(--bj-font);
   font-weight: 600;
   transition: background-color .2s, border-color .2s, color .2s, box-shadow .2s, transform .2s var(--bj-ease);
+}
+.b-link_button.arrow-right::after { padding-left: 0; }
+.b-link_button.mini {
+  min-height: 26px;
+  padding: 0 12px;
+  font-size: 12px;
 }
 .b-link_button:hover,
 .b-link_button.dark:hover,
@@ -865,7 +880,15 @@ html::after {
     background: rgba(255, 255, 255, .05);
     border-radius: 12px;
   }
-  .l-top_menu-v2 .global-search .search-marker { color: var(--bj-mu); }
+  .l-top_menu-v2 .global-search .search-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 36px;
+    color: var(--bj-mu);
+    line-height: 1;
+  }
   .l-top_menu-v2 .global-search .hotkey-marker { border-radius: 6px; }
   .l-top_menu-v2 .global-search .search-results {
     margin-top: 10px;
@@ -1095,8 +1118,10 @@ header.head .notice { color: var(--bj-mu); }
 .p-db_entries-show .b-db_entry > .c-about > .cc > :is(.c-info-left, .c-info-right):last-child { margin-bottom: 0 !important; }
 
 .p-dashboards-show .b-hot_topics-v2 {
-  gap: 6px;
-  padding: 8px 15px;
+
+  height: 42px;
+  gap: 8px;
+  padding: 7px 15px;
   background: rgba(20, 23, 29, .8);
   border-bottom: 1px solid var(--bj-ln);
 }
@@ -1110,8 +1135,9 @@ header.head .notice { color: var(--bj-mu); }
 }
 .p-dashboards-show .b-hot_topics-v2 .b-link {
   align-items: center;
-  gap: 6px;
-  padding: 0 10px 0 3px;
+  gap: 8px;
+  height: 28px;
+  padding: 0 14px 0 4px;
   background: var(--bj-sf2);
   border: 1px solid var(--bj-ln);
   border-radius: 999px;
@@ -1125,8 +1151,8 @@ header.head .notice { color: var(--bj-mu); }
 }
 .p-dashboards-show .b-hot_topics-v2 .b-link .poster {
   flex: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
@@ -1185,12 +1211,12 @@ header.head .notice { color: var(--bj-mu); }
   background: linear-gradient(to bottom, transparent, rgba(20, 23, 29, .75));
   pointer-events: none;
 }
-.p-dashboards-show .v2 .b-news_wall-topic .status-line,
-.p-dashboards-show .v2 .b-news_wall-topic .title { padding: 0 14px; }
+.p-dashboards-show .v2 .b-news_wall-topic .status-line { padding: 0 14px; }
+
+.p-dashboards-show .v2 .b-news_wall-topic .title { margin: 0 14px 16px; padding: 0; }
 .p-dashboards-show .v2 .b-news_wall-topic .status-line { align-items: center; gap: 8px; }
 .p-dashboards-show .v2 .b-news_wall-topic .status-line time { color: var(--bj-mu); font-size: 11.5px; }
 .p-dashboards-show .v2 .b-news_wall-topic .title {
-  padding-bottom: 14px;
   color: var(--bj-tx);
   font-weight: 600;
   line-height: 1.4;
@@ -2076,7 +2102,8 @@ body.p-profiles-show::after {
   margin: -2px 10px 0 0;
   border-radius: 2px;
   background: var(--bj-ac);
-  box-shadow: 0 0 10px var(--bj-ac);
+
+  filter: drop-shadow(0 0 3px rgba(240, 168, 69, .85));
   transform: rotate(45deg);
   animation: bj-blink 2.6s ease-in-out infinite;
 }
@@ -2142,7 +2169,7 @@ body.p-profiles-show::after {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.45); opacity: .55; }
 }
-@keyframes bj-blink { 50% { opacity: .6; filter: brightness(.75); } }
+@keyframes bj-blink { 50% { opacity: .7; filter: drop-shadow(0 0 1px rgba(240, 168, 69, .35)); } }
 @keyframes bj-drop { from { opacity: 0; transform: translateY(-6px); } }
 @keyframes bj-rise { from { opacity: 0; transform: translateY(18px); } }
 @keyframes bj-fill-x { from { transform: scaleX(0); } }

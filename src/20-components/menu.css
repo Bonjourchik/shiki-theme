@@ -231,7 +231,15 @@
     background: rgba(255, 255, 255, .05);
     border-radius: 12px;
   }
-  .l-top_menu-v2 .global-search .search-marker { color: var(--bj-mu); }
+  .l-top_menu-v2 .global-search .search-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 36px;
+    color: var(--bj-mu);
+    line-height: 1;
+  }
   .l-top_menu-v2 .global-search .hotkey-marker { border-radius: 6px; }
   .l-top_menu-v2 .global-search .search-results {
     margin-top: 10px;

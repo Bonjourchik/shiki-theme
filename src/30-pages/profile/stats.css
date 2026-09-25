@@ -75,7 +75,8 @@
   margin: -2px 10px 0 0;
   border-radius: 2px;
   background: var(--bj-ac);
-  box-shadow: 0 0 10px var(--bj-ac);
+  /* drop-shadow повторяет форму ромба; box-shadow от повёрнутого квадрата давал размытое пятно */
+  filter: drop-shadow(0 0 3px rgba(240, 168, 69, .85));
   transform: rotate(45deg);
   animation: bj-blink 2.6s ease-in-out infinite;
 }

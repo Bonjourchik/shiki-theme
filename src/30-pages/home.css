@@ -2,8 +2,11 @@
 
 /* лента «Темы дня» под шапкой: таблетки с круглыми постерами */
 .p-dashboards-show .b-hot_topics-v2 {
-  gap: 6px;
-  padding: 8px 15px;
+  /* высота фиксирована (так сайт прячет не поместившиеся темы во второй строке),
+     но под таблетки 28px + отступы по 7px */
+  height: 42px;
+  gap: 8px;
+  padding: 7px 15px;
   background: rgba(20, 23, 29, .8);
   border-bottom: 1px solid var(--bj-ln);
 }
@@ -17,8 +20,9 @@
 }
 .p-dashboards-show .b-hot_topics-v2 .b-link {
   align-items: center;
-  gap: 6px;
-  padding: 0 10px 0 3px;
+  gap: 8px;
+  height: 28px;
+  padding: 0 14px 0 4px;
   background: var(--bj-sf2);
   border: 1px solid var(--bj-ln);
   border-radius: 999px;
@@ -32,8 +36,8 @@
 }
 .p-dashboards-show .b-hot_topics-v2 .b-link .poster {
   flex: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
@@ -95,12 +99,12 @@
   background: linear-gradient(to bottom, transparent, rgba(20, 23, 29, .75));
   pointer-events: none;
 }
-.p-dashboards-show .v2 .b-news_wall-topic .status-line,
-.p-dashboards-show .v2 .b-news_wall-topic .title { padding: 0 14px; }
+.p-dashboards-show .v2 .b-news_wall-topic .status-line { padding: 0 14px; }
+/* у сайта у заголовка max-height + overflow: hidden — отступы задаём снаружи, иначе их съедает */
+.p-dashboards-show .v2 .b-news_wall-topic .title { margin: 0 14px 16px; padding: 0; }
 .p-dashboards-show .v2 .b-news_wall-topic .status-line { align-items: center; gap: 8px; }
 .p-dashboards-show .v2 .b-news_wall-topic .status-line time { color: var(--bj-mu); font-size: 11.5px; }
 .p-dashboards-show .v2 .b-news_wall-topic .title {
-  padding-bottom: 14px;
   color: var(--bj-tx);
   font-weight: 600;
   line-height: 1.4;

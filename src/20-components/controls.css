@@ -30,6 +30,14 @@ input[type=submit]:active {
 .b-link_button,
 .b-link_button.dark,
 .b-link_button.dark-2 {
+  /* текст и иконка по центру: у сайта line-height 15px, иконка стоит по базовой линии */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 18px;
+  line-height: 1.2;
   background-color: var(--bj-ac-s);
   border: 1px solid var(--bj-ac-line);
   border-radius: 10px;
@@ -37,6 +45,12 @@ input[type=submit]:active {
   font-family: var(--bj-font);
   font-weight: 600;
   transition: background-color .2s, border-color .2s, color .2s, box-shadow .2s, transform .2s var(--bj-ease);
+}
+.b-link_button.arrow-right::after { padding-left: 0; }
+.b-link_button.mini {
+  min-height: 26px;
+  padding: 0 12px;
+  font-size: 12px;
 }
 .b-link_button:hover,
 .b-link_button.dark:hover,

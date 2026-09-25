@@ -15,7 +15,7 @@
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.45); opacity: .55; }
 }
-@keyframes bj-blink { 50% { opacity: .6; filter: brightness(.75); } }
+@keyframes bj-blink { 50% { opacity: .7; filter: drop-shadow(0 0 1px rgba(240, 168, 69, .35)); } }
 @keyframes bj-drop { from { opacity: 0; transform: translateY(-6px); } }
 @keyframes bj-rise { from { opacity: 0; transform: translateY(18px); } }
 @keyframes bj-fill-x { from { transform: scaleX(0); } }
