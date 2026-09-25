@@ -250,7 +250,7 @@
 
 @media screen and (min-width: 768px) {
   /* содержимое шапки — по ширине страницы, а не от края до края */
-  .l-top_menu-v2 { padding: 0 max(20px, calc((100% - 1200px) / 2)); }
+  .l-top_menu-v2 { padding: 0 10px; }
   .l-top_menu-v2 .menu-logo { gap: 18px; margin-right: auto; }
   .l-top_menu-v2 .menu-dropdown.main { margin-right: 0; }
   .l-top_menu-v2 .logo-container { gap: 11px; padding: 0; }
@@ -360,6 +360,8 @@
   .l-top_menu-v2 .submenu > .legend { padding: 8px 10px 2px; color: var(--bj-ac); opacity: .85; }
 }
 @media screen and (min-width: 1024px) {
+  /* края шапки — по краям контента страницы (1200px и внутренние 15px) */
+  .l-top_menu-v2 { padding: 0 max(20px, calc((100% - 1200px) / 2 + 15px)); }
   /* поиск растягивается между разделом и кнопками; кнопки прижаты к профилю */
   .l-top_menu-v2 .menu-logo { margin-right: 0; }
   .l-top_menu-v2 .global-search {
@@ -409,4 +411,9 @@
     overflow: hidden;
     border-radius: 12px;
   }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* у сайта кнопка поиска на планшете — block, иконка уезжала в угол; профиль — фиксированные 180px */
+  .l-top_menu-v2 .menu-icon.search.mobile { display: flex; }
+  .l-top_menu-v2 .menu-dropdown.profile > span { width: auto; }
 }
