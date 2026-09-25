@@ -3658,7 +3658,7 @@ body.p-profiles-show::after {
 .p-profiles-show .activity .graph { z-index: 2; }
 .p-profiles-show .activity .graph .line { overflow: visible; }
 
-.p-profiles-show .activity .graph .line:hover { position: relative; z-index: 3; }
+.p-profiles-show .activity .graph .line:hover .bar-container { z-index: 3; }
 .p-profiles-show .activity .graph .line .bar-container .bar .value {
   top: auto;
   bottom: calc(100% + 6px);
