@@ -248,3 +248,11 @@ input[type=file]::file-selector-button {
   transition: background-color .2s, color .2s;
 }
 input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: var(--bj-on-ac); }
+
+/* активная кнопка-вкладка (BB-вкладки в клубах и т.п.) — у сайта синяя */
+.b-link_button.active,
+.b-link_button.inline.active {
+  background-color: var(--bj-ac);
+  border-color: var(--bj-ac);
+  color: var(--bj-on-ac);
+}

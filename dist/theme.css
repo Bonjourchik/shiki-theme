@@ -612,6 +612,13 @@ input[type=file]::file-selector-button {
 }
 input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: var(--bj-on-ac); }
 
+.b-link_button.active,
+.b-link_button.inline.active {
+  background-color: var(--bj-ac);
+  border-color: var(--bj-ac);
+  color: var(--bj-on-ac);
+}
+
 :is(.headline, .midheadline, .subheadline):is(.red, .blue, .skyblue, .powderblue, .green, .yellow, .orange, .pink, .magenta, .purple, .brown, .gray) {
   background: transparent;
   color: var(--bj-tx);
@@ -1764,6 +1771,16 @@ header.head .notice { color: var(--bj-mu); }
   box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
 }
 .p-clubs-show .l-content > .block > .b-topic-minified { margin-bottom: 12px; }
+
+.collection-size { color: var(--bj-mu); }
+.b-catalog_entry .image-decor a.image-cutter.see-more {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln2);
+  border-radius: inherit;
+  color: var(--bj-ac);
+  transition: border-color .2s, background-color .2s;
+}
+.b-catalog_entry .image-decor a.image-cutter.see-more:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); }
 
 @media screen and (min-width: 768px) {
   .p-db_entries-show .b-db_entry {
@@ -3163,6 +3180,11 @@ body.p-profiles-show::after {
 .p-user_histories-index .b-user_history-line:hover { background: rgba(255, 255, 255, .03); }
 .p-user_histories-index .b-user_history-line .id { color: var(--bj-mu); }
 .p-user_histories-index .b-user_history-line .date { color: var(--bj-mu); font-size: 11.5px; }
+
+.p-user_rates-index .l-content .order-control { transition: color .2s; }
+.p-user_rates-index .l-content .order-control:hover { color: var(--bj-tx); }
+.p-user_rates-index .l-content .order-control.active { color: var(--bj-ac); text-decoration: none; }
+.b-table tr.border { border-top-color: var(--bj-ln); }
 
 .p-profiles-show .b-stats_bar .bar {
   position: relative;

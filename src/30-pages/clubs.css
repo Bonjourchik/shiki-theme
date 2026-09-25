@@ -53,3 +53,14 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
 }
 .p-clubs-show .l-content > .block > .b-topic-minified { margin-bottom: 12px; }
+
+/* коллекции: счётчик элементов и плитка «ещё +N» */
+.collection-size { color: var(--bj-mu); }
+.b-catalog_entry .image-decor a.image-cutter.see-more {
+  background: var(--bj-sf2);
+  border-color: var(--bj-ln2);
+  border-radius: inherit;
+  color: var(--bj-ac);
+  transition: border-color .2s, background-color .2s;
+}
+.b-catalog_entry .image-decor a.image-cutter.see-more:hover { background: var(--bj-ac-s); border-color: var(--bj-ac-line); }

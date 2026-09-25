@@ -128,3 +128,8 @@
 .p-user_histories-index .b-user_history-line:hover { background: rgba(255, 255, 255, .03); }
 .p-user_histories-index .b-user_history-line .id { color: var(--bj-mu); }
 .p-user_histories-index .b-user_history-line .date { color: var(--bj-mu); font-size: 11.5px; }
+/* сортировка по столбцу: активный — янтарный, без подчёркивания; линии таблицы — тёмные */
+.p-user_rates-index .l-content .order-control { transition: color .2s; }
+.p-user_rates-index .l-content .order-control:hover { color: var(--bj-tx); }
+.p-user_rates-index .l-content .order-control.active { color: var(--bj-ac); text-decoration: none; }
+.b-table tr.border { border-top-color: var(--bj-ln); }
