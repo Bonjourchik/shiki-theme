@@ -289,11 +289,13 @@
   .l-top_menu-v2 .menu-dropdown.profile > span { padding: 0 12px 0 9px; }
   /* у сайта ссылка внутри — margin: 0 -15px: аватар вылезал за левый край, стрелка — за правый */
   .l-top_menu-v2 .menu-dropdown.profile > span a { margin: 0; padding: 0; }
-  /* аватар 24px + кольцо 2.5px — с запасом внутри «таблетки» 40px */
-  .l-top_menu-v2 .menu-dropdown.profile img {
+  /* аватар 26px + кольцо 2.5px — с запасом внутри «таблетки» 40px;
+     `> span img` — у сайта этим селектором height: 30px, иначе аватар становится овалом */
+  .l-top_menu-v2 .menu-dropdown.profile > span img {
     flex: none;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 0 1.5px var(--bj-sf2), 0 0 0 2.5px var(--bj-ac);
   }

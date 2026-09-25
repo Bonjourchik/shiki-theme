@@ -1351,10 +1351,11 @@ html::after {
 
   .l-top_menu-v2 .menu-dropdown.profile > span a { margin: 0; padding: 0; }
 
-  .l-top_menu-v2 .menu-dropdown.profile img {
+  .l-top_menu-v2 .menu-dropdown.profile > span img {
     flex: none;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 0 1.5px var(--bj-sf2), 0 0 0 2.5px var(--bj-ac);
   }
