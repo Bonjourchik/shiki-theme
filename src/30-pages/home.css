@@ -248,13 +248,22 @@
     margin-top: 8px;
   }
   .p-dashboards-show .v2 .fc-user-sections .f-sections .fc-tags .f-tags .tag-link[class] { float: none; margin: 0; }
-  .p-dashboards-show .v2 .fc-user-sections .f-tags.ranobe-tags .forum-container { margin-top: auto; padding: 12px 0 0; }
+  /* «Форум» — крупная кнопка на всю ширину колонки «Ранобэ», вровень с низом блока */
+  .p-dashboards-show .v2 .fc-user-sections .f-tags.ranobe-tags .forum-container {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: flex-end;
+    width: auto;
+    margin-top: 0;
+    padding: 12px 0 0;
+  }
   /* на 768–1023px сайт делает кнопку absolute, шириной 224px и прижимает вправо — она выпадала из карточки */
   .p-dashboards-show .v2 .fc-user-sections .f-tags.ranobe-tags .forum-container .b-link_button {
-    display: inline-flex;
     position: static;
-    width: auto;
+    width: 100%;
     max-width: none;
+    min-height: 40px;
+    font-size: 14px;
   }
 }
 .p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .status-line .comments { margin-left: auto; }
@@ -267,3 +276,13 @@
   text-overflow: ellipsis;
 }
 .p-dashboards-show .v2 :is(.content-updates, .hot-topics) .b-news_line-topic .status-line .comments { flex: none; }
+
+/* «Обновления аниме»: сайт показывает две строки тегов (высота 44px) — чипы компактнее,
+   чтобы обе строки помещались целиком, а не обрезались посередине */
+.p-dashboards-show .v2 .db-updates .db-update .tags { gap: 4px; max-height: 44px; }
+.p-dashboards-show .v2 .db-updates .db-update .tags :is(.b-tag, .b-anime_status_tag[class]) {
+  margin: 0;
+  padding: 0 7px;
+  font-size: 11px;
+  line-height: 18px;
+}

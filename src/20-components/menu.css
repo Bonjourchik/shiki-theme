@@ -94,19 +94,51 @@
 .l-top_menu-v2 .submenu > a.icon-mail:hover span.unread span { color: var(--bj-ac); }
 .l-top_menu-v2 .submenu > a.icon-mail span.unread span:not(:last-child)::after { background: var(--bj-ln2); }
 
-/* результаты поиска: у сайта белые градиенты сверху/снизу, тёмный текст, синие выделения */
+/* выпадающий список поиска: панель со скруглениями, пункты — строки без разделителей,
+   активный — янтарная подсветка с короткой меткой слева (у сайта полосы-разделители и синие линии) */
+.l-top_menu-v2 .global-search .search-results {
+  padding: 6px;
+  background: var(--bj-sf2);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .5);
+}
 .l-top_menu-v2 .global-search .search-results::before { background: linear-gradient(to top, transparent, var(--bj-sf2)); }
 .l-top_menu-v2 .global-search .search-results::after { background: linear-gradient(to bottom, transparent, var(--bj-sf2)); }
 .l-top_menu-v2 .global-search .search-results .nothing_found,
-.l-top_menu-v2 .global-search .search-results .search-mode { color: var(--bj-tx2); }
-.l-top_menu-v2 .global-search .search-results .nothing_found,
 .l-top_menu-v2 .global-search .search-results .search-mode,
-.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item { border-top-color: var(--bj-ln); }
-.l-top_menu-v2 .global-search .search-results .search-mode:hover {
-  background: linear-gradient(to left, var(--bj-ac-s), transparent);
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item {
+  position: relative;
+  margin: 2px 0;
+  padding-left: 16px;
+  border-top: 0;
+  border-radius: 10px;
+  color: var(--bj-tx2);
+  transition: background-color .2s, color .2s;
+}
+.l-top_menu-v2 .global-search .search-results .nothing_found,
+.l-top_menu-v2 .global-search .search-results .search-mode { line-height: 38px; }
+/* метка слева — у сайта это широкая цветная полоса */
+.l-top_menu-v2 .global-search .search-results .nothing_found::before,
+.l-top_menu-v2 .global-search .search-results .search-mode::before,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  width: 3px;
+  height: 16px;
+  margin: -8px 0 0 !important;
+  background: transparent;
+  border-radius: 3px;
+  transition: background-color .2s;
+}
+.l-top_menu-v2 .global-search .search-results .search-mode:hover,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:hover {
+  background: rgba(255, 255, 255, .05);
   color: var(--bj-tx);
 }
-.l-top_menu-v2 .global-search .search-results .search-mode:hover::before { background: rgba(240, 168, 69, .35); }
+.l-top_menu-v2 .global-search .search-results .search-mode:hover::before { background: var(--bj-ln2); }
 .l-top_menu-v2 .global-search .search-results .nothing_found.active,
 .l-top_menu-v2 .global-search .search-results .nothing_found:focus,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item.active,
@@ -115,9 +147,8 @@
 .l-top_menu-v2 .global-search .search-results .search-mode:focus,
 .l-top_menu-v2 .global-search .search-results .search-mode:active,
 .l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:active {
-  background: linear-gradient(to left, rgba(240, 168, 69, .22), transparent), rgba(240, 168, 69, .06);
-  border-top-color: var(--bj-ac-line);
-  color: var(--bj-tx);
+  background: var(--bj-ac-s);
+  color: var(--bj-ac);
 }
 .l-top_menu-v2 .global-search .search-results .nothing_found.active::before,
 .l-top_menu-v2 .global-search .search-results .nothing_found:focus::before,
@@ -126,9 +157,13 @@
 .l-top_menu-v2 .global-search .search-results .search-mode.active::before,
 .l-top_menu-v2 .global-search .search-results .search-mode:focus::before,
 .l-top_menu-v2 .global-search .search-results .search-mode:active::before,
-.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:active::before { background: var(--bj-ac); }
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item:active::before {
+  background: var(--bj-ac);
+  box-shadow: 0 0 8px rgba(240, 168, 69, .6);
+}
 .l-top_menu-v2 .global-search .search-results .nothing_found::before { background: var(--bj-warn); }
-.l-top_menu-v2 .global-search .search-results :is(.nothing_found, .search-mode, .b-db_entry-variant-list_item):is(.active, :focus, :active) + * { border-top-color: var(--bj-ac-line); }
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item .image,
+.l-top_menu-v2 .global-search .search-results .b-db_entry-variant-list_item img { border-radius: 6px; }
 .l-top_menu-v2.is-search-focus .global-search .search-marker { color: var(--bj-ac); }
 .l-top_menu-v2.is-search-mobile .global-search { background: var(--bj-sf); }
 

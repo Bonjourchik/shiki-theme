@@ -5,5 +5,17 @@
   { "name": "forum", "url": "https://shikimori.io/forum" },
   { "name": "topic", "url": "https://shikimori.io/forum/site/209842-css-thread" },
   { "name": "list", "url": "https://shikimori.io/Bonjourchik/list/anime" },
-  { "name": "catalog", "url": "https://shikimori.io/animes?search=initial" }
+  { "name": "catalog", "url": "https://shikimori.io/animes?search=initial" },
+  { "name": "manga", "url": "https://shikimori.io/mangas/2-berserk" },
+  { "name": "character", "url": "https://shikimori.io/characters/11-edward-elric" },
+  { "name": "person", "url": "https://shikimori.io/people/1870-hayao-miyazaki" },
+  { "name": "clubs", "url": "https://shikimori.io/clubs" },
+  { "name": "club", "url": "https://shikimori.io/clubs/811-css-club-nastroyka-vneshnego-vida-sayta" },
+  { "name": "collections", "url": "https://shikimori.io/collections" },
+  { "name": "ongoings", "url": "https://shikimori.io/ongoings" },
+  { "name": "top", "url": "https://shikimori.io/animes/top" },
+  { "name": "users", "url": "https://shikimori.io/users" },
+  { "name": "history", "url": "https://shikimori.io/Bonjourchik/history" },
+  { "name": "favorites", "url": "https://shikimori.io/Bonjourchik/favorites" },
+  { "name": "achievements", "url": "https://shikimori.io/Bonjourchik/achievements" }
 ]
