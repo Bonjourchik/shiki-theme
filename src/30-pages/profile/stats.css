@@ -132,6 +132,8 @@
    и обрезано overflow: hidden у .line (подпись оси x привязана к графику, её это не касается) */
 .p-profiles-show .activity .graph { z-index: 2; }
 .p-profiles-show .activity .graph .line { overflow: visible; }
+/* у столбцов анимация через transform — подсказка заперта внутри столбца; столбец под курсором — над соседями */
+.p-profiles-show .activity .graph .line:hover { position: relative; z-index: 3; }
 .p-profiles-show .activity .graph .line .bar-container .bar .value {
   top: auto;
   bottom: calc(100% + 6px);
