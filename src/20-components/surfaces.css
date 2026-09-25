@@ -94,12 +94,7 @@
 .b-table td { border-color: var(--bj-ln); }
 .b-table tbody tr { transition: background-color .2s; }
 
-/* страница тайтла: «Описание» у сайта не плавающее и лежит под «Информацией»/«Рейтингом» —
-   без clear его карточка обволакивает обе колонки (карточка в карточке) */
-.p-db_entries-show .b-db_entry > .c-description { clear: left; }
-/* зазор — нижним отступом плавающего блока: верхний отступ у элемента с clear поглощается */
-.p-db_entries-show .b-db_entry > .c-about,
-.p-db_entries-show .b-db_entry > .c-image { margin-bottom: 16px; padding-bottom: 0; }
+/* раскладка постер / информация / описание — сеткой в src/30-pages/db-entry.css */
 .p-db_entries-show .b-db_entry > .c-about > .cc { margin-bottom: 0; padding-bottom: 0; }
 /* «Информация» и «Рейтинг» — сетка с ровным зазором вместо плавающих колонок */
 .p-db_entries-show .b-db_entry > .c-about > .cc {
