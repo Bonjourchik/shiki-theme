@@ -116,3 +116,7 @@
 }
 /* у сайта .c-info-*:last-child { margin-bottom: 30px !important } — лишний зазор под сеткой */
 .p-db_entries-show .b-db_entry > .c-about > .cc > :is(.c-info-left, .c-info-right):last-child { margin-bottom: 0 !important; }
+
+/* заголовок «Фильтры»: у сайта flex с space-between — ромб слева, текст уезжал вправо */
+.c-filters .c-filters-head { justify-content: flex-start; }
+.c-filters .c-filters-head > span + * { margin-left: auto; }

@@ -198,3 +198,40 @@ input[type=radio] { accent-color: var(--bj-ac); }
 .b-add_to_list.dropped .trigger-arrow:hover { color: var(--bj-warn); }
 .b-add_to_list .expanded-options .option:hover { background: var(--bj-ac-s); color: var(--bj-ac); }
 .b-add_to_list .expanded-options .remove-trigger .text { color: var(--bj-warn); }
+
+/* пагинация «← назад · Страница N из M · вперёд →» — таблетки */
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: 999px;
+}
+.pagination .link {
+  padding: 3px 12px;
+  border-radius: 999px;
+  color: var(--bj-ac);
+  font-weight: 600;
+  transition: background-color .2s, color .2s;
+}
+.pagination a.link:not(.disabled):hover { background: var(--bj-ac); color: var(--bj-on-ac); }
+.pagination .link.disabled { color: var(--bj-mu); opacity: .6; }
+.pagination .no-hover { padding: 0 6px; color: var(--bj-mu); }
+.pagination .no-hover :is(.link-current, .link-total) { color: var(--bj-tx); font-family: var(--bj-font-alt); font-weight: 600; }
+
+/* обычный select — своя стрелка вместо системной (.c-filter-select — сортировка в фильтрах каталога) */
+select,
+select.c-filter-select {
+  background-color: var(--bj-bg);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 9px;
+  appearance: none;
+  padding: 5px 28px 5px 10px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgMTAgNiI+PHBhdGggZD0iTTEgMWw0IDQgNC00IiBmaWxsPSJub25lIiBzdHJva2U9IiM4NzhkYTAiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
+  background-position: right 11px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+select option { background: var(--bj-sf2); color: var(--bj-tx); }
