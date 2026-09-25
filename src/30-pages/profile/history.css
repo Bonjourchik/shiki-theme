@@ -104,3 +104,28 @@
 .p-user_rates-index .b-options-floated.mylist .b-link:hover,
 .p-user_rates-index .b-options-floated.mylist .b-link.active { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
 .p-user_rates-index .b-options-floated.mylist .b-link:is(:hover, .active) span { color: var(--bj-ac); }
+
+/* ===== История (.p-user_histories-index): интервалы карточками ===== */
+.p-user_histories-index .history-page > .mischeadline {
+  margin: 0 0 8px 4px;
+  color: var(--bj-ac);
+  font: 600 10.5px/1.4 var(--bj-font-alt);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.p-user_histories-index .history-page > .history-interval {
+  margin-bottom: 18px;
+  padding: 8px 10px;
+  background: var(--bj-sf);
+  border: 1px solid var(--bj-ln);
+  border-radius: var(--bj-r);
+}
+.p-user_histories-index .b-user_history-line {
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: var(--bj-tx2);
+  transition: background-color .2s;
+}
+.p-user_histories-index .b-user_history-line:hover { background: rgba(255, 255, 255, .03); }
+.p-user_histories-index .b-user_history-line .id { color: var(--bj-mu); }
+.p-user_histories-index .b-user_history-line .date { color: var(--bj-mu); font-size: 11.5px; }
