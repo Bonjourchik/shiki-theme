@@ -3398,6 +3398,9 @@ body.p-profiles-show::after {
 .p-profiles-show .cc-favourites:has(> :is(.c-anime, .c-manga, .c-ranobe))::before { content: "Аниме"; order: 0; }
 .p-profiles-show .cc-favourites:has(> :is(.c-character, .c-person))::after { content: "Персонажи"; order: 2; margin-top: 10px; }
 
+.p-profiles-show .cc-favourites > :nth-child(n + 7 of :is(.c-anime, .c-manga, .c-ranobe)),
+.p-profiles-show .cc-favourites > :nth-child(n + 7 of :is(.c-character, .c-person)) { display: none; }
+
 .p-profiles-show .profile-head {
   position: relative;
   display: grid;

@@ -53,3 +53,7 @@
 }
 .p-profiles-show .cc-favourites:has(> :is(.c-anime, .c-manga, .c-ranobe))::before { content: "Аниме"; order: 0; }
 .p-profiles-show .cc-favourites:has(> :is(.c-character, .c-person))::after { content: "Персонажи"; order: 2; margin-top: 10px; }
+/* не больше 6 в каждой группе: при большом «Количестве избранного в профиле» (настройки) сайт отдаёт больше
+   записей — остаются первые 6 аниме и первые 6 персонажей из присланных */
+.p-profiles-show .cc-favourites > :nth-child(n + 7 of :is(.c-anime, .c-manga, .c-ranobe)),
+.p-profiles-show .cc-favourites > :nth-child(n + 7 of :is(.c-character, .c-person)) { display: none; }
