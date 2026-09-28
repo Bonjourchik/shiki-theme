@@ -152,6 +152,35 @@
   pointer-events: none;
   transform: translateX(-50%);
 }
+/* у низких столбцов (.value.narrow) сайт число не выводит — оно есть только в title столбца
+   («10 часов с 20 февраля по 3 мая»). Поэтому подсказка у всех столбцов — текст title, а .value скрыто;
+   показывается при наведении на всю колонку, чтобы низкий столбец было легко поймать */
+.p-profiles-show .activity .graph .line .bar-container .bar .value[class] { display: none; }
+.p-profiles-show .activity .graph .line .bar-container .bar[title]::after {
+  content: attr(title);
+  position: absolute;
+  z-index: 5;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  display: none;
+  width: max-content;
+  max-width: 190px;
+  padding: 4px 8px;
+  background: var(--bj-sf3);
+  border: 1px solid var(--bj-ac-line);
+  border-radius: 7px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .45);
+  color: var(--bj-tx);
+  font: 600 10.5px/1.35 var(--bj-font);
+  text-align: center;
+  white-space: normal;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+.p-profiles-show .activity .graph .line:hover .bar-container .bar[title]::after { display: block; }
+/* у краёв графика подсказка прижата к краю, чтобы не вылезать за блок */
+.p-profiles-show .activity .graph .line:nth-child(-n + 4 of .line) .bar-container .bar::after { left: 0; transform: none; text-align: left; }
+.p-profiles-show .activity .graph .line:nth-last-child(-n + 4 of .line) .bar-container .bar::after { left: auto; right: 0; transform: none; text-align: right; }
 /* столбцы — с зазором 2px и скруглённым верхом */
 .p-profiles-show .activity .graph .line { border-right: 0; padding: 0 1px; box-sizing: border-box; }
 
