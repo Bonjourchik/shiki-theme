@@ -87,6 +87,12 @@
 /* случайный блок избранного сайта (10 записей вперемешку) прячем, если в «О себе» есть свой */
 .p-profiles-show:has(.bj-fav) .profile-content .block:has(> .cc-favourites) { display: none; }
 .p-profiles-show .about.block .bj-fav { margin-top: 18px; }
+/* в «О себе» только избранное — блок становится разделом «Избранное»: заголовок «Обо мне» убираем,
+   карандаш редактирования (виден только владельцу) остаётся справа, ссылка «Всё избранное» — левее него */
+.p-profiles-show .about.block:has(> .bj-fav):not(:has(> :not(.subheadline, .subheadline-buttons, .bj-fav))) > .subheadline { display: none; }
+.p-profiles-show .about.block:has(> .bj-fav):not(:has(> :not(.subheadline, .subheadline-buttons, .bj-fav))) > .bj-fav { margin-top: 0; }
+.p-profiles-show .about.block:has(> .subheadline-buttons):has(> .bj-fav):not(:has(> :not(.subheadline, .subheadline-buttons, .bj-fav))) .bj-fav-head { padding-right: 40px; }
+.p-profiles-show .about.block .bj-fav-head .bj-fav-title { margin-left: -6px; padding: 0 2px 0 8px; }
 .p-profiles-show .about.block .bj-fav-head {
   display: flex;
   align-items: center;
