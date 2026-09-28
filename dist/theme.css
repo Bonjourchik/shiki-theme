@@ -123,7 +123,9 @@ a, a:hover, a:active, a *, a:hover *,
   font-size: 11px;
   letter-spacing: 1.6px;
   line-height: 30px;
-  padding: 0 2px;
+
+  margin-left: -6px;
+  padding: 0 2px 0 8px;
   text-transform: uppercase;
 }
 .headline { font-size: 13px; }
@@ -188,17 +190,18 @@ a, a:hover, a:active, a *, a:hover *,
 .bar.horizontal .line .x_label,
 .bar.vertical .line .x_label { color: var(--bj-mu); }
 
-.bar.simple .bar.s0 { background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac)); }
-.bar.simple .bar.s1 { background: rgba(240, 168, 69, .72); }
-.bar.simple .bar.s2 { background: rgba(240, 168, 69, .45); }
-.bar.simple .bar.s0:hover,
-.bar.simple .bar.s1:hover,
-.bar.simple .bar.s2:hover { background: var(--bj-ac-h); }
+.bar.simple .bar.s0,
+.bar.simple .bar.s0:hover { background: linear-gradient(90deg, var(--bj-ac2), var(--bj-ac)); }
+.bar.simple .bar.s1,
+.bar.simple .bar.s1:hover { background: rgba(240, 168, 69, .72); }
+.bar.simple .bar.s2,
+.bar.simple .bar.s2:hover { background: rgba(240, 168, 69, .45); }
 .bar.simple .bar.s3,
 .bar.simple .bar.s3:hover { background: var(--bj-sf3); }
+.bar.simple .bar:hover { filter: brightness(1.2); }
 .bar.simple .bar .value { color: var(--bj-on-ac); }
 .bar.simple .bar.s3 .value { color: var(--bj-tx2); }
-.bar.simple .bar { border-radius: 4px; transition: background .2s; }
+.bar.simple .bar { border-radius: 4px; transition: filter .2s; }
 
 .p-user_rates-index .list-groups .summary.lines { color: var(--bj-tx2); }
 .p-user_rates-index .l-content .order-control { color: var(--bj-tx2); }
