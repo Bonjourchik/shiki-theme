@@ -97,3 +97,5 @@
 ## Notes
 
 Source tags: `Source: user`, `Source: code`, `Source: docs`, `Source: inference`, `TODO:`.
+
+- Если в «О себе» только `[div=bj-fav]`, заголовок «Обо мне» скрыт (`about.css`) — блок выглядит разделом «Избранное»; карандаш редактирования (только владельцу) остаётся справа, ссылке «Всё избранное» даётся `padding-right: 40px`.
