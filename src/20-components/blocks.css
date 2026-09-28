@@ -47,8 +47,11 @@
 .subheadline a:hover { color: var(--bj-ac); }
 /* заголовок-ссылка без соседних кнопок — кликабелен во всю строку, до стрелки справа
    (стрелка — ::before ссылки, прижата к правому краю заголовка) */
+:is(.headline, .midheadline, .subheadline):has(> a:only-child) { display: flex; align-items: center; }
 :is(.headline, .midheadline, .subheadline) > a:only-child {
   display: block;
+  flex: 1 1 auto;
+  min-width: 0;
   max-width: none;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -160,8 +160,11 @@ a, a:hover, a:active, a *, a:hover *,
 .midheadline a:hover,
 .subheadline a:hover { color: var(--bj-ac); }
 
+:is(.headline, .midheadline, .subheadline):has(> a:only-child) { display: flex; align-items: center; }
 :is(.headline, .midheadline, .subheadline) > a:only-child {
   display: block;
+  flex: 1 1 auto;
+  min-width: 0;
   max-width: none;
   overflow: hidden;
   text-overflow: ellipsis;
