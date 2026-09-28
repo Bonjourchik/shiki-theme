@@ -45,6 +45,15 @@
 .headline a:hover,
 .midheadline a:hover,
 .subheadline a:hover { color: var(--bj-ac); }
+/* заголовок-ссылка без соседних кнопок — кликабелен во всю строку, до стрелки справа
+   (стрелка — ::before ссылки, прижата к правому краю заголовка) */
+:is(.headline, .midheadline, .subheadline) > a:only-child {
+  display: block;
+  max-width: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .b-topic {
   background: var(--bj-sf);
