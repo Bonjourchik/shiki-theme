@@ -31,3 +31,25 @@
 }
 .p-profiles-show .cc-friends a:hover img,
 .p-profiles-show .b-clubs a:hover img { transform: scale(1.1); }
+
+/* избранное — группами «Аниме» и «Персонажи» с подписями. Подписи — ::before/::after самого блока:
+   в сетке они становятся ячейками на всю ширину, order ставит их перед своей группой */
+.p-profiles-show .cc-favourites > :is(.c-anime, .c-manga, .c-ranobe) { order: 1; }
+.p-profiles-show .cc-favourites > :is(.c-character, .c-person) { order: 3; }
+.p-profiles-show .cc-favourites::before,
+.p-profiles-show .cc-favourites::after { display: none; }
+.p-profiles-show .cc-favourites:has(> :is(.c-anime, .c-manga, .c-ranobe))::before,
+.p-profiles-show .cc-favourites:has(> :is(.c-character, .c-person))::after {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0 -2px;
+  color: var(--bj-mu);
+  font: 600 9.5px/1 var(--bj-font-alt);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--bj-ln2), transparent) right center / calc(100% - 96px) 1px no-repeat;
+}
+.p-profiles-show .cc-favourites:has(> :is(.c-anime, .c-manga, .c-ranobe))::before { content: "Аниме"; order: 0; }
+.p-profiles-show .cc-favourites:has(> :is(.c-character, .c-person))::after { content: "Персонажи"; order: 2; margin-top: 10px; }
