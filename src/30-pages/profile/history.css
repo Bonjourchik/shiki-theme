@@ -172,8 +172,8 @@
   line-height: 17px;
   vertical-align: 1px;
 }
-.p-user_rates-index .list-lines td.name > .ongoing { --bj-tag: #7fb2ff; }
-.p-user_rates-index .list-lines td.name > .rewatches { --bj-tag: var(--bj-ok); }
+.p-user_rates-index .list-lines td.name > .ongoing[class] { --bj-tag: #7fb2ff; }
+.p-user_rates-index .list-lines td.name > .rewatches[class] { --bj-tag: var(--bj-ok); }
 .p-user_rates-index .list-lines td.name .rate-text { color: var(--bj-mu); }
 /* оценка и эпизоды: своё значение светлое, «/ всего» приглушённое */
 .p-user_rates-index .list-lines td.num { color: var(--bj-tx2); }
