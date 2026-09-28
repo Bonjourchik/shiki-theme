@@ -1852,6 +1852,8 @@ header.head .notice { color: var(--bj-mu); }
   border-top-color: var(--bj-ln);
 }
 
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-right:not(:has(*)) { display: none; }
+
 .tooltip-inner:has(.b-catalog_entry-tooltip) {
   padding: 16px 16px 14px;
   background:

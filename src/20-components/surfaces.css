@@ -147,3 +147,5 @@
   border-top-style: solid;
   border-top-color: var(--bj-ln);
 }
+/* у анонсов «Рейтинг» пустой (только пробел) — без пустой карточки */
+.p-db_entries-show .b-db_entry > .c-about > .cc > .c-info-right:not(:has(*)) { display: none; }
