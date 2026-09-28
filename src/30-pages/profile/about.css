@@ -183,3 +183,7 @@
 @media screen and (max-width: 767px) {
   .p-profiles-show .about.block .bj-fav-row .b-catalog_entry[class] { width: calc((100cqw - 30px) / 4) !important; }
 }
+/* с «Избранным» в «О себе» — оно над «Достижениями» (у сайта порядок: статистика, достижения, о себе) */
+.p-profiles-show .profile-content:has(> .about.block .bj-fav) { display: flex; flex-direction: column; }
+.p-profiles-show .profile-content:has(> .about.block .bj-fav) > .achievements { order: 1; }
+.p-profiles-show .profile-content:has(> .about.block .bj-fav) > .about.block ~ .block:not(.achievements) { order: 2; }

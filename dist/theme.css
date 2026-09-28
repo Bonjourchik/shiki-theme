@@ -3010,6 +3010,10 @@ header.head .notice { color: var(--bj-mu); }
   .p-profiles-show .about.block .bj-fav-row .b-catalog_entry[class] { width: calc((100cqw - 30px) / 4) !important; }
 }
 
+.p-profiles-show .profile-content:has(> .about.block .bj-fav) { display: flex; flex-direction: column; }
+.p-profiles-show .profile-content:has(> .about.block .bj-fav) > .achievements { order: 1; }
+.p-profiles-show .profile-content:has(> .about.block .bj-fav) > .about.block ~ .block:not(.achievements) { order: 2; }
+
 .p-profiles-show .achievements .cc-2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
