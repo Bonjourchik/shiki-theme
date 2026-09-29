@@ -138,13 +138,12 @@
   color: var(--bj-tx2);
   font-size: 12.5px;
 }
-/* карточка списков «стеклом» поверх баннера */
+/* карточка списков поверх баннера. Без backdrop-filter: под ней анимированный арт, и размытие
+   пересчитывалось бы каждый кадр (баннер дёргался) — вместо стекла плотный полупрозрачный фон */
 .p-profiles-show .profile-head > .c-info {
   grid-area: info;
   padding: 18px 20px;
-  background: rgba(20, 23, 29, .62);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  backdrop-filter: blur(16px) saturate(1.4);
+  background: rgba(20, 23, 29, .86);
   border: 1px solid var(--bj-ln);
   border-radius: var(--bj-r);
 }

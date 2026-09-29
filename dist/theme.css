@@ -1104,8 +1104,8 @@ html::after {
   width: 900px;
   height: 600px;
   border-radius: 50%;
+
   background: radial-gradient(closest-side, rgba(240, 168, 69, .12), rgba(255, 122, 61, .05) 50%, transparent);
-  filter: blur(30px);
   pointer-events: none;
   animation: bj-drift 18s ease-in-out infinite alternate;
 }
@@ -1132,6 +1132,12 @@ html::after {
   backdrop-filter: blur(14px) saturate(1.3);
   border-bottom: 1px solid rgba(255, 255, 255, .06);
   color: var(--bj-tx);
+}
+
+.p-profiles-show .l-top_menu-v2 {
+  background: rgba(11, 13, 17, .88);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
 .l-top_menu-v2 .menu-dropdown > span {
   color: var(--bj-tx2);
@@ -3000,6 +3006,12 @@ header.head .notice { color: var(--bj-mu); }
   object-fit: cover;
 }
 .p-profiles-show .about.block .bj-fav-row .b-catalog_entry .misc { display: none; }
+
+.p-profiles-show .about.block .bj-fav-row .collection_score {
+  background-color: rgba(16, 20, 26, .8);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
 @keyframes bj-fav-ride { to { transform: translateX(-100%); } }
 
 .p-profiles-show .about.block .bj-fav-row :has(> .b-catalog_entry):only-child { animation-name: bj-fav-sway; animation-direction: alternate; }
@@ -3563,9 +3575,7 @@ body.p-profiles-show::after {
 .p-profiles-show .profile-head > .c-info {
   grid-area: info;
   padding: 18px 20px;
-  background: rgba(20, 23, 29, .62);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  backdrop-filter: blur(16px) saturate(1.4);
+  background: rgba(20, 23, 29, .86);
   border: 1px solid var(--bj-ln);
   border-radius: var(--bj-r);
 }

@@ -5,6 +5,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, .06);
   color: var(--bj-tx);
 }
+/* в профиле шапка лежит на анимированном баннере — размытие под ней пересчитывалось бы каждый кадр */
+.p-profiles-show .l-top_menu-v2 {
+  background: rgba(11, 13, 17, .88);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
 .l-top_menu-v2 .menu-dropdown > span {
   color: var(--bj-tx2);
   transition: color .2s, box-shadow .3s var(--bj-ease);

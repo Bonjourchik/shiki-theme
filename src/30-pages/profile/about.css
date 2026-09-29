@@ -174,6 +174,12 @@
   object-fit: cover;
 }
 .p-profiles-show .about.block .bj-fav-row .b-catalog_entry .misc { display: none; }
+/* оценка на постере: у сайта backdrop-filter — на едущей ленте 70 таких размытий пересчитывались каждый кадр */
+.p-profiles-show .about.block .bj-fav-row .collection_score {
+  background-color: rgba(16, 20, 26, .8);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
 @keyframes bj-fav-ride { to { transform: translateX(-100%); } }
 /* копия одна (старый BB или сайт склеил теги) — кругом нельзя: лента пустела бы; тогда туда-обратно */
 .p-profiles-show .about.block .bj-fav-row :has(> .b-catalog_entry):only-child { animation-name: bj-fav-sway; animation-direction: alternate; }

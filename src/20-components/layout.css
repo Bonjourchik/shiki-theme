@@ -12,8 +12,8 @@ html::after {
   width: 900px;
   height: 600px;
   border-radius: 50%;
+  /* без filter: blur — градиент и так мягкий, а размытие большого движущегося слоя дорого */
   background: radial-gradient(closest-side, rgba(240, 168, 69, .12), rgba(255, 122, 61, .05) 50%, transparent);
-  filter: blur(30px);
   pointer-events: none;
   animation: bj-drift 18s ease-in-out infinite alternate;
 }
