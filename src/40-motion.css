@@ -1,5 +1,4 @@
 @keyframes bj-drift { to { transform: translate(520px, 260px) scale(1.2); } }
-@keyframes bj-kenburns { from { transform: scale(1); } to { transform: scale(1.12) translate(-2%, -3%); } }
 @keyframes bj-sweep {
   0% { transform: translateX(-100%); }
   60%, 100% { transform: translateX(100%); }
