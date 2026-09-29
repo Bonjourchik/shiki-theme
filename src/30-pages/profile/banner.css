@@ -2,47 +2,56 @@ body.p-profiles-show { position: relative; }
 /* блик баннера (translateX до 100%) и бегущий текст дают вклад в scrollable overflow документа —
    без этого появлялась горизонтальная прокрутка. :has() — чтобы не трогать html на других страницах */
 html:has(body.p-profiles-show) { overflow-x: hidden; }
-/* арт; затемнение к фону — в том же слое, поверх картинки. Наезд камеры (scale 1 → 1.12 за 26 с) убран:
-   такой медленный зум большой картинки браузер рисует ступеньками — баннер «покадрово» дёргался */
+/* арт — по ширине страницы (до 1280px), а не во весь экран: во весь экран (1868×480) картинка 16:9
+   увеличивалась почти вдвое и в кадр попадала лишь середина. Края плавно уходят в фон.
+   Затемнение к фону — в том же слое, поверх картинки. Анимаций у арта нет: медленный зум
+   браузер рисовал ступеньками */
 body.p-profiles-show::before {
   content: "";
   position: absolute;
   z-index: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
   top: 0;
+  width: min(100%, 1280px);
   height: var(--bj-banner-h);
+  translate: -50% 0;
   background:
     linear-gradient(180deg, rgba(11, 13, 17, 0) 0, rgba(11, 13, 17, .05) 45%, rgba(11, 13, 17, .6) 75%, var(--bj-bg) 100%),
     var(--bj-art) center 30% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   pointer-events: none;
 }
-/* пробегающий блик — отдельный слой, едет через transform */
+/* пробегающий блик — отдельный слой той же ширины, едет через transform.
+   Полоса блика — середина слоя (35–65%), слой сдвигается от -65% до 35%: полоса не выходит за арт */
 body.p-profiles-show::after {
   content: "";
   position: absolute;
   z-index: 0;
-  left: 0;
+  left: 50%;
   top: 0;
-  width: 100%;
+  width: min(100%, 1280px);
+  margin-left: max(-50%, -640px);
   height: calc(var(--bj-banner-h) * .8);
   background: linear-gradient(105deg, transparent 35%, rgba(255, 210, 150, .12) 50%, transparent 65%);
   /* к низу блик гаснет вместе с затемнением арта */
   -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent);
   mask-image: linear-gradient(180deg, #000 50%, transparent);
   pointer-events: none;
-  transform: translateX(-100%);
+  transform: translateX(-65%);
   animation: bj-sweep 7s ease-in-out infinite;
   will-change: transform;
 }
-/* бегущий текст: только заливка, без обводки */
+/* бегущий текст: только заливка, без обводки. Бесконечная строка с постоянной скоростью: в строке
+   три копии --bj-ghost, сдвиг ровно на одну копию (-33.333%) — стык не виден. Раньше текст ездил
+   туда-обратно с замедлением у краёв и на малой скорости шёл ступеньками. Отдельный слой (will-change)
+   двигается с субпиксельной точностью. Обрезка по ширине страницы — overflow-x: clip у .l-page */
+.p-profiles-show .l-page { overflow-x: clip; }
 .p-profiles-show .l-page::before {
-  content: var(--bj-ghost);
+  content: var(--bj-ghost) var(--bj-ghost) var(--bj-ghost);
   position: absolute;
   z-index: -1;
-  left: 24px;
-  right: 0;
-  overflow: hidden;
+  left: 0;
   top: 250px;
   font: 800 130px/1 var(--bj-font-alt);
   letter-spacing: -2px;
@@ -52,5 +61,6 @@ body.p-profiles-show::after {
   background-clip: text;
   color: transparent;
   pointer-events: none;
-  animation: bj-ghost 14s ease-in-out infinite alternate;
+  animation: bj-ghost 60s linear infinite;
+  will-change: transform;
 }
