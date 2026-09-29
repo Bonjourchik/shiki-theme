@@ -325,3 +325,9 @@ input[type=file]::file-selector-button:hover { background: var(--bj-ac); color: 
 .b-add_to_list .trigger .text { font-size: 13px; }
 /* в новостях почты и комментариях карточка тайтла лежит в .body с overflow: hidden — пока список открыт, не обрезаем */
 .body:has(.b-add_to_list.expanded) { overflow: visible; }
+/* «Связанное», когда блок не свёрнут (b-height_shortened нет): список привязан к .b-user_rate внутри
+   .info с overflow: hidden и открывался невидимым — «срабатывал не всегда» */
+.info:has(.b-add_to_list.expanded) { overflow: visible; }
+/* страница тайтла: колонка с постером — position: sticky, это свой слой; блоки ниже (описание и т.д.)
+   рисовались поверх открытого списка. Пока он открыт, колонка выше соседей */
+.c-image:has(.b-add_to_list.expanded) { z-index: 50; }
