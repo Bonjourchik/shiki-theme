@@ -1127,17 +1127,10 @@ html::after {
 .l-footer a:hover { color: var(--bj-ac); }
 
 .l-top_menu-v2 {
+
   background: rgba(11, 13, 17, .72);
-  -webkit-backdrop-filter: blur(14px) saturate(1.3);
-  backdrop-filter: blur(14px) saturate(1.3);
   border-bottom: 1px solid rgba(255, 255, 255, .06);
   color: var(--bj-tx);
-}
-
-.p-profiles-show .l-top_menu-v2 {
-  background: rgba(11, 13, 17, .88);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
 }
 .l-top_menu-v2 .menu-dropdown > span {
   color: var(--bj-tx2);
