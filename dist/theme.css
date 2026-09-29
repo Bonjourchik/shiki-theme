@@ -3318,10 +3318,13 @@ body.p-profiles-show::before {
   right: 0;
   top: 0;
   height: var(--bj-banner-h);
-  background: var(--bj-art) center 30% / cover no-repeat;
+  background:
+    linear-gradient(180deg, rgba(11, 13, 17, 0) 0, rgba(11, 13, 17, .05) 45%, rgba(11, 13, 17, .6) 75%, var(--bj-bg) 100%),
+    var(--bj-art) center 30% / cover no-repeat;
   pointer-events: none;
   transform-origin: 50% 40%;
   animation: bj-kenburns 26s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 body.p-profiles-show::after {
@@ -3329,17 +3332,17 @@ body.p-profiles-show::after {
   position: absolute;
   z-index: 0;
   left: 0;
-  right: 0;
   top: 0;
+  width: 100%;
+  height: calc(var(--bj-banner-h) * .8);
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 210, 150, .12) 50%, transparent 65%);
 
-  height: calc(var(--bj-banner-h) + 60px);
-  background:
-    linear-gradient(180deg, rgba(11, 13, 17, 0) 0, rgba(11, 13, 17, .05) calc(var(--bj-banner-h) * .45), rgba(11, 13, 17, .6) calc(var(--bj-banner-h) * .75), var(--bj-bg) var(--bj-banner-h)),
-    linear-gradient(105deg, transparent 35%, rgba(255, 210, 150, .14) 50%, transparent 65%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%, 250% 100%;
+  -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent);
+  mask-image: linear-gradient(180deg, #000 50%, transparent);
   pointer-events: none;
+  transform: translateX(-100%);
   animation: bj-sweep 7s ease-in-out infinite;
+  will-change: transform;
 }
 
 .p-profiles-show .l-page::before {
@@ -4064,8 +4067,8 @@ body.p-profiles-show::after {
 @keyframes bj-drift { to { transform: translate(520px, 260px) scale(1.2); } }
 @keyframes bj-kenburns { from { transform: scale(1); } to { transform: scale(1.12) translate(-2%, -3%); } }
 @keyframes bj-sweep {
-  0% { background-position: 0 0, 120% 0; }
-  60%, 100% { background-position: 0 0, -120% 0; }
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(100%); }
 }
 @keyframes bj-ghost { to { transform: translateX(-160px); } }
 @keyframes bj-spin { to { transform: rotate(360deg); } }
