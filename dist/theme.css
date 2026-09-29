@@ -3347,12 +3347,11 @@ body.p-profiles-show::after {
   will-change: transform;
 }
 
-.p-profiles-show .l-page { overflow-x: clip; }
 .p-profiles-show .l-page::before {
   content: var(--bj-ghost) var(--bj-ghost) var(--bj-ghost);
   position: absolute;
   z-index: -1;
-  left: 0;
+  left: calc(50% - 50vw);
   top: 250px;
   font: 800 130px/1 var(--bj-font-alt);
   letter-spacing: -2px;

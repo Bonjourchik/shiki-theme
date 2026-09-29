@@ -38,13 +38,13 @@ body.p-profiles-show::after {
 /* бегущий текст: только заливка, без обводки. Бесконечная строка с постоянной скоростью: в строке
    три копии --bj-ghost, сдвиг ровно на одну копию (-33.333%) — стык не виден. Раньше текст ездил
    туда-обратно с замедлением у краёв и на малой скорости шёл ступеньками. Отдельный слой (will-change)
-   двигается с субпиксельной точностью. Обрезка по ширине страницы — overflow-x: clip у .l-page */
-.p-profiles-show .l-page { overflow-x: clip; }
+   двигается с субпиксельной точностью. Во всю ширину экрана, как баннер: начало — левый край экрана
+   (.l-page по центру, поэтому 50% − 50vw); лишнее справа обрезает overflow-x у html/body */
 .p-profiles-show .l-page::before {
   content: var(--bj-ghost) var(--bj-ghost) var(--bj-ghost);
   position: absolute;
   z-index: -1;
-  left: 0;
+  left: calc(50% - 50vw);
   top: 250px;
   font: 800 130px/1 var(--bj-font-alt);
   letter-spacing: -2px;
