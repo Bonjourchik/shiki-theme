@@ -1,7 +1,7 @@
 @keyframes bj-drift { to { transform: translate(520px, 260px) scale(1.2); } }
 @keyframes bj-sweep {
-  0% { transform: translateX(-65%); }
-  60%, 100% { transform: translateX(35%); }
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(100%); }
 }
 @keyframes bj-ghost { to { transform: translateX(-33.333%); } }
 @keyframes bj-spin { to { transform: rotate(360deg); } }
