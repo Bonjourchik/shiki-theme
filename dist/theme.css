@@ -3978,6 +3978,7 @@ body.p-profiles-show::after {
 .p-user_rates-index .list-lines td.num .misc-value { color: var(--bj-mu); }
 .p-user_rates-index .list-lines td.num .b-separator { color: var(--bj-ln2); padding: 0 3px; }
 
+
 .p-profiles-show .b-stats_bar .bar {
   position: relative;
   display: flex;
@@ -4029,6 +4030,7 @@ body.p-profiles-show::after {
 .p-profiles-show .b-stats_bar .stat_names .stat_name::after,
 .p-profiles-show .b-stats_bar .stat_names .size::before,
 .p-profiles-show .b-stats_bar .stat_names .size::after { color: var(--bj-mu); }
+
 
 .p-profiles-show .lifetime .title {
   display: flex;
@@ -4086,6 +4088,7 @@ body.p-profiles-show::after {
   font-family: inherit;
 }
 
+
 .p-profiles-show .activity { margin-top: 24px; }
 
 .p-profiles-show .profile-content .activity > .title { margin-bottom: 14px; }
@@ -4101,6 +4104,7 @@ body.p-profiles-show::after {
 }
 .p-profiles-show .activity .graph .line .bar-container .bar .value { color: var(--bj-tx2); }
 .p-profiles-show .activity .graph .x_label { color: var(--bj-mu); font-size: 10px; }
+
 
 .p-profiles-show .activity .graph { z-index: 2; }
 .p-profiles-show .activity .graph .line { overflow: visible; }
@@ -4124,7 +4128,14 @@ body.p-profiles-show::after {
   transform: translateX(-50%);
 }
 
+.p-profiles-show .activity .graph .line .bar-container .bar .value:not(:empty)::after {
+  content: " ч";
+  color: var(--bj-tx2);
+  font-weight: 600;
+}
+
 .p-profiles-show .activity .graph .line { border-right: 0; padding: 0 1px; box-sizing: border-box; }
+
 
 @media screen and (min-width: 1024px) {
   .p-profiles-show .profile-content > .cc-2 { grid-template-columns: minmax(0, 1fr); }

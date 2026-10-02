@@ -152,6 +152,12 @@
   pointer-events: none;
   transform: translateX(-50%);
 }
+/* число в подсказке — часы за период, а не количество тайтлов: подписываем единицу */
+.p-profiles-show .activity .graph .line .bar-container .bar .value:not(:empty)::after {
+  content: " ч";
+  color: var(--bj-tx2);
+  font-weight: 600;
+}
 /* столбцы — с зазором 2px и скруглённым верхом */
 .p-profiles-show .activity .graph .line { border-right: 0; padding: 0 1px; box-sizing: border-box; }
 
