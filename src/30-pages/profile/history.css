@@ -103,6 +103,36 @@
 .p-user_rates-index .b-options-floated.mylist .b-link:hover,
 .p-user_rates-index .b-options-floated.mylist .b-link.active { background: var(--bj-ac-s); border-color: var(--bj-ac-line); color: var(--bj-ac); }
 .p-user_rates-index .b-options-floated.mylist .b-link:is(:hover, .active) span { color: var(--bj-ac); }
+/* режим постеров: карандаш редактирования — круглая кнопка в углу постера */
+.p-user_rates-index .list-posters .user_rate .edit-user_rate[class] {
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: rgba(20, 23, 29, .85);
+  border: 1px solid var(--bj-ln2);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+  color: var(--bj-tx2);
+  transition: background-color .2s, border-color .2s, color .2s;
+}
+.p-user_rates-index .list-posters .user_rate .edit-user_rate[class]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  -webkit-mask: var(--bj-i-pen) center / contain no-repeat;
+  mask: var(--bj-i-pen) center / contain no-repeat;
+}
+.p-user_rates-index .list-posters .user_rate .edit-user_rate[class]::after { display: none; }
+.p-user_rates-index .list-posters .user_rate .edit-user_rate[class]:hover {
+  background: rgba(36, 30, 20, .92);
+  border-color: var(--bj-ac-line);
+  color: var(--bj-ac);
+}
 
 /* ===== История (.p-user_histories-index): интервалы карточками ===== */
 .p-user_histories-index .history-page > .mischeadline {
@@ -144,7 +174,51 @@
 }
 .p-user_rates-index .list-lines tr.selectable > td:first-child { padding-left: 8px; border-radius: 8px 0 0 8px; }
 .p-user_rates-index .list-lines tr.selectable > td:last-child { padding-right: 8px; border-radius: 0 8px 8px 0; }
-.p-user_rates-index .list-lines tr.selectable:hover > td { background-color: rgba(255, 255, 255, .035); }
+.p-user_rates-index .list-lines tr.selectable:hover > td { background-color: var(--bj-ac-s); }
+/* вся строка — ссылка на тайтл: наведение в любом месте показывает окно тайтла, клик открывает страницу */
+.p-user_rates-index .list-lines tr.selectable { position: relative; }
+.p-user_rates-index .list-lines tr.selectable td.name a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+/* у сайта все .num позиционированы и легли бы поверх ссылки — «Тип» и чужие оценки остаются под ней */
+.p-user_rates-index .list-lines tr.selectable > td.num:not(.hoverable) { position: static; }
+/* поверх ссылки (только в своём списке): оценка и эпизоды правятся кликом, номер — карандаш меню редактирования */
+.p-user_rates-index .list-lines tr.editable > td:is(.hoverable, .index) { position: relative; z-index: 1; }
+.p-user_rates-index .list-lines tr.editable td.index { cursor: pointer; }
+.p-user_rates-index .list-lines tr.editable td.index::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 3px;
+  margin: auto;
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  -webkit-mask: var(--bj-i-pen) center / contain no-repeat;
+  mask: var(--bj-i-pen) center / contain no-repeat;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.p-user_rates-index .list-lines tr.editable:hover td.index > span { visibility: hidden; }
+.p-user_rates-index .list-lines tr.editable:hover td.index::before { opacity: 1; }
+.p-user_rates-index .list-lines tr.editable td.index:hover { color: var(--bj-ac-h); }
+/* шапка таблицы — скруглённая плашка в тон строкам вместо плоской полосы */
+.p-user_rates-index .list-lines.b-table thead tr:first-child > th {
+  height: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: var(--bj-sf2);
+  color: var(--bj-mu);
+  vertical-align: middle;
+}
+.p-user_rates-index .list-lines.b-table thead tr:first-child > th:first-child { padding-left: 8px; border-radius: 8px 0 0 8px; }
+.p-user_rates-index .list-lines.b-table thead tr:first-child > th:last-child { padding-right: 8px; border-radius: 0 8px 8px 0; }
+.p-user_rates-index .list-lines.b-table thead tr:first-child > th.num { letter-spacing: .5px; }
+.p-user_rates-index .list-lines.b-table thead tr:first-child > th.order-control { cursor: pointer; }
+.p-user_rates-index .list-lines.b-table thead tr:first-child > th.order-control.active { color: var(--bj-ac); }
+/* пустая строка-разделитель под шапкой — просто отступ */
+.p-user_rates-index .list-lines.b-table thead tr.border > th { height: 6px; padding: 0; background: none; }
 .p-user_rates-index .list-lines td.index {
   width: 34px;
   color: var(--bj-mu);

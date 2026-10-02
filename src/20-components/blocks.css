@@ -149,7 +149,8 @@
 .b-height_shortener .shade { background-image: linear-gradient(to bottom, rgba(20, 23, 29, 0), var(--bj-sf)); }
 
 /* список аниме пользователя: наведение на строку, форма редактирования, сводка */
-.p-user_rates-index .list-lines .selectable:hover { background-color: var(--bj-ac-s); }
+/* подсветка — на ячейках (history.css), у строки фон прозрачный: иначе за скруглёнными краями виден прямой угол */
+.p-user_rates-index .list-lines .selectable:hover { background-color: transparent; }
 .p-user_rates-index .list-lines tr.edit-form form {
   background: var(--bj-sf2);
   border-color: var(--bj-ln);

@@ -58,6 +58,8 @@
   -webkit-mask: var(--bj-i-close) center / contain no-repeat;
   mask: var(--bj-i-close) center / contain no-repeat;
 }
+/* у сайта «✕» ещё и текстом в ::after — без этого в окне тайтла видны два крестика */
+.tooltip-inner .close::after { display: none; }
 
 /* содержимое — без своей рамки и фона */
 .b-catalog_entry-tooltip .inner[class] {
