@@ -3908,16 +3908,7 @@ body.p-profiles-show::after {
 .p-user_rates-index .list-lines tr.selectable > td:last-child { padding-right: 8px; border-radius: 0 8px 8px 0; }
 .p-user_rates-index .list-lines tr.selectable:hover > td { background-color: var(--bj-ac-s); }
 
-.p-user_rates-index .list-lines tr.selectable { position: relative; }
-.p-user_rates-index .list-lines tr.selectable td.name a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.p-user_rates-index .list-lines tr.selectable > td.num:not(.hoverable) { position: static; }
-
-.p-user_rates-index .list-lines tr.editable > td:is(.hoverable, .index) { position: relative; z-index: 1; }
+.p-user_rates-index .list-lines tr.editable td.index { position: relative; }
 .p-user_rates-index .list-lines tr.editable td.index { cursor: pointer; }
 .p-user_rates-index .list-lines tr.editable td.index::before {
   content: "";

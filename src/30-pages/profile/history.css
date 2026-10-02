@@ -175,17 +175,8 @@
 .p-user_rates-index .list-lines tr.selectable > td:first-child { padding-left: 8px; border-radius: 8px 0 0 8px; }
 .p-user_rates-index .list-lines tr.selectable > td:last-child { padding-right: 8px; border-radius: 0 8px 8px 0; }
 .p-user_rates-index .list-lines tr.selectable:hover > td { background-color: var(--bj-ac-s); }
-/* вся строка — ссылка на тайтл: наведение в любом месте показывает окно тайтла, клик открывает страницу */
-.p-user_rates-index .list-lines tr.selectable { position: relative; }
-.p-user_rates-index .list-lines tr.selectable td.name a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-/* у сайта все .num позиционированы и легли бы поверх ссылки — «Тип» и чужие оценки остаются под ней */
-.p-user_rates-index .list-lines tr.selectable > td.num:not(.hoverable) { position: static; }
-/* поверх ссылки (только в своём списке): оценка и эпизоды правятся кликом, номер — карандаш меню редактирования */
-.p-user_rates-index .list-lines tr.editable > td:is(.hoverable, .index) { position: relative; z-index: 1; }
+/* в своём списке номер при наведении — карандаш: клик по строке открывает меню редактирования */
+.p-user_rates-index .list-lines tr.editable td.index { position: relative; }
 .p-user_rates-index .list-lines tr.editable td.index { cursor: pointer; }
 .p-user_rates-index .list-lines tr.editable td.index::before {
   content: "";
