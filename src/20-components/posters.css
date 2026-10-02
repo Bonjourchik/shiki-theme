@@ -18,6 +18,10 @@
   display: block;
   position: absolute;
   inset: 0;
+  /* у значка статуса сайт задаёт ширину 32px и z-index — без сброса блик был узкой полосой */
+  width: auto;
+  height: auto;
+  z-index: 1;
   background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, .3) 50%, transparent 70%);
   pointer-events: none;
   transform: translateX(-120%);
